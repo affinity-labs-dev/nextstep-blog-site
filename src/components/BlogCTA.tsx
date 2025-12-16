@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -8,9 +9,16 @@ const BlogCTA = () => {
         <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
           Ready to Make Your Next Move?
         </h2>
-        <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
+        <p className="text-muted-foreground text-lg mb-4 max-w-xl mx-auto">
           Join thousands of consultants who've found their dream roles through NextStep. 
           Get curated opportunities delivered to your inbox.
+        </p>
+        <p className="text-muted-foreground text-sm mb-8 max-w-xl mx-auto">
+          Not sure where to start? Read our{" "}
+          <Link to="/blog/consulting-exit-opportunities-2024" className="text-primary hover:underline">
+            complete guide to consulting exit opportunities
+          </Link>
+          .
         </p>
         <Button size="lg" className="shadow-button" asChild>
           <a href="https://getnextstep.com/auth/candidate/sign-up" target="_blank" rel="noopener noreferrer">
