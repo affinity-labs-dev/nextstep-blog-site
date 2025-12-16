@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getPostContent } from "@/data/blogContent";
 import { blogPosts } from "@/data/blogPosts";
+import { getImageForCategory } from "@/data/blogImages";
 import BlogCard from "@/components/BlogCard";
 
 const BlogPost = () => {
@@ -237,6 +238,15 @@ const BlogPost = () => {
               </div>
             </div>
           </header>
+
+          {/* Hero Image */}
+          <div className="max-w-4xl mx-auto px-4 pb-8">
+            <img
+              src={getImageForCategory(post.category)}
+              alt={post.title}
+              className="w-full h-64 md:h-96 object-cover rounded-2xl"
+            />
+          </div>
 
           {/* Article Content */}
           <article className="max-w-4xl mx-auto px-4 pb-16">
