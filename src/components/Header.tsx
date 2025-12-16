@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/nextstep-logo.png";
 
 const Header = () => {
-  const [isCandidate, setIsCandidate] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -18,21 +16,14 @@ const Header = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-3">
             <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
               Sign in
             </Button>
             
-            <div className="flex items-center gap-2 bg-muted rounded-full p-1">
-              <span className={`text-sm px-3 py-1 transition-colors ${isCandidate ? 'text-primary font-medium' : 'text-muted-foreground'}`}>
-                I'm a Candidate
-              </span>
-              <Switch 
-                checked={!isCandidate}
-                onCheckedChange={(checked) => setIsCandidate(!checked)}
-                className="data-[state=checked]:bg-secondary data-[state=unchecked]:bg-secondary"
-              />
-            </div>
+            <Button variant="outline" size="sm">
+              I'm a Candidate
+            </Button>
 
             <Button variant="outline" size="sm">
               I'm Hiring
