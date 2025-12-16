@@ -28,12 +28,19 @@ const BlogPost = () => {
     let listItems: string[] = [];
     let inList = false;
 
+    const formatText = (text: string): string => {
+      return text.replace(
+        /\*\*(.*?)\*\*/g,
+        '<strong class="font-semibold text-foreground">$1</strong>'
+      );
+    };
+
     const flushList = () => {
       if (listItems.length > 0) {
         elements.push(
           <ul key={`list-${elements.length}`} className="list-disc list-inside space-y-2 text-muted-foreground mb-6 ml-4">
             {listItems.map((item, i) => (
-              <li key={i}>{item}</li>
+              <li key={i} dangerouslySetInnerHTML={{ __html: formatText(item) }} />
             ))}
           </ul>
         );
@@ -83,16 +90,11 @@ const BlogPost = () => {
         flushList();
       } else if (trimmedLine) {
         flushList();
-        // Handle inline bold text
-        const formattedLine = trimmedLine.replace(
-          /\*\*(.*?)\*\*/g,
-          '<strong class="font-semibold text-foreground">$1</strong>'
-        );
         elements.push(
           <p
             key={index}
             className="text-muted-foreground leading-relaxed mb-4"
-            dangerouslySetInnerHTML={{ __html: formattedLine }}
+            dangerouslySetInnerHTML={{ __html: formatText(trimmedLine) }}
           />
         );
       }
