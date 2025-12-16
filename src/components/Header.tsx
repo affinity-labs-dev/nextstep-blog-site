@@ -17,8 +17,10 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
-              Sign in
+            <Button variant="ghost" className="text-muted-foreground hover:text-foreground" asChild>
+              <a href="https://getnextstep.com/auth/choose-type" target="_blank" rel="noopener noreferrer">
+                Sign in
+              </a>
             </Button>
             
             <Button variant="outline" size="sm" asChild>
