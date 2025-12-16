@@ -3,9 +3,11 @@ import { Helmet } from "react-helmet-async";
 import { ArrowLeft, Clock, Calendar, User, Share2 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BlogFAQ from "@/components/BlogFAQ";
 import { getPostContent } from "@/data/blogContent";
 import { blogPosts } from "@/data/blogPosts";
 import { getImageForCategory } from "@/data/blogImages";
+import { blogFAQs } from "@/data/blogFAQs";
 import BlogCard from "@/components/BlogCard";
 
 const BlogPost = () => {
@@ -155,6 +157,21 @@ const BlogPost = () => {
     ],
   };
 
+  const faqs = blogFAQs[post.slug] || [];
+  
+  const faqStructuredData = faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  } : null;
+
   return (
     <>
       <Helmet>
@@ -183,6 +200,9 @@ const BlogPost = () => {
         {/* Structured Data */}
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbData)}</script>
+        {faqStructuredData && (
+          <script type="application/ld+json">{JSON.stringify(faqStructuredData)}</script>
+        )}
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -284,6 +304,9 @@ const BlogPost = () => {
                 </button>
               </div>
             </div>
+
+            {/* FAQ Section */}
+            <BlogFAQ faqs={faqs} />
           </article>
 
           {/* Related Posts */}
