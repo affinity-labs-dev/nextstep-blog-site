@@ -12,7 +12,14 @@ const Header = () => {
         <div className="flex items-center justify-between rounded-full bg-card/80 backdrop-blur-md px-4 py-2 md:px-6 md:py-3 shadow-soft border border-border/50">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <img src={logo} alt="NextStep" className="h-8 md:h-10 w-auto" width={189} height={40} />
+            <img 
+              src={logo} 
+              alt="NextStep - Career platform for ex-consultants" 
+              className="h-8 md:h-10 w-auto" 
+              width={189} 
+              height={40}
+              decoding="async"
+            />
           </a>
 
           {/* Desktop Navigation */}

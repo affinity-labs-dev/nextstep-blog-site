@@ -248,14 +248,15 @@ const BlogPost = () => {
             </div>
           </header>
 
-          {/* Hero Image */}
           <div className="max-w-4xl mx-auto px-4 pb-8">
             <img
               src={getImageForCategory(post.category)}
-              alt={post.title}
+              alt={`Featured image for ${post.title} - ${post.category} article`}
               className="w-full h-64 md:h-96 object-cover rounded-2xl"
               width={896}
               height={384}
+              decoding="async"
+              fetchPriority="high"
             />
           </div>
 

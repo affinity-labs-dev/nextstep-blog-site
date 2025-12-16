@@ -20,9 +20,10 @@ const BlogCard = ({ slug, title, excerpt, category, readTime, date, featured = f
       <Link to={`/blog/${slug}`} className={`block overflow-hidden ${featured ? 'md:h-full' : 'aspect-video'}`}>
         <img 
           src={image} 
-          alt={title}
+          alt={`${title} - ${category} article thumbnail`}
           className={`w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 ${featured ? 'aspect-video md:aspect-auto md:h-full' : ''}`}
           loading="lazy"
+          decoding="async"
           width={featured ? 758 : 366}
           height={featured ? 426 : 206}
         />
