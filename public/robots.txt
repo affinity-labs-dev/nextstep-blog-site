@@ -9,6 +9,12 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
 # Social media crawlers
 User-agent: Twitterbot
 Allow: /
@@ -16,7 +22,10 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-# AI crawlers for AI visibility
+User-agent: LinkedInBot
+Allow: /
+
+# AI crawlers - Allowed
 User-agent: GPTBot
 Allow: /
 
@@ -31,6 +40,13 @@ Allow: /
 
 User-agent: Anthropic-AI
 Allow: /
+
+# AI crawlers - Blocked (training data scrapers)
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
 
 # Sitemap location
 Sitemap: https://blog.getnextstep.com/sitemap.xml
