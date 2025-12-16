@@ -13,15 +13,15 @@ export interface BlogPostContent {
 }
 
 export const blogContent: Record<string, BlogPostContent> = {
-  "consulting-exit-opportunities-2024": {
-    slug: "consulting-exit-opportunities-2024",
-    title: "Top Exit Opportunities for Consultants in 2024: A Complete Guide",
-    metaDescription: "Discover the best exit opportunities for consultants in 2024. From private equity to tech startups, learn which industries are hiring ex-consultants and how to position yourself.",
+  "consulting-exit-opportunities-2026": {
+    slug: "consulting-exit-opportunities-2026",
+    title: "Top Exit Opportunities for Consultants in 2026: A Complete Guide",
+    metaDescription: "Discover the best exit opportunities for consultants in 2026. From private equity to tech startups, learn which industries are hiring ex-consultants and how to position yourself.",
     keywords: ["consulting exit opportunities", "ex-consultant careers", "consulting to private equity", "consulting to tech", "career transition consultants"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
-    publishDate: "2024-12-15",
-    modifiedDate: "2024-12-15",
+    publishDate: "2026-12-15",
+    modifiedDate: "2026-12-15",
     category: "Career Transitions",
     readTime: "8 min read",
     content: `
@@ -29,9 +29,9 @@ export const blogContent: Record<string, BlogPostContent> = {
 
 Management consultants possess a unique combination of skills that make them highly sought after across industries. Your ability to structure complex problems, synthesize data, and communicate effectively with executives is invaluable in today's business landscape.
 
-In 2024, the exit opportunity landscape has evolved significantly. While traditional paths like private equity and corporate strategy remain strong, new opportunities in tech, venture capital, and entrepreneurship have emerged as equally attractive options.
+In 2026, the exit opportunity landscape has evolved significantly. While traditional paths like private equity and corporate strategy remain strong, new opportunities in tech, venture capital, and entrepreneurship have emerged as equally attractive options.
 
-## Top Exit Opportunities for 2024
+## Top Exit Opportunities for 2026
 
 ### 1. Private Equity and Venture Capital
 
@@ -120,8 +120,8 @@ Ready to take the next step in your career? NextStep connects consultants with m
     keywords: ["McKinsey to product manager", "consulting to PM", "tech career transition", "product management career", "ex-consultant PM"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
-    publishDate: "2024-12-12",
-    modifiedDate: "2024-12-12",
+    publishDate: "2026-12-12",
+    modifiedDate: "2026-12-12",
     category: "Tech Careers",
     readTime: "6 min read",
     content: `
@@ -272,8 +272,8 @@ NextStep can connect you with ex-consultants who've successfully made this trans
     keywords: ["case interview tips", "consulting interview", "BCG interview", "McKinsey case study", "management consulting interview"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
-    publishDate: "2024-12-10",
-    modifiedDate: "2024-12-10",
+    publishDate: "2026-12-10",
+    modifiedDate: "2026-12-10",
     category: "Interview Prep",
     readTime: "10 min read",
     content: `
@@ -432,8 +432,8 @@ NextStep offers mock interviews with ex-MBB consultants who can provide personal
     keywords: ["consulting to private equity", "PE career transition", "private equity recruiting", "ex-consultant PE", "consulting PE exit"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
-    publishDate: "2024-12-08",
-    modifiedDate: "2024-12-08",
+    publishDate: "2026-12-08",
+    modifiedDate: "2026-12-08",
     category: "Private Equity",
     readTime: "7 min read",
     content: `
@@ -623,8 +623,8 @@ NextStep can connect you with ex-consultants now in PE who can provide guidance 
     keywords: ["consulting work life balance", "ex-consultant lifestyle", "leave consulting", "consulting burnout", "better work life balance careers"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
-    publishDate: "2024-12-05",
-    modifiedDate: "2024-12-05",
+    publishDate: "2026-12-05",
+    modifiedDate: "2026-12-05",
     category: "Work-Life Balance",
     readTime: "5 min read",
     content: `
@@ -761,8 +761,8 @@ NextStep can connect you with ex-consultants who've successfully found balance a
     keywords: ["salary negotiation consultants", "ex-consultant compensation", "negotiate job offer", "consulting salary benchmark", "compensation negotiation tips"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
-    publishDate: "2024-12-03",
-    modifiedDate: "2024-12-03",
+    publishDate: "2026-12-03",
+    modifiedDate: "2026-12-03",
     category: "Compensation",
     readTime: "6 min read",
     content: `
@@ -929,8 +929,8 @@ NextStep offers negotiation coaching with ex-consultants who've successfully nav
     keywords: ["startup vs corporate", "ex-consultant startup", "consulting to startup", "corporate strategy career", "startup career decision"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
-    publishDate: "2024-11-30",
-    modifiedDate: "2024-11-30",
+    publishDate: "2026-11-30",
+    modifiedDate: "2026-11-30",
     category: "Career Decisions",
     readTime: "8 min read",
     content: `
@@ -1151,8 +1151,8 @@ NextStep can connect you with ex-consultants who've taken both paths and can sha
     keywords: ["networking career change", "consulting networking", "career transition networking", "professional networking tips", "networking strategies"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
-    publishDate: "2024-11-28",
-    modifiedDate: "2024-11-28",
+    publishDate: "2026-11-28",
+    modifiedDate: "2026-11-28",
     category: "Networking",
     readTime: "5 min read",
     content: `
@@ -1348,8 +1348,8 @@ NextStep provides networking opportunities with ex-consultants across industries
     keywords: ["Bain alumni", "consulting alumni careers", "ex-Bain success stories", "consulting career paths", "after Bain consulting"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
-    publishDate: "2024-11-25",
-    modifiedDate: "2024-11-25",
+    publishDate: "2026-11-25",
+    modifiedDate: "2026-11-25",
     category: "Success Stories",
     readTime: "7 min read",
     content: `
