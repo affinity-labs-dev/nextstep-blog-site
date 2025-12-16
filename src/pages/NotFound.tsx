@@ -13,6 +13,7 @@ const NotFound = () => {
     <>
       <Helmet>
         <title>Page Not Found | NextStep Blog</title>
+        <meta name="description" content="This page doesn't exist. Return to NextStep Blog for expert career advice, consulting exit opportunities, and success stories from MBB alumni." />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <div className="flex min-h-screen items-center justify-center bg-muted">
