@@ -158,7 +158,7 @@ const BlogPost = () => {
   return (
     <>
       <Helmet>
-        <title>{post.title} | NextStep Career Blog</title>
+        <title>{`${post.title.slice(0, 50)}${post.title.length > 50 ? '...' : ''} | NextStep`}</title>
         <meta name="description" content={post.metaDescription} />
         <meta name="keywords" content={post.keywords.join(", ")} />
         <link rel="canonical" href={`https://blog.getnextstep.com/blog/${post.slug}`} />

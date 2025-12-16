@@ -9,7 +9,7 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>NextStep Blog | Career Advice for Ex-Consultants | Exit Opportunities</title>
+        <title>NextStep Blog | Career Advice for Ex-Consultants</title>
         <meta 
           name="description" 
           content="Expert career insights for consultants transitioning to industry roles. Discover exit opportunities, interview tips, salary guides, and success stories from McKinsey, BCG, and Bain alumni." 
