@@ -16,15 +16,15 @@ const NotFound = () => {
         <meta name="description" content="This page doesn't exist. Return to NextStep Blog for expert career advice, consulting exit opportunities, and success stories from MBB alumni." />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
-      <div className="flex min-h-screen items-center justify-center bg-muted">
-        <div className="text-center">
+      <main className="flex min-h-screen items-center justify-center bg-muted">
+        <section className="text-center">
           <h1 className="mb-4 text-4xl font-bold">404</h1>
           <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
           <Link to="/" className="text-primary underline hover:text-primary/90">
             Return to Home
           </Link>
-        </div>
-      </div>
+        </section>
+      </main>
     </>
   );
 };
