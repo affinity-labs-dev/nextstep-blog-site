@@ -27,8 +27,10 @@ const Header = () => {
               </a>
             </Button>
 
-            <Button variant="outline" size="sm">
-              I'm Hiring
+            <Button variant="outline" size="sm" asChild>
+              <a href="https://getnextstep.com/auth/company/sign-up" target="_blank" rel="noopener noreferrer">
+                I'm Hiring
+              </a>
             </Button>
           </div>
 
