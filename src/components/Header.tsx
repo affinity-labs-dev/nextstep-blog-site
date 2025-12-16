@@ -21,8 +21,10 @@ const Header = () => {
               Sign in
             </Button>
             
-            <Button variant="outline" size="sm">
-              I'm a Candidate
+            <Button variant="outline" size="sm" asChild>
+              <a href="https://getnextstep.com/auth/candidate/sign-up" target="_blank" rel="noopener noreferrer">
+                I'm a Candidate
+              </a>
             </Button>
 
             <Button variant="outline" size="sm">
