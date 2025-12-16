@@ -1,0 +1,306 @@
+import { useParams, Link, Navigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { ArrowLeft, Clock, Calendar, User, Share2 } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { getPostContent } from "@/data/blogContent";
+import { blogPosts } from "@/data/blogPosts";
+import BlogCard from "@/components/BlogCard";
+
+const BlogPost = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const post = slug ? getPostContent(slug) : undefined;
+
+  if (!post) {
+    return <Navigate to="/blog" replace />;
+  }
+
+  // Get related posts (same category, excluding current)
+  const relatedPosts = blogPosts
+    .filter((p) => p.category === post.category && p.slug !== slug)
+    .slice(0, 3);
+
+  // Convert markdown-style content to HTML-like structure
+  const renderContent = (content: string) => {
+    const lines = content.trim().split("\n");
+    const elements: JSX.Element[] = [];
+    let listItems: string[] = [];
+    let inList = false;
+
+    const flushList = () => {
+      if (listItems.length > 0) {
+        elements.push(
+          <ul key={`list-${elements.length}`} className="list-disc list-inside space-y-2 text-muted-foreground mb-6 ml-4">
+            {listItems.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        );
+        listItems = [];
+        inList = false;
+      }
+    };
+
+    lines.forEach((line, index) => {
+      const trimmedLine = line.trim();
+
+      if (trimmedLine.startsWith("## ")) {
+        flushList();
+        elements.push(
+          <h2 key={index} className="text-2xl font-bold text-foreground mt-10 mb-4">
+            {trimmedLine.slice(3)}
+          </h2>
+        );
+      } else if (trimmedLine.startsWith("### ")) {
+        flushList();
+        elements.push(
+          <h3 key={index} className="text-xl font-semibold text-foreground mt-8 mb-3">
+            {trimmedLine.slice(4)}
+          </h3>
+        );
+      } else if (trimmedLine.startsWith("**") && trimmedLine.endsWith("**")) {
+        flushList();
+        elements.push(
+          <p key={index} className="font-semibold text-foreground mb-2">
+            {trimmedLine.slice(2, -2)}
+          </p>
+        );
+      } else if (trimmedLine.startsWith("- ")) {
+        inList = true;
+        listItems.push(trimmedLine.slice(2));
+      } else if (trimmedLine.match(/^\d+\.\s/)) {
+        inList = true;
+        listItems.push(trimmedLine.replace(/^\d+\.\s/, ""));
+      } else if (trimmedLine === "") {
+        flushList();
+      } else if (trimmedLine) {
+        flushList();
+        // Handle inline bold text
+        const formattedLine = trimmedLine.replace(
+          /\*\*(.*?)\*\*/g,
+          '<strong class="font-semibold text-foreground">$1</strong>'
+        );
+        elements.push(
+          <p
+            key={index}
+            className="text-muted-foreground leading-relaxed mb-4"
+            dangerouslySetInnerHTML={{ __html: formattedLine }}
+          />
+        );
+      }
+    });
+
+    flushList();
+    return elements;
+  };
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.metaDescription,
+    author: {
+      "@type": "Organization",
+      name: post.author,
+    },
+    datePublished: post.publishDate,
+    dateModified: post.modifiedDate,
+    publisher: {
+      "@type": "Organization",
+      name: "NextStep",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://blog.getnextstep.com/nextstep-logo.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://blog.getnextstep.com/blog/${post.slug}`,
+    },
+    keywords: post.keywords.join(", "),
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://blog.getnextstep.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://blog.getnextstep.com/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: `https://blog.getnextstep.com/blog/${post.slug}`,
+      },
+    ],
+  };
+
+  return (
+    <>
+      <Helmet>
+        <title>{post.title} | NextStep Career Blog</title>
+        <meta name="description" content={post.metaDescription} />
+        <meta name="keywords" content={post.keywords.join(", ")} />
+        <link rel="canonical" href={`https://blog.getnextstep.com/blog/${post.slug}`} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.metaDescription} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://blog.getnextstep.com/blog/${post.slug}`} />
+        <meta property="article:published_time" content={post.publishDate} />
+        <meta property="article:modified_time" content={post.modifiedDate} />
+        <meta property="article:section" content={post.category} />
+        {post.keywords.map((keyword) => (
+          <meta key={keyword} property="article:tag" content={keyword} />
+        ))}
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.metaDescription} />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbData)}</script>
+      </Helmet>
+
+      <div className="min-h-screen bg-background">
+        <Header />
+
+        <main className="pt-20">
+          {/* Breadcrumb */}
+          <nav className="max-w-4xl mx-auto px-4 py-6" aria-label="Breadcrumb">
+            <ol className="flex items-center gap-2 text-sm text-muted-foreground">
+              <li>
+                <Link to="/" className="hover:text-primary transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>/</li>
+              <li>
+                <Link to="/" className="hover:text-primary transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li>/</li>
+              <li className="text-foreground truncate max-w-[200px]">{post.title}</li>
+            </ol>
+          </nav>
+
+          {/* Article Header */}
+          <header className="max-w-4xl mx-auto px-4 pb-8">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-primary hover:underline mb-6"
+            >
+              <ArrowLeft size={16} />
+              Back to all articles
+            </Link>
+
+            <span className="inline-block text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full mb-4">
+              {post.category}
+            </span>
+
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
+              {post.title}
+            </h1>
+
+            <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <User size={16} />
+                <span>{post.author}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Calendar size={16} />
+                <time dateTime={post.publishDate}>
+                  {new Date(post.publishDate).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock size={16} />
+                <span>{post.readTime}</span>
+              </div>
+            </div>
+          </header>
+
+          {/* Article Content */}
+          <article className="max-w-4xl mx-auto px-4 pb-16">
+            <div className="prose prose-lg max-w-none">
+              {renderContent(post.content)}
+            </div>
+
+            {/* Share Section */}
+            <div className="border-t border-border mt-12 pt-8">
+              <div className="flex items-center justify-between">
+                <p className="text-muted-foreground">Found this helpful? Share it with your network.</p>
+                <button
+                  onClick={() => {
+                    navigator.share?.({
+                      title: post.title,
+                      url: window.location.href,
+                    });
+                  }}
+                  className="inline-flex items-center gap-2 text-primary hover:underline"
+                >
+                  <Share2 size={16} />
+                  Share
+                </button>
+              </div>
+            </div>
+          </article>
+
+          {/* Related Posts */}
+          {relatedPosts.length > 0 && (
+            <section className="bg-muted/30 py-16">
+              <div className="max-w-7xl mx-auto px-4">
+                <h2 className="text-2xl font-bold text-foreground mb-8">Related Articles</h2>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {relatedPosts.map((relatedPost) => (
+                    <BlogCard key={relatedPost.slug} {...relatedPost} />
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* CTA Section */}
+          <section className="py-16">
+            <div className="max-w-4xl mx-auto px-4 text-center">
+              <h2 className="text-2xl font-bold text-foreground mb-4">
+                Ready to Take the Next Step?
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                Connect with mentors who've successfully navigated career transitions from top consulting firms.
+              </p>
+              <a
+                href="https://getnextstep.com/auth/choose-type"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:opacity-90 transition-opacity"
+              >
+                Get Started
+              </a>
+            </div>
+          </section>
+        </main>
+
+        <Footer />
+      </div>
+    </>
+  );
+};
+
+export default BlogPost;
