@@ -34,6 +34,25 @@ const Index = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "NextStep",
+            "description": "NextStep is a career platform helping ex-consultants from McKinsey, BCG, and Bain transition to industry roles in tech, private equity, and corporate strategy.",
+            "url": "https://getnextstep.com",
+            "logo": "https://blog.getnextstep.com/favicon.png",
+            "sameAs": [
+              "https://www.linkedin.com/company/getnextstep",
+              "https://twitter.com/getnextstep"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "url": "https://getnextstep.com"
+            }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "Blog",
             "name": "NextStep Blog",
             "description": "Career advice and insights for consultants transitioning to industry roles",
@@ -41,7 +60,11 @@ const Index = () => {
             "publisher": {
               "@type": "Organization",
               "name": "NextStep",
-              "url": "https://getnextstep.com"
+              "url": "https://getnextstep.com",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://blog.getnextstep.com/favicon.png"
+              }
             }
           })}
         </script>
