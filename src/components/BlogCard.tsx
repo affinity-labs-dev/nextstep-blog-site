@@ -23,6 +23,8 @@ const BlogCard = ({ slug, title, excerpt, category, readTime, date, featured = f
           alt={title}
           className={`w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 ${featured ? 'aspect-video md:aspect-auto md:h-full' : ''}`}
           loading="lazy"
+          width={featured ? 758 : 366}
+          height={featured ? 426 : 206}
         />
       </Link>
       

@@ -254,6 +254,8 @@ const BlogPost = () => {
               src={getImageForCategory(post.category)}
               alt={post.title}
               className="w-full h-64 md:h-96 object-cover rounded-2xl"
+              width={896}
+              height={384}
             />
           </div>
 
