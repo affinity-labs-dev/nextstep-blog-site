@@ -86,9 +86,16 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    @apply overflow-x-hidden;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
     font-family: var(--body-sans);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-tap-highlight-color: transparent;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -97,6 +104,18 @@ All colors MUST be HSL.
 
   .font-serif {
     font-family: var(--headline-serif);
+  }
+
+  /* Ensure minimum tap target size */
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Exception for inline links in text content */
+  p a, li a, .inline-link {
+    min-height: auto;
+    min-width: auto;
   }
 }
 

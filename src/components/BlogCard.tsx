@@ -30,36 +30,36 @@ const BlogCard = ({ slug, title, excerpt, category, readTime, date, featured = f
         />
       </Link>
       
-      <div className="p-6">
+      <div className="p-5 sm:p-6">
         <div className="flex items-center gap-3 mb-3">
-          <span className="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
+          <span className="text-sm font-medium text-primary bg-primary/10 px-3 py-1.5 rounded-full">
             {category}
           </span>
-          <span className="text-xs text-muted-foreground">{date}</span>
+          <span className="text-sm text-muted-foreground">{date}</span>
         </div>
         
-        <h3 className={`font-semibold text-foreground group-hover:text-primary transition-colors mb-3 ${featured ? 'text-2xl' : 'text-lg'}`}>
-          <Link to={`/blog/${slug}`} className="hover:underline">
+        <h3 className={`font-semibold text-foreground group-hover:text-primary transition-colors mb-3 ${featured ? 'text-xl sm:text-2xl' : 'text-lg'}`}>
+          <Link to={`/blog/${slug}`} className="inline-link hover:underline">
             {title}
           </Link>
         </h3>
         
-        <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3">
+        <p className="text-muted-foreground text-base leading-relaxed mb-4 line-clamp-3">
           {excerpt}
         </p>
         
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-            <Clock size={14} />
+          <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+            <Clock size={16} />
             <span>{readTime}</span>
           </div>
           
           <Link 
             to={`/blog/${slug}`}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:gap-2.5 transition-all"
+            className="inline-flex items-center gap-1.5 text-base font-medium text-primary hover:gap-2.5 transition-all py-2 -mr-2 pr-2"
           >
             Read more
-            <ArrowRight size={16} />
+            <ArrowRight size={18} />
           </Link>
         </div>
       </div>

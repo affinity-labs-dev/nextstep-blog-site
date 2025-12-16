@@ -46,8 +46,9 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden p-2"
+            className="md:hidden p-3 min-h-[48px] min-w-[48px] flex items-center justify-center -mr-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -56,10 +57,16 @@ const Header = () => {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden mt-2 rounded-2xl bg-card/95 backdrop-blur-md p-4 shadow-soft border border-border/50 animate-fade-in">
-            <div className="flex flex-col gap-3">
-              <Button variant="ghost" className="justify-start">Sign in</Button>
-              <Button variant="ghost" className="justify-start">I'm a Candidate</Button>
-              <Button variant="outline">I'm Hiring</Button>
+            <div className="flex flex-col gap-2">
+              <Button variant="ghost" className="justify-start h-12 text-base" asChild>
+                <a href="https://getnextstep.com/auth/choose-type" target="_blank" rel="noopener noreferrer">Sign in</a>
+              </Button>
+              <Button variant="ghost" className="justify-start h-12 text-base" asChild>
+                <a href="https://getnextstep.com/auth/candidate/sign-up" target="_blank" rel="noopener noreferrer">I'm a Candidate</a>
+              </Button>
+              <Button variant="outline" className="h-12 text-base" asChild>
+                <a href="https://getnextstep.com/auth/company/sign-up" target="_blank" rel="noopener noreferrer">I'm Hiring</a>
+              </Button>
             </div>
           </div>
         )}
