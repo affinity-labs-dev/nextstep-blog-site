@@ -36,11 +36,11 @@ const BlogCard = ({ slug, title, excerpt, category, readTime, date, featured = f
           <span className="text-xs text-muted-foreground">{date}</span>
         </div>
         
-        <h2 className={`font-semibold text-foreground group-hover:text-primary transition-colors mb-3 ${featured ? 'text-2xl' : 'text-lg'}`}>
+        <h3 className={`font-semibold text-foreground group-hover:text-primary transition-colors mb-3 ${featured ? 'text-2xl' : 'text-lg'}`}>
           <Link to={`/blog/${slug}`} className="hover:underline">
             {title}
           </Link>
-        </h2>
+        </h3>
         
         <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3">
           {excerpt}
