@@ -21,10 +21,15 @@ const Index = () => {
         <meta property="og:description" content="Discover expert career advice for ex-consultants. Exit opportunities, interview strategies, and success stories from McKinsey, BCG, and Bain alumni." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://blog.getnextstep.com" />
+        <meta property="og:image" content="https://blog.getnextstep.com/og-homepage.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/jpeg" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="NextStep Blog | Career Advice for Ex-Consultants" />
         <meta name="twitter:description" content="Discover expert career advice for ex-consultants. Exit opportunities, interview strategies, and success stories from McKinsey, BCG, and Bain alumni." />
+        <meta name="twitter:image" content="https://blog.getnextstep.com/og-homepage.jpg" />
         
         <script type="application/ld+json">
           {JSON.stringify({

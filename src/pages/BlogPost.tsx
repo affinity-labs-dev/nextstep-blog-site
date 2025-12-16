@@ -7,6 +7,7 @@ import BlogFAQ from "@/components/BlogFAQ";
 import { getPostContent } from "@/data/blogContent";
 import { blogPosts } from "@/data/blogPosts";
 import { getImageForCategory } from "@/data/blogImages";
+import { getOgImageForCategory } from "@/data/ogImages";
 import { blogFAQs } from "@/data/blogFAQs";
 import BlogCard from "@/components/BlogCard";
 
@@ -185,6 +186,10 @@ const BlogPost = () => {
         <meta property="og:description" content={post.metaDescription} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://blog.getnextstep.com/blog/${post.slug}`} />
+        <meta property="og:image" content={`https://blog.getnextstep.com${getOgImageForCategory(post.category)}`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/jpeg" />
         <meta property="article:published_time" content={post.publishDate} />
         <meta property="article:modified_time" content={post.modifiedDate} />
         <meta property="article:section" content={post.category} />
@@ -196,6 +201,7 @@ const BlogPost = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.metaDescription} />
+        <meta name="twitter:image" content={`https://blog.getnextstep.com${getOgImageForCategory(post.category)}`} />
 
         {/* Structured Data */}
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
