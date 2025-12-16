@@ -52,6 +52,13 @@ const BlogPost = () => {
             {trimmedLine.slice(3)}
           </h2>
         );
+      } else if (trimmedLine.startsWith("#### ")) {
+        flushList();
+        elements.push(
+          <h4 key={index} className="text-lg font-semibold text-foreground mt-6 mb-2">
+            {trimmedLine.slice(5)}
+          </h4>
+        );
       } else if (trimmedLine.startsWith("### ")) {
         flushList();
         elements.push(
