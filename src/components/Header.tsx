@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/nextstep-logo.png";
 
 const Header = () => {
   const [isCandidate, setIsCandidate] = useState(true);
@@ -12,13 +13,8 @@ const Header = () => {
       <nav className="mx-auto max-w-6xl">
         <div className="flex items-center justify-between rounded-full bg-card/80 backdrop-blur-md px-4 py-2 md:px-6 md:py-3 shadow-soft border border-border/50">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">&lt;</span>
-            </div>
-            <span className="text-xl font-bold">
-              Next<span className="text-primary">Step</span>
-            </span>
+          <a href="/" className="flex items-center">
+            <img src={logo} alt="NextStep" className="h-8 md:h-10 w-auto" />
           </a>
 
           {/* Desktop Navigation */}
