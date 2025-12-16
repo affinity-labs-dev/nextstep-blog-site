@@ -236,17 +236,19 @@ const BlogPost = () => {
 
           {/* Article Header */}
           <header className="max-w-4xl mx-auto px-4 pb-8">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 text-primary hover:underline mb-6 py-2 min-h-[48px]"
-            >
-              <ArrowLeft size={18} />
-              <span className="text-base">Back to all articles</span>
-            </Link>
+            <div className="flex items-center justify-between mb-6">
+              <Link
+                to="/"
+                className="inline-flex items-center gap-2 text-primary hover:underline py-2 min-h-[48px]"
+              >
+                <ArrowLeft size={18} />
+                <span className="text-base">Back to all articles</span>
+              </Link>
 
-            <span className="inline-block text-base font-medium text-primary bg-primary/10 px-4 py-2 rounded-full mb-4">
-              {post.category}
-            </span>
+              <span className="text-base font-medium text-primary bg-primary/10 px-4 py-2 rounded-full">
+                {post.category}
+              </span>
+            </div>
 
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
               {post.title}
