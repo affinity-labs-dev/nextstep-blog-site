@@ -12,19 +12,19 @@ const Index = () => {
         <title>NextStep Blog | Career Advice for Ex-Consultants</title>
         <meta 
           name="description" 
-          content="Expert career insights for consultants transitioning to industry roles. Discover exit opportunities, interview tips, salary guides, and success stories from McKinsey, BCG, and Bain alumni." 
+          content="Discover expert career advice for ex-consultants. Exit opportunities, interview strategies, and success stories from McKinsey, BCG, and Bain alumni." 
         />
         <meta name="keywords" content="consulting exit opportunities, ex-consultant careers, McKinsey alumni jobs, BCG career transition, Bain exit strategy, management consulting to tech, consulting to private equity" />
         <link rel="canonical" href="https://blog.getnextstep.com" />
         
         <meta property="og:title" content="NextStep Blog | Career Advice for Ex-Consultants" />
-        <meta property="og:description" content="Expert career insights for consultants transitioning to industry roles. Exit opportunities, interview tips, and success stories." />
+        <meta property="og:description" content="Discover expert career advice for ex-consultants. Exit opportunities, interview strategies, and success stories from McKinsey, BCG, and Bain alumni." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://blog.getnextstep.com" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="NextStep Blog | Career Advice for Ex-Consultants" />
-        <meta name="twitter:description" content="Expert career insights for consultants transitioning to industry roles." />
+        <meta name="twitter:description" content="Discover expert career advice for ex-consultants. Exit opportunities, interview strategies, and success stories from McKinsey, BCG, and Bain alumni." />
         
         <script type="application/ld+json">
           {JSON.stringify({
