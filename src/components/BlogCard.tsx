@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Clock, ArrowRight } from "lucide-react";
+import { getImageForCategory } from "@/data/blogImages";
 
 interface BlogCardProps {
   slug: string;
@@ -12,9 +13,18 @@ interface BlogCardProps {
 }
 
 const BlogCard = ({ slug, title, excerpt, category, readTime, date, featured = false }: BlogCardProps) => {
+  const image = getImageForCategory(category);
+
   return (
     <article className={`group bg-card rounded-2xl border border-border/50 overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/20 ${featured ? 'md:col-span-2 md:grid md:grid-cols-2' : ''}`}>
-      <div className={`bg-gradient-to-br from-primary/10 to-accent aspect-video ${featured ? 'md:aspect-auto md:h-full' : ''}`} />
+      <Link to={`/blog/${slug}`} className={`block overflow-hidden ${featured ? 'md:h-full' : 'aspect-video'}`}>
+        <img 
+          src={image} 
+          alt={title}
+          className={`w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 ${featured ? 'aspect-video md:aspect-auto md:h-full' : ''}`}
+          loading="lazy"
+        />
+      </Link>
       
       <div className="p-6">
         <div className="flex items-center gap-3 mb-3">
