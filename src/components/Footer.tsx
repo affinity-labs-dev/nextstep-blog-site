@@ -8,7 +8,14 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="NextStep" className="h-8 w-auto" width={151} height={32} />
+            <img 
+              src={logo} 
+              alt="NextStep logo - Return to homepage" 
+              className="h-8 w-auto" 
+              width={151} 
+              height={32}
+              decoding="async"
+            />
           </Link>
 
           {/* Links */}
