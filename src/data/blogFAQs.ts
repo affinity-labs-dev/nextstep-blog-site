@@ -4,163 +4,163 @@ export const blogFAQs: Record<string, FAQItem[]> = {
   "consulting-exit-opportunities-2026": [
     {
       question: "What are the best exit opportunities for consultants in 2026?",
-      answer: "The top exit opportunities include private equity and venture capital, tech companies (product management, strategy, operations), corporate development and M&A, startups and entrepreneurship, and corporate strategy roles at Fortune 500 companies."
+      answer: "Private equity, tech product management, corporate strategy, and startups. PE and VC hire heavily at the 3-4 year mark. Tech companies recruit for PM, strategy, and operations roles. Fortune 500 corporate development teams value due diligence experience."
     },
     {
       question: "When is the best time to leave consulting?",
-      answer: "The optimal time depends on your goals: 1-2 years post-MBA is good for PM and operations roles, 3-4 years (Senior Consultant/Manager level) is ideal for PE, VC, and corporate strategy, while 5+ years is best for C-suite and board positions."
+      answer: "1-2 years: PM and operations roles. 3-4 years (Manager level): PE, VC, corporate strategy. 5+ years: C-suite and board positions. Most consultants exit between years 2-4."
     },
     {
       question: "How do I transition from consulting to private equity?",
-      answer: "Focus on developing financial modeling and valuation skills, practice investment memo writing, and start networking early with PE professionals. Your due diligence experience and ability to quickly understand business models are highly valued."
+      answer: "Build LBO modeling skills, practice writing investment memos, and network with PE associates 6-12 months before applying. PE values your due diligence experience and speed in understanding business models."
     },
     {
       question: "Do consultants make good product managers?",
-      answer: "Yes, consultants often excel as PMs due to their structured thinking, stakeholder management skills, data-driven decision making, and communication abilities. However, they need to develop product sense, technical fluency, and user empathy."
+      answer: "Yes. Structured thinking, stakeholder management, and data analysis transfer directly. Gaps to fill: product sense, technical fluency, and user empathy. Most consultants need 3-6 months to build PM fundamentals."
     }
   ],
   "mckinsey-to-tech-transition": [
     {
       question: "How long does it take to transition from McKinsey to a PM role?",
-      answer: "A typical transition takes 6-12 months of preparation. This includes 2-3 months building PM fundamentals, 3-6 months gaining hands-on experience, and 1-2 months of intensive interview preparation."
+      answer: "6-12 months total. Breakdown: 2-3 months learning PM fundamentals, 3-6 months gaining hands-on experience (side projects or internal transfers), 1-2 months interview prep."
     },
     {
       question: "What PM interview types should ex-consultants prepare for?",
-      answer: "Prepare for six main interview types: Product Design, Product Improvement, Metrics/Analytics, Strategy, Estimation (market sizing), and Behavioral questions about leadership and handling ambiguity."
+      answer: "Six types: Product Design, Product Improvement, Metrics/Analytics, Strategy, Estimation (market sizing), and Behavioral. Consultants typically excel at Strategy and Estimation but need practice on Product Design."
     },
     {
       question: "Should I join a big tech company or a startup as my first PM role?",
-      answer: "Big tech offers structured programs, clear progression, and brand recognition but can be slow-moving. Startups offer more ownership and faster growth but less structure. Choose based on your risk tolerance and learning preferences."
+      answer: "Big tech: structured training, clear progression, brand recognition, slower pace. Startups: more ownership, faster growth, less structure, higher risk. Choose big tech if you want mentorship, startups if you want breadth."
     },
     {
       question: "What skills do consultants need to develop for product management?",
-      answer: "Focus on developing product sense (understanding what makes products successful), technical fluency (how software is built), user empathy (end-user focus vs. business stakeholder focus), and execution skills (shipping products, not just recommending)."
+      answer: "Product sense (why products succeed), technical fluency (how software ships), user empathy (end-user vs. executive focus), and execution (shipping, not recommending). Most consultants underestimate the user empathy gap."
     }
   ],
   "consulting-interview-case-study-tips": [
     {
       question: "What do case interviewers really look for?",
-      answer: "Interviewers evaluate five dimensions: Problem Structuring (30%), Analytical Rigor (25%), Business Judgment (20%), Communication (15%), and Coachability (10%). Focus on insight over comprehensiveness."
+      answer: "Five dimensions with weightings: Problem Structuring (30%), Analytical Rigor (25%), Business Judgment (20%), Communication (15%), Coachability (10%). Insight matters more than comprehensiveness."
     },
     {
       question: "Should I memorize case interview frameworks?",
-      answer: "No, memorizing frameworks robotically is one of the fastest ways to get rejected. Instead, understand the underlying logic and adapt your approach to each unique situation. Use frameworks as a starting point, not a destination."
+      answer: "No. Memorized frameworks are obvious and lead to rejection. Understand the logic behind frameworks (profitability, market entry, M&A) and adapt to each case. Interviewers test thinking, not recall."
     },
     {
       question: "How should I structure my case interview preparation?",
-      answer: "Practice 2-3 cases daily with different partners for 5 days before your interview. Day 6 should be light review focusing on rest and confidence. Day 7, relax and get good sleep."
+      answer: "Final week: 2-3 cases daily with different partners for 5 days. Day 6: light review only. Day 7: rest. Total prep time varies, but 50-100 practice cases is typical for successful candidates."
     },
     {
       question: "What is the hypothesis-driven approach in case interviews?",
-      answer: "Form an initial hypothesis based on the case setup, structure your analysis to test it, adjust as you learn new information, and conclude with conviction based on evidence. This shows you can have a point of view, not just explore aimlessly."
+      answer: "Form an initial hypothesis from case facts, structure analysis to test it, adjust based on new data, conclude with conviction. This demonstrates strategic thinking vs. aimless exploration."
     }
   ],
   "private-equity-consulting-background": [
     {
       question: "Why do PE firms hire ex-consultants?",
-      answer: "PE firms value consultants' analytical rigor, due diligence experience, ability to quickly understand business models, and structured problem-solving skills. These translate directly to evaluating investment opportunities."
+      answer: "Due diligence experience, speed in understanding business models, structured analysis, and presentation skills. Consultants can evaluate 3-5 deals simultaneously during diligence processes."
     },
     {
       question: "What additional skills do consultants need for PE?",
-      answer: "Focus on financial modeling, valuation techniques (DCF, LBO modeling, comparable analysis), investment memo writing, and developing industry expertise. Understanding deal dynamics and value creation levers is crucial."
+      answer: "LBO modeling, DCF valuation, comparable company analysis, and investment memo writing. Most PE associates spend 60-80 hours weekly; financial modeling is 30-40% of the work."
     },
     {
       question: "What is the typical compensation in PE vs consulting?",
-      answer: "PE compensation often exceeds consulting, especially when including carried interest. Base salaries are competitive, but the real upside comes from deal bonuses and carry on successful investments."
+      answer: "PE Associate: $150-250K base + $100-200K bonus + carried interest. Consulting Manager: $200-250K total. PE upside comes from carry on successful fund exits, often 5-10 years out."
     },
     {
       question: "How important is networking for breaking into PE?",
-      answer: "Networking is crucial. Most PE roles are filled through referrals and relationships. Start building connections with PE professionals early, leverage your consulting alumni network, and attend industry events."
+      answer: "Critical. 70-80% of PE roles are filled through referrals. Start networking 12+ months before your target transition. Consulting alumni at PE firms are the highest-value contacts."
     }
   ],
   "work-life-balance-after-consulting": [
     {
       question: "Can I maintain my income while improving work-life balance?",
-      answer: "Yes, many roles offer competitive compensation with better hours. Corporate strategy, certain tech roles, and some PE/VC positions can match or exceed consulting pay while providing more predictable schedules."
+      answer: "Yes. Corporate strategy roles pay $180-250K for 50-55 hour weeks. Senior PM roles at big tech pay $250-400K total comp for 45-55 hours. PE has longer hours but higher ceiling."
     },
     {
       question: "Which industries offer the best work-life balance for ex-consultants?",
-      answer: "Corporate strategy at Fortune 500 companies, certain tech roles (especially at more mature companies), and some venture capital positions typically offer better balance than consulting while leveraging your skills."
+      answer: "Corporate strategy at Fortune 500 (50-55 hrs), big tech PM/strategy (45-55 hrs), VC (variable but more control). Investment banking and growth PE have similar hours to consulting."
     },
     {
       question: "Will leaving consulting hurt my long-term career prospects?",
-      answer: "Not at all. Many ex-consultants have built exceptional careers in industry. The key is choosing a path that aligns with your goals and allows for continued growth and impact."
+      answer: "No. Most consulting partners left and returned or never returned. 80%+ of MBB consultants exit within 5 years. Industry experience is increasingly valued for senior consulting roles."
     },
     {
       question: "How do I evaluate work-life balance during the interview process?",
-      answer: "Ask specific questions about typical hours, travel expectations, and flexibility. Speak with current employees, check Glassdoor reviews, and pay attention to how quickly people respond to emails outside business hours."
+      answer: "Ask: typical weekly hours, weekend work frequency, travel percentage, remote work policy. Check Glassdoor for consistency. Note response times to your emails (nights/weekends = red flag)."
     }
   ],
   "salary-negotiation-ex-consultants": [
     {
       question: "How much can ex-consultants expect to earn when transitioning?",
-      answer: "Compensation varies by role and company, but many ex-consultants maintain or increase their total compensation. Tech companies often offer significant equity, while PE/VC roles include carried interest potential."
+      answer: "Tech PM: $150-300K (L5-L6 at FAANG). Corporate strategy: $150-220K. PE Associate: $250-400K total. Most maintain or increase total comp; equity can significantly increase upside."
     },
     {
       question: "Should I disclose my current consulting salary during negotiations?",
-      answer: "In many states, employers cannot ask for salary history. Focus on the value you bring and market rates for the role rather than anchoring to your current compensation."
+      answer: "No. Salary history requests are illegal in CA, NY, and 20+ other states. Redirect to market rates and role requirements. Your consulting comp is often higher than posted ranges, which can work against you."
     },
     {
       question: "How do I negotiate equity as an ex-consultant?",
-      answer: "Understand the company's equity structure, ask about vesting schedules, and negotiate for more shares if base salary is fixed. Consider the stage of the company and potential upside when evaluating offers."
+      answer: "Ask for equity details upfront: grant size, vesting schedule (typically 4 years), strike price, and 409A valuation. At startups, negotiate for 10-25% more shares if base is fixed. Equity is most negotiable."
     },
     {
       question: "What negotiation tactics work best for ex-consultants?",
-      answer: "Use your consulting skills: gather data on market rates, understand the full compensation package, create leverage with multiple offers if possible, and frame negotiations around mutual value creation."
+      answer: "Get competing offers (2-3 is ideal). Research levels.fyi and Glassdoor for market data. Negotiate base, equity, and signing bonus separately. Ask for time (48-72 hours) before accepting."
     }
   ],
   "startup-vs-corporate-ex-consultant": [
     {
       question: "What are the main differences between startup and corporate roles?",
-      answer: "Startups offer more ownership, faster learning, and equity upside but less structure and higher risk. Corporate roles provide stability, clear progression, and resources but may have slower pace and more bureaucracy."
+      answer: "Startups: more ownership, 10-20% equity potential, less structure, higher failure risk (90% fail). Corporate: stability, clear promotion paths, more resources, slower decision-making."
     },
     {
       question: "How do I know if I'm suited for startup life?",
-      answer: "Consider your risk tolerance, need for structure, and appetite for ambiguity. If you thrive in undefined situations, can wear multiple hats, and are comfortable with uncertainty, startups may be a good fit."
+      answer: "Good fit if: you tolerate ambiguity, can work without clear direction, are comfortable with financial risk, and want to build vs. optimize. Bad fit if: you need structure, clear metrics, or stable income."
     },
     {
       question: "Can I move from a startup to corporate later (or vice versa)?",
-      answer: "Yes, career paths are increasingly fluid. Startup experience is valued at corporations for bringing innovation and agility, while corporate experience at startups provides operational rigor and scalability expertise."
+      answer: "Yes. Startup-to-corporate is common after exits or for stability. Corporate-to-startup is valued for operational rigor. Most executives have mixed backgrounds. Timing matters less than skills."
     },
     {
       question: "How should I evaluate startup equity offers?",
-      answer: "Consider the company stage, total dilution, vesting schedule, and exercise window. Research comparable exits in the industry and understand the likely outcomes. Don't over-value equity in early-stage companies."
+      answer: "Key factors: company stage (Series A = higher risk/reward), your percentage ownership post-dilution, exercise window (90 days is standard, negotiate for longer), and recent 409A valuation."
     }
   ],
   "networking-strategies-career-change": [
     {
       question: "How do I network effectively without being pushy?",
-      answer: "Focus on building genuine relationships rather than asking for favors. Offer value first, be curious about others' experiences, and follow up thoughtfully. Quality connections matter more than quantity."
+      answer: "Lead with curiosity, not asks. Request 20-minute calls, not job referrals. Share relevant articles or intros. Follow up within 24 hours with specific thanks. Aim for 5-10 quality conversations monthly."
     },
     {
       question: "How do I leverage my consulting alumni network?",
-      answer: "Your firm's alumni are often willing to help. Reach out with specific, thoughtful questions, be respectful of their time, and always follow up with gratitude. Many successful transitions happen through alumni connections."
+      answer: "Use firm alumni directories. Reference shared projects or offices. Be specific in asks. Success rate: 60-70% response rate from alumni vs. 10-20% from cold outreach. Alumni referrals are your highest-ROI activity."
     },
     {
       question: "What's the best way to reach out to someone I don't know?",
-      answer: "Personalize your message, be specific about why you're reaching out to them, keep it brief, and make a clear but reasonable ask. Mention any mutual connections or shared experiences."
+      answer: "Template: Personalized opener (specific to them), 1-2 sentences on your background, specific question or ask, time-bound request (15-20 min call). Keep under 100 words. LinkedIn or email both work."
     },
     {
       question: "How long should I network before applying to roles?",
-      answer: "Start networking 3-6 months before you plan to transition. This gives you time to build relationships, learn about opportunities, and get referrals when you're ready to apply."
+      answer: "Start 3-6 months before target transition. Build 20-30 relevant contacts before applying. Aim for 2-3 internal referrals per target company. Referred candidates are 4x more likely to be hired."
     }
   ],
   "bain-alumni-success-stories": [
     {
       question: "What careers do Bain alumni typically pursue?",
-      answer: "Bain alumni pursue diverse paths including private equity, venture capital, tech companies, startups, corporate strategy, and entrepreneurship. Many have founded successful companies or reached C-suite positions."
+      answer: "Top exits: PE/VC (25%), tech (20%), corporate strategy (15%), startups/entrepreneurship (15%), other consulting (10%), other industries (15%). Notable alumni: Mitt Romney, Jamie Dimon (briefly)."
     },
     {
       question: "How does Bain experience help in career transitions?",
-      answer: "Bain's emphasis on results, practical implementation, and client relationships translates well to industry roles. The problem-solving methodology and collaborative culture are valued across sectors."
+      answer: "Bain emphasizes results and implementation over analysis alone. This translates to operating roles better than strategy-heavy consulting. True North values and collaborative culture are recognized across industries."
     },
     {
       question: "Do Bain alumni help each other with career transitions?",
-      answer: "Yes, Bain has a strong alumni network. Former consultants often help each other through referrals, advice, and introductions. The firm's culture of collaboration extends beyond tenure."
+      answer: "Yes. Bain has 15,000+ alumni globally. Alumni response rate to outreach is 50-60%. Annual alumni events and online directory facilitate connections. Culture of helping extends post-tenure."
     },
     {
       question: "What makes Bain consultants successful in new roles?",
-      answer: "Bain alumni succeed due to their results orientation, ability to work across functions, practical problem-solving approach, and strong work ethic. The True North values continue to guide their careers."
+      answer: "Results orientation, cross-functional collaboration, practical problem-solving, and client relationship skills. Bain alumni cite the operating partner model and True North values as lasting influences."
     }
   ]
 };
