@@ -1,9 +1,9 @@
 import { FAQItem } from "@/components/BlogFAQ";
 
 export const blogFAQs: Record<string, FAQItem[]> = {
-  "consulting-exit-opportunities-2024": [
+  "consulting-exit-opportunities-2026": [
     {
-      question: "What are the best exit opportunities for consultants in 2024?",
+      question: "What are the best exit opportunities for consultants in 2026?",
       answer: "The top exit opportunities include private equity and venture capital, tech companies (product management, strategy, operations), corporate development and M&A, startups and entrepreneurship, and corporate strategy roles at Fortune 500 companies."
     },
     {
