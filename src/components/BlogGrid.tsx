@@ -32,6 +32,9 @@ const BlogGrid = () => {
           </ul>
         </nav>
 
+        {/* Section Heading */}
+        <h2 className="sr-only">Latest Articles</h2>
+
         {/* Blog Posts Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPosts.map((post, index) => (
