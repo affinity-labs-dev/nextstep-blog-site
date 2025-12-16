@@ -217,20 +217,20 @@ const BlogPost = () => {
         <main className="pt-20">
           {/* Breadcrumb */}
           <nav className="max-w-4xl mx-auto px-4 py-6" aria-label="Breadcrumb">
-            <ol className="flex items-center gap-2 text-sm text-muted-foreground">
+            <ol className="flex items-center gap-2 text-base text-muted-foreground flex-wrap">
               <li>
-                <Link to="/" className="hover:text-primary transition-colors">
+                <Link to="/" className="inline-link py-2 hover:text-primary transition-colors">
                   Home
                 </Link>
               </li>
-              <li>/</li>
+              <li aria-hidden="true">/</li>
               <li>
-                <Link to="/" className="hover:text-primary transition-colors">
+                <Link to="/" className="inline-link py-2 hover:text-primary transition-colors">
                   Blog
                 </Link>
               </li>
-              <li>/</li>
-              <li className="text-foreground truncate max-w-[200px]">{post.title}</li>
+              <li aria-hidden="true">/</li>
+              <li className="text-foreground truncate max-w-[200px] py-2">{post.title}</li>
             </ol>
           </nav>
 
@@ -238,27 +238,27 @@ const BlogPost = () => {
           <header className="max-w-4xl mx-auto px-4 pb-8">
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-primary hover:underline mb-6"
+              className="inline-flex items-center gap-2 text-primary hover:underline mb-6 py-2 min-h-[48px]"
             >
-              <ArrowLeft size={16} />
-              Back to all articles
+              <ArrowLeft size={18} />
+              <span className="text-base">Back to all articles</span>
             </Link>
 
-            <span className="inline-block text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full mb-4">
+            <span className="inline-block text-base font-medium text-primary bg-primary/10 px-4 py-2 rounded-full mb-4">
               {post.category}
             </span>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
               {post.title}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-4 text-base text-muted-foreground">
               <div className="flex items-center gap-2">
-                <User size={16} />
+                <User size={18} />
                 <span>{post.author}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar size={16} />
+                <Calendar size={18} />
                 <time dateTime={post.publishDate}>
                   {new Date(post.publishDate).toLocaleDateString("en-US", {
                     year: "numeric",
@@ -268,7 +268,7 @@ const BlogPost = () => {
                 </time>
               </div>
               <div className="flex items-center gap-2">
-                <Clock size={16} />
+                <Clock size={18} />
                 <span>{post.readTime}</span>
               </div>
             </div>
@@ -294,8 +294,8 @@ const BlogPost = () => {
 
             {/* Share Section */}
             <div className="border-t border-border mt-12 pt-8">
-              <div className="flex items-center justify-between">
-                <p className="text-muted-foreground">Found this helpful? Share it with your network.</p>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <p className="text-muted-foreground text-base">Found this helpful? Share it with your network.</p>
                 <button
                   onClick={() => {
                     navigator.share?.({
@@ -303,10 +303,10 @@ const BlogPost = () => {
                       url: window.location.href,
                     });
                   }}
-                  className="inline-flex items-center gap-2 text-primary hover:underline"
+                  className="inline-flex items-center gap-2 text-primary hover:underline py-3 px-4 min-h-[48px] -ml-4 sm:ml-0"
                 >
-                  <Share2 size={16} />
-                  Share
+                  <Share2 size={18} />
+                  <span className="text-base">Share</span>
                 </button>
               </div>
             </div>
@@ -335,12 +335,12 @@ const BlogPost = () => {
               <h2 className="text-2xl font-bold text-foreground mb-4">
                 Ready to Take the Next Step?
               </h2>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground text-base mb-6">
                 Connect with mentors who've successfully navigated career transitions from top consulting firms.
               </p>
               <a
                 href="https://getnextstep.com/auth/choose-type"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-4 min-h-[48px] rounded-full text-base font-medium hover:opacity-90 transition-opacity"
               >
                 Get Started
               </a>

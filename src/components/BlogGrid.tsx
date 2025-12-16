@@ -19,7 +19,7 @@ const BlogGrid = () => {
               <li key={category}>
                 <button
                   onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  className={`px-4 py-3 min-h-[48px] rounded-full text-base font-medium transition-all ${
                     activeCategory === category
                       ? "bg-primary text-primary-foreground"
                       : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
