@@ -42,6 +42,7 @@ const BlogGrid = () => {
               key={post.slug}
               {...post}
               featured={index === 0 && activeCategory === "All"}
+              isFirstCard={index === 0}
             />
           ))}
         </div>
