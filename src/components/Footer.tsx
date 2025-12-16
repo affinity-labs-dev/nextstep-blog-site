@@ -12,7 +12,7 @@ const Footer = () => {
           </Link>
 
           {/* Links */}
-          <nav className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
+          <nav aria-label="Footer navigation" className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
             <Link to="/blog/mckinsey-to-tech-transition" className="hover:text-foreground transition-colors">
               Consulting to Tech Guide
             </Link>

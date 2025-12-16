@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 py-3 md:px-6 md:py-4">
-      <nav className="mx-auto max-w-6xl">
+      <nav className="mx-auto max-w-6xl" aria-label="Main navigation">
         <div className="flex items-center justify-between rounded-full bg-card/80 backdrop-blur-md px-4 py-2 md:px-6 md:py-3 shadow-soft border border-border/50">
           {/* Logo */}
           <a href="/" className="flex items-center">
