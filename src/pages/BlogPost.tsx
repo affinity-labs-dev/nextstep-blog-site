@@ -334,12 +334,9 @@ const BlogPost = () => {
           {/* CTA Section */}
           <section className="py-16">
             <div className="max-w-4xl mx-auto px-4 text-center">
-              <h2 className="text-2xl font-bold text-foreground mb-4">
-                Ready to Take the Next Step?
+              <h2 className="text-2xl font-bold text-foreground mb-6">
+                Join thousands of consultants who've found their dream roles through NextStep. Get curated opportunities delivered to your inbox.
               </h2>
-              <p className="text-muted-foreground text-base mb-6">
-                Connect with mentors who've successfully navigated career transitions from top consulting firms.
-              </p>
               <a
                 href="https://getnextstep.com/auth/choose-type"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-4 min-h-[48px] rounded-full text-base font-medium hover:opacity-90 transition-opacity"
