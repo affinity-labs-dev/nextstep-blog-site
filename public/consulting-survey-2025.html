@@ -142,17 +142,18 @@
             background: hsl(250, 35%, 95%);
         }
 
-        /* Mobile Menu Button */
+        /* Mobile Menu Button - matching Header.tsx */
         .mobile-menu-btn {
             display: none;
-            width: 36px;
-            height: 36px;
+            min-width: 48px;
+            min-height: 48px;
             align-items: center;
             justify-content: center;
             background: transparent;
             border: none;
             cursor: pointer;
-            padding: 0;
+            padding: 12px;
+            margin-right: -8px;
         }
         
         @media (max-width: 768px) {
@@ -171,103 +172,75 @@
             color: var(--text);
         }
         
-        /* Mobile Menu Overlay */
-        .mobile-menu {
+        /* Mobile Menu Dropdown - matching Header.tsx */
+        .mobile-menu-dropdown {
             display: none;
-            position: fixed;
-            top: 0;
+            position: absolute;
+            top: 100%;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 300;
-            opacity: 0;
-            transition: opacity 0.3s;
+            margin-top: 8px;
+            padding: 0 16px;
         }
         
-        .mobile-menu.active {
+        .mobile-menu-dropdown.active {
             display: block;
-            opacity: 1;
+            animation: fadeIn 0.2s ease-out;
         }
         
-        .mobile-menu-content {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 280px;
-            max-width: 85%;
-            height: 100%;
-            background: var(--bg-alt);
-            padding: 24px;
-            transform: translateX(100%);
-            transition: transform 0.3s;
-            overflow-y: auto;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
-        .mobile-menu.active .mobile-menu-content {
-            transform: translateX(0);
+        .mobile-menu-dropdown-content {
+            background: hsla(0, 0%, 100%, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 4px 20px -4px hsla(240, 10%, 15%, 0.08);
+            border: 1px solid hsla(240, 5%, 88%, 0.5);
         }
         
-        .mobile-menu-close {
-            display: flex;
-            width: 36px;
-            height: 36px;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            margin-left: auto;
-            margin-bottom: 24px;
-        }
-        
-        .mobile-menu-close svg {
-            width: 24px;
-            height: 24px;
-            color: var(--text);
-        }
-        
-        .mobile-menu-links {
+        .mobile-menu-dropdown-content .mobile-menu-links {
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
         
-        .mobile-menu-links a {
-            display: block;
+        .mobile-menu-dropdown-content .mobile-menu-links a {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
             text-decoration: none;
             color: var(--text);
             font-size: 16px;
             font-weight: 500;
             padding: 12px 16px;
+            min-height: 48px;
             border-radius: 8px;
             transition: background 0.2s;
         }
         
-        .mobile-menu-links a:hover {
+        .mobile-menu-dropdown-content .mobile-menu-links a:hover {
             background: var(--bg);
         }
         
-        .mobile-menu-links .mobile-menu-cta {
-            margin-top: 16px;
-            padding-top: 16px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        
-        .mobile-menu-links .mobile-menu-cta a {
-            text-align: center;
+        .mobile-menu-dropdown-content .mobile-menu-links a.outline {
+            justify-content: center;
+            border: 2px solid hsla(240, 10%, 15%, 0.2);
+            background: transparent;
             font-weight: 600;
         }
         
-        .mobile-menu-links .mobile-menu-cta a.outline {
-            border: 2px solid hsla(240, 10%, 15%, 0.2);
-            background: transparent;
-        }
-        
-        .mobile-menu-links .mobile-menu-cta a.outline:hover {
+        .mobile-menu-dropdown-content .mobile-menu-links a.outline:hover {
             border-color: hsla(240, 10%, 15%, 0.4);
             background: hsl(250, 35%, 95%);
         }
@@ -980,7 +953,7 @@
 
     <!-- Site Header -->
     <div class="site-header">
-        <div class="site-header-inner">
+        <nav class="site-header-inner">
             <a href="/">
                 <img src="/assets/nextstep-logo-updated.png?v=20260105" alt="NextStep" class="site-header-logo" />
             </a>
@@ -989,30 +962,26 @@
                 <a href="https://getnextstep.com/auth/candidate/sign-up" class="site-header-btn">I'm a Candidate</a>
                 <a href="https://getnextstep.com/auth/company/sign-up" class="site-header-btn">I'm Hiring</a>
             </div>
-            <button class="mobile-menu-btn" onclick="openMobileMenu()" aria-label="Open menu">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Open menu">
+                <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
-            </button>
-        </div>
-    </div>
-    
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu" onclick="closeMobileMenu(event)">
-        <div class="mobile-menu-content" onclick="event.stopPropagation()">
-            <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Close menu">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg class="close-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            <div class="mobile-menu-links">
-                <div class="mobile-menu-cta">
-                    <a href="https://getnextstep.com/auth/choose-type">Sign in</a>
-                    <a href="https://getnextstep.com/auth/candidate/sign-up" class="outline">I'm a Candidate</a>
-                    <a href="https://getnextstep.com/auth/company/sign-up" class="outline">I'm Hiring</a>
+            
+            <!-- Mobile Menu Dropdown -->
+            <div class="mobile-menu-dropdown" id="mobileMenuDropdown">
+                <div class="mobile-menu-dropdown-content">
+                    <div class="mobile-menu-links">
+                        <a href="https://getnextstep.com/auth/choose-type">Sign in</a>
+                        <a href="https://getnextstep.com/auth/candidate/sign-up" class="outline">I'm a Candidate</a>
+                        <a href="https://getnextstep.com/auth/company/sign-up" class="outline">I'm Hiring</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </nav>
     </div>
 
     <!-- Hero -->
@@ -1864,18 +1833,40 @@
     </script>
     
     <script>
-        // Mobile Menu Functions
-        function openMobileMenu() {
-            document.getElementById('mobileMenu').classList.add('active');
-            document.body.style.overflow = 'hidden';
+        // Mobile Menu Functions - matching Header.tsx behavior
+        let mobileMenuOpen = false;
+        
+        function toggleMobileMenu() {
+            mobileMenuOpen = !mobileMenuOpen;
+            const dropdown = document.getElementById('mobileMenuDropdown');
+            const btn = document.getElementById('mobileMenuBtn');
+            const menuIcon = btn.querySelector('.menu-icon');
+            const closeIcon = btn.querySelector('.close-icon');
+            
+            if (mobileMenuOpen) {
+                dropdown.classList.add('active');
+                menuIcon.style.display = 'none';
+                closeIcon.style.display = 'block';
+                btn.setAttribute('aria-label', 'Close menu');
+            } else {
+                dropdown.classList.remove('active');
+                menuIcon.style.display = 'block';
+                closeIcon.style.display = 'none';
+                btn.setAttribute('aria-label', 'Open menu');
+            }
         }
         
-        function closeMobileMenu(event) {
-            if (event && event.target !== document.getElementById('mobileMenu')) {
-                return;
-            }
-            document.getElementById('mobileMenu').classList.remove('active');
-            document.body.style.overflow = '';
+        function closeMobileMenu() {
+            mobileMenuOpen = false;
+            const dropdown = document.getElementById('mobileMenuDropdown');
+            const btn = document.getElementById('mobileMenuBtn');
+            const menuIcon = btn.querySelector('.menu-icon');
+            const closeIcon = btn.querySelector('.close-icon');
+            
+            dropdown.classList.remove('active');
+            menuIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+            btn.setAttribute('aria-label', 'Open menu');
         }
         
         // Table of Contents Toggle Functions
@@ -1903,6 +1894,14 @@
             if (e.key === 'Escape') {
                 closeMobileMenu();
                 closeTOC();
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const header = document.querySelector('.site-header');
+            if (!header.contains(e.target) && mobileMenuOpen) {
+                closeMobileMenu();
             }
         });
     </script>
