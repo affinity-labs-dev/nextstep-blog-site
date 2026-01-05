@@ -108,15 +108,16 @@
             text-decoration: none;
             color: var(--text-muted);
             font-size: 14px;
-            font-weight: 500;
-            padding: 8px 16px;
-            min-height: 44px;
-            border-radius: 6px;
+            font-weight: 600;
+            padding: 8px 20px;
+            min-height: 40px;
+            border-radius: 9999px;
             transition: all 0.2s;
         }
 
         .site-header-link:hover {
             color: var(--text);
+            background: hsl(250, 35%, 95%);
         }
 
         .site-header-btn {
@@ -125,11 +126,11 @@
             justify-content: center;
             text-decoration: none;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             padding: 8px 16px;
-            min-height: 36px;
-            border-radius: 6px;
-            border: 1px solid var(--border);
+            height: 36px;
+            border-radius: 9999px;
+            border: 2px solid hsla(240, 10%, 15%, 0.2);
             color: var(--text);
             background: transparent;
             transition: all 0.2s;
@@ -137,8 +138,8 @@
         }
 
         .site-header-btn:hover {
+            border-color: hsla(240, 10%, 15%, 0.4);
             background: hsl(250, 35%, 95%);
-            color: hsl(250, 40%, 40%);
         }
 
         @media (max-width: 768px) {
