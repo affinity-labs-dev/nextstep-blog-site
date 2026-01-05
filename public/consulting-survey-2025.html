@@ -142,16 +142,6 @@
             background: hsl(250, 35%, 95%);
         }
 
-        @media (max-width: 768px) {
-            .site-header-nav {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: flex;
-            }
-        }
-        
         /* Mobile Menu Button */
         .mobile-menu-btn {
             display: none;
@@ -163,6 +153,16 @@
             border: none;
             cursor: pointer;
             padding: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .site-header-nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
         }
         
         .mobile-menu-btn svg {
