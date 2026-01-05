@@ -13,6 +13,13 @@ import BlogCard from "@/components/BlogCard";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
+  
+  // Redirect to standalone HTML page for the survey
+  if (slug === "consulting-survey-2025") {
+    window.location.href = "/consulting-survey-2025.html";
+    return null;
+  }
+  
   const post = slug ? getPostContent(slug) : undefined;
 
   if (!post) {
