@@ -588,21 +588,11 @@
             text-align: center;
         }
 
-        .footer-logo-link {
-            display: inline-block;
+        .footer-brand {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-size: 24px;
+            font-weight: 400;
             margin-bottom: 16px;
-            transition: opacity 0.2s, transform 0.2s;
-        }
-        
-        .footer-logo-link:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
-        }
-        
-        .footer-logo {
-            height: 40px;
-            width: auto;
-            filter: brightness(0) invert(1);
         }
 
         .footer p {
@@ -622,16 +612,6 @@
 
         .footer-links span {
             opacity: 0.5;
-        }
-        
-        /* Chart container hover effect */
-        .exhibit {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .exhibit:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px -8px hsla(240, 10%, 15%, 0.15);
         }
 
         /* Responsive */
@@ -1380,9 +1360,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <a href="/" class="footer-logo-link">
-            <img src="/assets/nextstep-logo-updated.png?v=20260105" alt="NextStep" class="footer-logo" />
-        </a>
+        <div class="footer-brand">NextStep</div>
         <p>Helping consultants navigate their next career move with data, insight, and a sense of humor.</p>
         <div class="footer-links">
             <span>September 2025</span>
@@ -1396,12 +1374,6 @@
         Chart.defaults.font.family = "'Plus Jakarta Sans', sans-serif";
         Chart.defaults.font.size = 12;
         Chart.defaults.color = '#64748b';
-        
-        // Enable animation delay for scroll-triggered effect
-        Chart.defaults.animation = {
-            duration: 1000,
-            easing: 'easeOutQuart'
-        };
 
         const colors = {
             primary: '#4f46e5',
@@ -1414,59 +1386,12 @@
             danger: '#ef4444',
             dangerHover: '#f87171',
             gray: '#94a3b8',
-            grayHover: '#a8b5c7',
             grayLight: '#cbd5e1',
-            grayLightHover: '#e2e8f0',
             accent1: '#06b6d4',
-            accent1Hover: '#22d3ee',
             accent2: '#8b5cf6',
-            accent2Hover: '#a78bfa',
             accent3: '#ec4899',
             accent3Hover: '#f472b6',
-            accent4: '#14b8a6',
-            accent4Hover: '#2dd4bf'
-        };
-        
-        // Common stacked tooltip config
-        const stackedTooltipConfig = {
-            enabled: true,
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            titleColor: '#1e293b',
-            bodyColor: '#475569',
-            borderColor: '#e2e8f0',
-            borderWidth: 1,
-            cornerRadius: 8,
-            padding: 12,
-            boxPadding: 6,
-            usePointStyle: true,
-            titleFont: { weight: '600', size: 13 },
-            bodyFont: { size: 12 },
-            callbacks: {
-                label: function(context) {
-                    return context.dataset.label + ': ' + context.parsed.x.toFixed(1) + '%';
-                }
-            }
-        };
-        
-        // Doughnut tooltip config
-        const doughnutTooltipConfig = {
-            enabled: true,
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            titleColor: '#1e293b',
-            bodyColor: '#475569',
-            borderColor: '#e2e8f0',
-            borderWidth: 1,
-            cornerRadius: 8,
-            padding: 12,
-            boxPadding: 6,
-            usePointStyle: true,
-            titleFont: { weight: '600', size: 13 },
-            bodyFont: { size: 12 },
-            callbacks: {
-                label: function(context) {
-                    return context.label + ': ' + context.parsed + '%';
-                }
-            }
+            accent4: '#14b8a6'
         };
 
         // Common tooltip configuration for combo charts
@@ -1656,19 +1581,16 @@
                     label: 'No Travel',
                     data: [17.39, 15.79, 45.26, 41.28, 36.92, 46.67],
                     backgroundColor: colors.success,
-                    hoverBackgroundColor: colors.successHover,
                     borderRadius: 4
                 }, {
                     label: 'Less Frequent',
                     data: [31.88, 31.58, 41.05, 38.95, 30.77, 40.00],
                     backgroundColor: colors.warm,
-                    hoverBackgroundColor: colors.warmHover,
                     borderRadius: 4
                 }, {
                     label: 'Weekly',
                     data: [50.72, 52.63, 13.68, 19.77, 32.31, 13.33],
                     backgroundColor: colors.danger,
-                    hoverBackgroundColor: colors.dangerHover,
                     borderRadius: 4
                 }]
             },
@@ -1676,10 +1598,7 @@
                 responsive: true,
                 maintainAspectRatio: false,
                 indexAxis: 'y',
-                plugins: { 
-                    legend: { position: 'top' },
-                    tooltip: stackedTooltipConfig
-                },
+                plugins: { legend: { position: 'top' } },
                 scales: {
                     x: { stacked: true, max: 100, title: { display: true, text: 'Percentage (%)' } },
                     y: { stacked: true }
@@ -1742,49 +1661,28 @@
                     label: 'Economy',
                     data: [86.26, 63.64, 56.25],
                     backgroundColor: colors.grayLight,
-                    hoverBackgroundColor: colors.grayLightHover,
                     borderRadius: 4
                 }, {
                     label: 'Premium Economy',
                     data: [6.11, 16.36, 6.25],
                     backgroundColor: colors.accent1,
-                    hoverBackgroundColor: colors.accent1Hover,
                     borderRadius: 4
                 }, {
                     label: 'Business',
                     data: [5.34, 18.18, 37.50],
                     backgroundColor: colors.primary,
-                    hoverBackgroundColor: colors.primaryHover,
                     borderRadius: 4
                 }, {
                     label: 'First',
                     data: [2.29, 1.82, 0],
                     backgroundColor: colors.accent2,
-                    hoverBackgroundColor: colors.accent2Hover,
                     borderRadius: 4
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: { 
-                    legend: { position: 'top' },
-                    tooltip: {
-                        enabled: true,
-                        backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                        titleColor: '#1e293b',
-                        bodyColor: '#475569',
-                        borderColor: '#e2e8f0',
-                        borderWidth: 1,
-                        cornerRadius: 8,
-                        padding: 12,
-                        callbacks: {
-                            label: function(context) {
-                                return context.dataset.label + ': ' + context.parsed.y.toFixed(1) + '%';
-                            }
-                        }
-                    }
-                },
+                plugins: { legend: { position: 'top' } },
                 scales: {
                     x: { stacked: true },
                     y: { stacked: true, max: 100, title: { display: true, text: 'Percentage (%)' } }
@@ -1847,19 +1745,16 @@
                     label: 'No Travel',
                     data: [21.21, 37.50, 34.21, 34.15, 39.39, 43.90, 41.67],
                     backgroundColor: colors.success,
-                    hoverBackgroundColor: colors.successHover,
                     borderRadius: 4
                 }, {
                     label: 'Less Frequent',
                     data: [21.21, 12.50, 42.11, 36.59, 36.36, 19.51, 50.00],
                     backgroundColor: colors.warm,
-                    hoverBackgroundColor: colors.warmHover,
                     borderRadius: 4
                 }, {
                     label: 'Weekly',
                     data: [57.58, 50.00, 23.68, 29.27, 24.24, 36.59, 8.33],
                     backgroundColor: colors.danger,
-                    hoverBackgroundColor: colors.dangerHover,
                     borderRadius: 4
                 }]
             },
@@ -1867,10 +1762,7 @@
                 responsive: true,
                 maintainAspectRatio: false,
                 indexAxis: 'y',
-                plugins: { 
-                    legend: { position: 'top' },
-                    tooltip: stackedTooltipConfig
-                },
+                plugins: { legend: { position: 'top' } },
                 scales: {
                     x: { stacked: true, max: 100, title: { display: true, text: 'Percentage (%)' } },
                     y: { stacked: true }
@@ -2034,19 +1926,8 @@
                         colors.accent4,
                         colors.grayLight
                     ],
-                    hoverBackgroundColor: [
-                        colors.primaryHover,
-                        colors.grayHover,
-                        colors.accent1Hover,
-                        colors.accent2Hover,
-                        colors.warmHover,
-                        colors.successHover,
-                        colors.accent3Hover,
-                        colors.accent4Hover,
-                        colors.grayLightHover
-                    ],
                     borderWidth: 0,
-                    hoverOffset: 12
+                    hoverOffset: 8
                 }]
             },
             options: {
@@ -2058,7 +1939,11 @@
                         position: 'right',
                         labels: { padding: 16, usePointStyle: true, pointStyle: 'circle' }
                     },
-                    tooltip: doughnutTooltipConfig
+                    tooltip: {
+                        callbacks: {
+                            label: ctx => ctx.label + ': ' + ctx.parsed + '%'
+                        }
+                    }
                 }
             }
         });
@@ -2135,36 +2020,6 @@
             if (!header.contains(e.target) && mobileMenuOpen) {
                 closeMobileMenu();
             }
-        });
-        
-        // Scroll-triggered chart animations using Intersection Observer
-        const chartObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const canvas = entry.target.querySelector('canvas');
-                    if (canvas) {
-                        const chart = Chart.getChart(canvas);
-                        if (chart) {
-                            // Reset and replay animation
-                            chart.reset();
-                            chart.update('none');
-                            setTimeout(() => {
-                                chart.update();
-                            }, 100);
-                        }
-                    }
-                    // Unobserve after animation to prevent re-triggering
-                    chartObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.3,
-            rootMargin: '0px 0px -50px 0px'
-        });
-        
-        // Observe all chart containers
-        document.querySelectorAll('.chart-container').forEach(container => {
-            chartObserver.observe(container);
         });
     </script>
 
