@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "@/assets/nextstep-logo.png";
+import logo from "@/assets/nextstep-logo-updated.png";
 
 const Footer = () => {
   return (
@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center py-2">
             <img 
-              src={logo} 
+              src={`${logo}?v=20260105`}
               alt="NextStep logo - Return to homepage" 
               className="h-8 w-auto" 
               width={151} 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/nextstep-logo.png";
+import logo from "@/assets/nextstep-logo-updated.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -13,7 +13,7 @@ const Header = () => {
           {/* Logo */}
           <a href="/" className="flex items-center">
             <img 
-              src={logo} 
+              src={`${logo}?v=20260105`}
               alt="NextStep - Career platform for ex-consultants" 
               className="h-8 md:h-10 w-auto" 
               width={189} 

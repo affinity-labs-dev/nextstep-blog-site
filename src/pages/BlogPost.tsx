@@ -130,7 +130,7 @@ const BlogPost = () => {
       name: "NextStep",
       logo: {
         "@type": "ImageObject",
-        url: "https://blog.getnextstep.com/nextstep-logo.png",
+        url: "https://blog.getnextstep.com/assets/nextstep-logo-updated.png?v=20260105",
       },
     },
     mainEntityOfPage: {
