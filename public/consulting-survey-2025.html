@@ -146,6 +146,129 @@
             .site-header-nav {
                 display: none;
             }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+        }
+        
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            width: 36px;
+            height: 36px;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+        
+        .mobile-menu-btn svg {
+            width: 24px;
+            height: 24px;
+            color: var(--text);
+        }
+        
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 300;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        .mobile-menu-content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 280px;
+            max-width: 85%;
+            height: 100%;
+            background: var(--bg-alt);
+            padding: 24px;
+            transform: translateX(100%);
+            transition: transform 0.3s;
+            overflow-y: auto;
+        }
+        
+        .mobile-menu.active .mobile-menu-content {
+            transform: translateX(0);
+        }
+        
+        .mobile-menu-close {
+            display: flex;
+            width: 36px;
+            height: 36px;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            margin-left: auto;
+            margin-bottom: 24px;
+        }
+        
+        .mobile-menu-close svg {
+            width: 24px;
+            height: 24px;
+            color: var(--text);
+        }
+        
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .mobile-menu-links a {
+            display: block;
+            text-decoration: none;
+            color: var(--text);
+            font-size: 16px;
+            font-weight: 500;
+            padding: 12px 16px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        
+        .mobile-menu-links a:hover {
+            background: var(--bg);
+        }
+        
+        .mobile-menu-links .mobile-menu-cta {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .mobile-menu-links .mobile-menu-cta a {
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .mobile-menu-links .mobile-menu-cta a.primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .mobile-menu-links .mobile-menu-cta a.primary:hover {
+            background: var(--primary-dark);
         }
 
         /* Hero Header */
@@ -520,22 +643,242 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero {
-                padding: 100px 24px 80px;
+                padding: 100px 16px 60px;
             }
+            
+            .hero h1 {
+                font-size: 28px;
+                line-height: 1.2;
+            }
+            
+            .hero-subtitle {
+                font-size: 16px;
+                margin-bottom: 24px;
+            }
+            
+            .hero-meta {
+                flex-direction: column;
+                gap: 8px;
+                font-size: 12px;
+            }
+            
             .container {
-                padding: 60px 24px;
+                padding: 40px 16px;
             }
+            
+            .about-section {
+                padding: 24px 16px;
+                margin-bottom: 40px;
+            }
+            
+            .about-section h2 {
+                font-size: 20px;
+            }
+            
+            .about-section p {
+                font-size: 14px;
+            }
+            
             .exec-summary {
-                padding: 40px 24px;
+                padding: 32px 16px;
+                margin-bottom: 40px;
+                border-radius: 12px;
             }
+            
+            .exec-summary::before {
+                left: 16px;
+                font-size: 10px;
+                padding: 4px 12px;
+            }
+            
+            .exec-summary h2 {
+                font-size: 20px;
+                margin-bottom: 24px;
+            }
+            
+            .key-finding {
+                padding-left: 16px;
+                margin-bottom: 20px;
+            }
+            
+            .key-finding h3 {
+                font-size: 16px;
+            }
+            
+            .key-finding p {
+                font-size: 14px;
+            }
+            
+            .implication-box {
+                padding: 20px;
+            }
+            
+            .implication-box p {
+                font-size: 15px;
+            }
+            
+            .section {
+                margin-bottom: 60px;
+            }
+            
+            .section-number {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+                margin-bottom: 16px;
+            }
+            
+            .section h2 {
+                font-size: 22px;
+            }
+            
+            .section-tagline {
+                font-size: 15px;
+            }
+            
+            .section-content p {
+                font-size: 14px;
+                text-align: left;
+                margin-bottom: 16px;
+            }
+            
             .exhibit {
-                padding: 24px;
+                padding: 16px;
+                margin: 32px 0;
+                border-radius: 8px;
             }
+            
+            .exhibit-label {
+                font-size: 10px;
+            }
+            
+            .exhibit-title {
+                font-size: 16px;
+            }
+            
+            .exhibit-desc {
+                font-size: 13px;
+            }
+            
             .chart-container {
+                height: 280px;
+                margin: 24px 0 16px;
+            }
+            
+            .chart-container.tall {
                 height: 320px;
             }
+            
+            .exhibit-footnote {
+                font-size: 11px;
+            }
+            
+            .leadership-list li {
+                padding: 16px 0;
+            }
+            
+            .leadership-list h4 {
+                font-size: 16px;
+            }
+            
+            .leadership-list p {
+                font-size: 14px;
+            }
+            
             .nav-bar {
-                top: 56px;
+                top: 52px;
+                padding: 0 12px;
+            }
+            
+            .nav-inner {
+                gap: 4px;
+                padding: 12px 0;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .nav-bar a {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            
+            .footer {
+                padding: 40px 16px;
+            }
+            
+            .footer-brand {
+                font-size: 20px;
+            }
+            
+            .footer p {
+                font-size: 13px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 12px;
+                font-size: 12px;
+            }
+        }
+        
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .hero {
+                padding: 90px 12px 48px;
+            }
+            
+            .hero h1 {
+                font-size: 24px;
+            }
+            
+            .hero-subtitle {
+                font-size: 14px;
+            }
+            
+            .site-header {
+                padding: 8px 12px;
+            }
+            
+            .site-header-inner {
+                padding: 6px 12px;
+            }
+            
+            .site-header-logo {
+                height: 28px;
+            }
+            
+            .site-header-btn {
+                font-size: 12px;
+                padding: 6px 12px;
+                height: 32px;
+            }
+            
+            .container {
+                padding: 32px 12px;
+            }
+            
+            .about-section,
+            .exec-summary {
+                padding: 20px 12px;
+            }
+            
+            .exhibit {
+                padding: 12px;
+            }
+            
+            .chart-container {
+                height: 240px;
+            }
+            
+            .chart-container.tall {
+                height: 280px;
+            }
+            
+            .section h2 {
+                font-size: 20px;
+            }
+            
+            .nav-bar {
+                top: 48px;
             }
         }
     </style>
@@ -552,6 +895,37 @@
                 <a href="https://getnextstep.com/auth/choose-type" class="site-header-link">Sign in</a>
                 <a href="https://getnextstep.com/auth/candidate/sign-up" class="site-header-btn">I'm a Candidate</a>
                 <a href="https://getnextstep.com/auth/company/sign-up" class="site-header-btn">I'm Hiring</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="openMobileMenu()" aria-label="Open menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" onclick="closeMobileMenu(event)">
+        <div class="mobile-menu-content" onclick="event.stopPropagation()">
+            <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="mobile-menu-links">
+                <a href="#about" onclick="closeMobileMenu()">About</a>
+                <a href="#summary" onclick="closeMobileMenu()">Executive Summary</a>
+                <a href="#section1" onclick="closeMobileMenu()">Salaries</a>
+                <a href="#section2" onclick="closeMobileMenu()">Travel Frequency</a>
+                <a href="#section3" onclick="closeMobileMenu()">Travel Class</a>
+                <a href="#section4" onclick="closeMobileMenu()">Regional Analysis</a>
+                <a href="#section5" onclick="closeMobileMenu()">Attrition</a>
+                <a href="#section6" onclick="closeMobileMenu()">Leadership</a>
+                <div class="mobile-menu-cta">
+                    <a href="https://getnextstep.com/auth/choose-type">Sign in</a>
+                    <a href="https://getnextstep.com/auth/candidate/sign-up" class="primary">I'm a Candidate</a>
+                    <a href="https://getnextstep.com/auth/company/sign-up">I'm Hiring</a>
+                </div>
             </div>
         </div>
     </div>
@@ -1380,6 +1754,29 @@
                         }
                     }
                 }
+            }
+        });
+    </script>
+    
+    <script>
+        // Mobile Menu Functions
+        function openMobileMenu() {
+            document.getElementById('mobileMenu').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu(event) {
+            if (event && event.target !== document.getElementById('mobileMenu')) {
+                return;
+            }
+            document.getElementById('mobileMenu').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeMobileMenu();
             }
         });
     </script>
