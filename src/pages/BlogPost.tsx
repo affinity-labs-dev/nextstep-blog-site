@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import BlogFAQ from "@/components/BlogFAQ";
 import { getPostContent } from "@/data/blogContent";
 import { blogPosts } from "@/data/blogPosts";
-import { getImageForCategory } from "@/data/blogImages";
+import { getImageForCategory, getImageForSlug } from "@/data/blogImages";
 import { getOgImageForCategory } from "@/data/ogImages";
 import { blogFAQs } from "@/data/blogFAQs";
 import BlogCard from "@/components/BlogCard";
@@ -285,7 +285,7 @@ const BlogPost = () => {
 
           <div className="max-w-4xl mx-auto px-4 pb-8">
             <img
-              src={getImageForCategory(post.category)}
+              src={getImageForSlug(slug!) || getImageForCategory(post.category)}
               alt={`Featured image for ${post.title} - ${post.category} article`}
               className="w-full h-64 md:h-96 object-cover rounded-2xl"
               width={896}

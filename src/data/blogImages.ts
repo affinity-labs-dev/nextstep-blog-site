@@ -7,6 +7,7 @@ import compensation from "@/assets/blog/compensation.jpg";
 import careerDecisions from "@/assets/blog/career-decisions.jpg";
 import networking from "@/assets/blog/networking.jpg";
 import successStories from "@/assets/blog/success-stories.jpg";
+import consultingSurvey from "@/assets/blog/consulting-survey.jpg";
 
 export const categoryImages: Record<string, string> = {
   "Career Transitions": careerTransitions,
@@ -18,6 +19,15 @@ export const categoryImages: Record<string, string> = {
   "Career Decisions": careerDecisions,
   "Networking": networking,
   "Success Stories": successStories,
+};
+
+// Slug-specific images for posts that need custom images
+export const slugImages: Record<string, string> = {
+  "consulting-survey-2025": consultingSurvey,
+};
+
+export const getImageForSlug = (slug: string): string | null => {
+  return slugImages[slug] || null;
 };
 
 export const getImageForCategory = (category: string): string => {

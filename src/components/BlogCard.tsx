@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Clock, ArrowRight } from "lucide-react";
-import { getImageForCategory } from "@/data/blogImages";
+import { getImageForCategory, getImageForSlug } from "@/data/blogImages";
 
 interface BlogCardProps {
   slug: string;
@@ -13,7 +13,7 @@ interface BlogCardProps {
 }
 
 const BlogCard = ({ slug, title, excerpt, category, readTime, date, featured = false, isFirstCard = false }: BlogCardProps & { isFirstCard?: boolean }) => {
-  const image = getImageForCategory(category);
+  const image = getImageForSlug(slug) || getImageForCategory(category);
 
   return (
     <article className={`group bg-card rounded-2xl border border-border/50 overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/20 ${featured ? 'md:col-span-2 md:grid md:grid-cols-2' : ''}`}>
