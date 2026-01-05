@@ -644,22 +644,42 @@
         @media (max-width: 768px) {
             .hero {
                 padding: 100px 16px 60px;
+                text-align: center;
+            }
+            
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
             
             .hero h1 {
                 font-size: 28px;
-                line-height: 1.2;
+                line-height: 1.25;
+                margin-bottom: 12px;
             }
             
             .hero-subtitle {
                 font-size: 16px;
                 margin-bottom: 24px;
+                max-width: 100%;
             }
             
             .hero-meta {
                 flex-direction: column;
+                align-items: center;
                 gap: 8px;
                 font-size: 12px;
+            }
+            
+            .hero-meta span {
+                display: block;
+                text-align: center;
+            }
+            
+            .brand {
+                justify-content: center;
+                margin-bottom: 24px;
             }
             
             .container {
@@ -785,20 +805,77 @@
                 font-size: 14px;
             }
             
+            /* Mobile Table of Contents - Collapsible */
             .nav-bar {
                 top: 52px;
-                padding: 0 12px;
+                padding: 0 16px;
             }
             
             .nav-inner {
-                gap: 4px;
-                padding: 12px 0;
-                -webkit-overflow-scrolling: touch;
+                flex-direction: column;
+                gap: 0;
+                padding: 0;
+                overflow: visible;
             }
             
-            .nav-bar a {
-                font-size: 12px;
-                padding: 6px 12px;
+            .nav-bar .toc-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 14px 16px;
+                background: var(--bg-alt);
+                border: none;
+                font-size: 14px;
+                font-weight: 600;
+                color: var(--text);
+                cursor: pointer;
+                border-radius: 8px;
+            }
+            
+            .nav-bar .toc-toggle svg {
+                width: 20px;
+                height: 20px;
+                transition: transform 0.2s;
+            }
+            
+            .nav-bar .toc-toggle.active svg {
+                transform: rotate(180deg);
+            }
+            
+            .nav-bar .toc-links {
+                display: none;
+                flex-direction: column;
+                background: var(--bg);
+                border-radius: 0 0 8px 8px;
+                margin-top: -4px;
+                padding: 8px 0;
+                border: 1px solid var(--border);
+                border-top: none;
+            }
+            
+            .nav-bar .toc-links.active {
+                display: flex;
+            }
+            
+            .nav-bar .toc-links a {
+                padding: 12px 16px;
+                font-size: 14px;
+                border-radius: 0;
+                border-bottom: 1px solid var(--border);
+            }
+            
+            .nav-bar .toc-links a:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-bar .toc-links a:hover {
+                background: var(--bg-alt);
+            }
+            
+            /* Hide desktop links on mobile */
+            .nav-bar .desktop-links {
+                display: none;
             }
             
             .footer {
@@ -817,6 +894,21 @@
                 flex-direction: column;
                 gap: 12px;
                 font-size: 12px;
+            }
+        }
+        
+        /* Desktop nav bar - show desktop links, hide toggle */
+        @media (min-width: 769px) {
+            .nav-bar .toc-toggle {
+                display: none;
+            }
+            
+            .nav-bar .toc-links {
+                display: none;
+            }
+            
+            .nav-bar .desktop-links {
+                display: flex;
             }
         }
         
@@ -946,14 +1038,34 @@
     <!-- Navigation -->
     <nav class="nav-bar">
         <div class="nav-inner">
-            <a href="#about">About</a>
-            <a href="#summary">Executive Summary</a>
-            <a href="#section1">Salaries</a>
-            <a href="#section2">Travel Frequency</a>
-            <a href="#section3">Travel Class</a>
-            <a href="#section4">Regional Analysis</a>
-            <a href="#section5">Attrition</a>
-            <a href="#section6">Leadership</a>
+            <!-- Mobile Collapsible TOC -->
+            <button class="toc-toggle" onclick="toggleTOC()" aria-expanded="false" aria-controls="tocLinks">
+                <span>Table of Contents</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <div class="toc-links" id="tocLinks">
+                <a href="#about" onclick="closeTOC()">About</a>
+                <a href="#summary" onclick="closeTOC()">Executive Summary</a>
+                <a href="#section1" onclick="closeTOC()">Salaries</a>
+                <a href="#section2" onclick="closeTOC()">Travel Frequency</a>
+                <a href="#section3" onclick="closeTOC()">Travel Class</a>
+                <a href="#section4" onclick="closeTOC()">Regional Analysis</a>
+                <a href="#section5" onclick="closeTOC()">Attrition</a>
+                <a href="#section6" onclick="closeTOC()">Leadership</a>
+            </div>
+            <!-- Desktop Links -->
+            <div class="desktop-links">
+                <a href="#about">About</a>
+                <a href="#summary">Executive Summary</a>
+                <a href="#section1">Salaries</a>
+                <a href="#section2">Travel Frequency</a>
+                <a href="#section3">Travel Class</a>
+                <a href="#section4">Regional Analysis</a>
+                <a href="#section5">Attrition</a>
+                <a href="#section6">Leadership</a>
+            </div>
         </div>
     </nav>
 
@@ -1773,10 +1885,31 @@
             document.body.style.overflow = '';
         }
         
+        // Table of Contents Toggle Functions
+        function toggleTOC() {
+            const toggle = document.querySelector('.toc-toggle');
+            const links = document.getElementById('tocLinks');
+            const isActive = links.classList.contains('active');
+            
+            toggle.classList.toggle('active');
+            links.classList.toggle('active');
+            toggle.setAttribute('aria-expanded', !isActive);
+        }
+        
+        function closeTOC() {
+            const toggle = document.querySelector('.toc-toggle');
+            const links = document.getElementById('tocLinks');
+            
+            toggle.classList.remove('active');
+            links.classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+        
         // Close menu on escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeMobileMenu();
+                closeTOC();
             }
         });
     </script>
