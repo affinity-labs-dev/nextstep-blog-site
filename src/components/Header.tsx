@@ -61,7 +61,7 @@ const Header = () => {
               <Button variant="ghost" className="justify-start h-12 text-base" asChild>
                 <a href="https://getnextstep.com/auth/choose-type" target="_blank" rel="noopener noreferrer">Sign in</a>
               </Button>
-              <Button variant="ghost" className="justify-start h-12 text-base" asChild>
+              <Button variant="outline" className="h-12 text-base" asChild>
                 <a href="https://getnextstep.com/auth/candidate/sign-up" target="_blank" rel="noopener noreferrer">I'm a Candidate</a>
               </Button>
               <Button variant="outline" className="h-12 text-base" asChild>
