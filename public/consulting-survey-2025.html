@@ -262,13 +262,14 @@
             font-weight: 600;
         }
         
-        .mobile-menu-links .mobile-menu-cta a.primary {
-            background: var(--primary);
-            color: white;
+        .mobile-menu-links .mobile-menu-cta a.outline {
+            border: 2px solid hsla(240, 10%, 15%, 0.2);
+            background: transparent;
         }
         
-        .mobile-menu-links .mobile-menu-cta a.primary:hover {
-            background: var(--primary-dark);
+        .mobile-menu-links .mobile-menu-cta a.outline:hover {
+            border-color: hsla(240, 10%, 15%, 0.4);
+            background: hsl(250, 35%, 95%);
         }
 
         /* Hero Header */
@@ -1015,8 +1016,8 @@
                 <a href="#section6" onclick="closeMobileMenu()">Leadership</a>
                 <div class="mobile-menu-cta">
                     <a href="https://getnextstep.com/auth/choose-type">Sign in</a>
-                    <a href="https://getnextstep.com/auth/candidate/sign-up" class="primary">I'm a Candidate</a>
-                    <a href="https://getnextstep.com/auth/company/sign-up">I'm Hiring</a>
+                    <a href="https://getnextstep.com/auth/candidate/sign-up" class="outline">I'm a Candidate</a>
+                    <a href="https://getnextstep.com/auth/company/sign-up" class="outline">I'm Hiring</a>
                 </div>
             </div>
         </div>
