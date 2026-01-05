@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "consulting-survey-2025",
+    title: "Consulting Survey 2025: Pay, Travel, and Retention in a Shifting Industry",
+    excerpt: "Our comprehensive survey of 1,000+ consultants reveals insights on compensation, travel policies, work-life balance, and what's driving attrition in the consulting industry.",
+    category: "Career Transitions",
+    readTime: "15 min read",
+    date: "Jan 5, 2026",
+    featured: true
+  },
+  {
     slug: "consulting-exit-opportunities-2026",
     title: "Top Exit Opportunities for Consultants in 2026: A Complete Guide",
     excerpt: "Explore the most lucrative and fulfilling career paths for ex-consultants, from private equity to tech startups. Learn which industries are actively recruiting consulting talent and how to position yourself for success.",

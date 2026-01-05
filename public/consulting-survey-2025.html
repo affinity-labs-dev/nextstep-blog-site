@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulting Survey 2025 | NextStep</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1f36;
+            --accent: #4f46e5;
+            --accent-light: #818cf8;
+            --warm: #f59e0b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --bg: #faf9f7;
+            --bg-alt: #ffffff;
+            --text: #1a1f36;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+        /* Header */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #2d3561 100%);
+            color: white;
+            padding: 80px 40px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .brand::before {
+            content: '';
+            display: block;
+            width: 32px;
+            height: 3px;
+            background: var(--accent-light);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(42px, 6vw, 72px);
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            font-weight: 300;
+            opacity: 0.85;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 32px;
+            font-size: 14px;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            background: var(--bg-alt);
+            border-bottom: 1px solid var(--border);
+            padding: 0 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 16px 0;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .nav-bar a:hover {
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 80px;
+        }
+
+        .about-section h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .about-section p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        /* Executive Summary */
+        .exec-summary {
+            background: linear-gradient(to bottom, var(--bg-alt), var(--bg));
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 60px;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .exec-summary::before {
+            content: 'Executive Summary';
+            position: absolute;
+            top: -14px;
+            left: 40px;
+            background: var(--accent);
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 4px;
+        }
+
+        .exec-summary h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 32px;
+            font-weight: 500;
+            margin-bottom: 32px;
+            color: var(--primary);
+            font-style: italic;
+        }
+
+        .key-finding {
+            margin-bottom: 28px;
+            padding-left: 24px;
+            border-left: 3px solid var(--accent-light);
+        }
+
+        .key-finding h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .key-finding p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        .implication-box {
+            background: var(--primary);
+            color: white;
+            padding: 28px 32px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .implication-box strong {
+            display: block;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            opacity: 0.7;
+        }
+
+        .implication-box p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 100px;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            color: white;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 20px;
+            font-weight: 600;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 36px;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .section-tagline {
+            font-size: 18px;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .section-content p {
+            margin-bottom: 24px;
+            text-align: justify;
+        }
+
+        /* Exhibits */
+        .exhibit {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 48px 0;
+        }
+
+        .exhibit-header {
+            margin-bottom: 24px;
+        }
+
+        .exhibit-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .exhibit-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .exhibit-desc {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 380px;
+            margin: 32px 0 24px;
+        }
+
+        .chart-container.tall {
+            height: 450px;
+        }
+
+        .exhibit-footnote {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-style: italic;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Leadership Section */
+        .leadership-list {
+            list-style: none;
+        }
+
+        .leadership-list li {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .leadership-list li:last-child {
+            border-bottom: none;
+        }
+
+        .leadership-list h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .leadership-list p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .footer p {
+            opacity: 0.7;
+            font-size: 14px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-top: 32px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            font-size: 13px;
+        }
+
+        .footer-links span {
+            opacity: 0.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 24px 80px;
+            }
+            .container {
+                padding: 60px 24px;
+            }
+            .exec-summary {
+                padding: 40px 24px;
+            }
+            .exhibit {
+                padding: 24px;
+            }
+            .chart-container {
+                height: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="brand">NextStep</div>
+            <h1>Consulting Survey 2025</h1>
+            <p class="hero-subtitle">Pay, Travel, and Retention in a Shifting Industry</p>
+            <div class="hero-meta">
+                <span>September 2025</span>
+                <span>1,000+ Respondents</span>
+                <span>In Partnership with Consulting Comedy</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-inner">
+            <a href="#about">About</a>
+            <a href="#summary">Executive Summary</a>
+            <a href="#section1">Salaries</a>
+            <a href="#section2">Travel Frequency</a>
+            <a href="#section3">Travel Class</a>
+            <a href="#section4">Regional Analysis</a>
+            <a href="#section5">Attrition</a>
+            <a href="#section6">Leadership</a>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- About -->
+        <section id="about" class="about-section">
+            <h2>About This Report</h2>
+            <p>This report is based on survey responses collected through the NextStep platform and published in partnership with Consulting Comedy. The survey closed in July 2025 with more than 1,000 consultants, from analysts to partners, sharing their views on pay, satisfaction, travel, and why people stay or leave. These voices gave us the data and the punchlines that shape the insights you will see here. A big thank you to everyone who contributed. Without your honesty, we would simply have another report built on assumptions, and nobody needs more of those.</p>
+        </section>
+
+        <!-- Executive Summary -->
+        <section id="summary" class="exec-summary">
+            <h2>Spoiler alert: Pay is only half the story</h2>
+
+            <div class="key-finding">
+                <h3>Compensation is not the whole story.</h3>
+                <p>Median pay varies widely by firm type and by region, but average satisfaction varies far less. Once pay is reasonably competitive, the day-to-day operating reality becomes decisive. Staffing fit, working hours, and travel cadence shape the experience far more than an extra increment of base salary. Strategy firms pay more and run harder. Big 4 and implementation groups often move at a steadier cadence but face pay-band friction and heavy internal processes.</p>
+            </div>
+
+            <div class="key-finding">
+                <h3>The middle is the hinge.</h3>
+                <p>Engagement Managers carry high accountability while having limited control over pipeline and resourcing. When travel becomes weekly and hours stretch beyond sustainable ranges, their satisfaction is the first to fall and the fastest to fall. Comfort in business or first can help Manager-plus cohorts stay effective on repeated long-haul trips. Without cadence rules, such as caps on consecutive weekly travel, recovery windows, and a protected light day after overnight flights, comfort alone does not fix the problem.</p>
+            </div>
+
+            <div class="key-finding">
+                <h3>Travel is the hidden tax on satisfaction.</h3>
+                <p>Weekly travel is the most consistent headwind to sentiment across cohorts. Comfort cushions fatigue, but cadence rules are what bend the curve. Regions with normalized hybrid norms, for example parts of Europe, show narrower satisfaction gaps even at modest pay levels. Think of comfort as the seat belt and cadence as the speed limit. You really want both.</p>
+            </div>
+
+            <div class="key-finding">
+                <h3>Exit risk is predictable and preventable.</h3>
+                <p>Openness to leave rises where travel is heavy, comfort is lean, and pay transparency is weak. It moderates where leaders enforce boundaries, publish bands and criteria, and run a transparent staffing calendar. Industry is the dominant destination, with tech and private equity pockets in specific markets. Retention requires regionalized cadence and comfort rules, clear bands and promotion criteria, and a Manager-plus support system built on staffing fit, escalation clarity, and better manager practice.</p>
+            </div>
+
+            <div class="implication-box">
+                <strong>Implication</strong>
+                <p>If the goal is to convert people who are open to leaving into people who are committed to staying, invest as much in how the work gets done as in how it gets paid.</p>
+            </div>
+        </section>
+
+        <!-- Section 1: Salaries -->
+        <section id="section1" class="section">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <h2>Salaries Examined: Money and Meaning</h2>
+                <p class="section-tagline">Big paychecks lose their shine when the job grinds on</p>
+            </div>
+
+            <div class="section-content">
+                <p>Compensation is one of the most visible markers of differentiation across firms, but it rarely explains why people stay satisfied in their jobs. Strategy houses such as MBB and Tier 2 clearly lead in pay, offering median total packages that can be double those of implementation peers. Big 4 firms typically fall in between: salaries trail MBB but exceed those in boutique or implementation-heavy shops, and their global scale often provides steadier pipelines. Despite these clear financial divides, satisfaction averages compress into a much narrower band. This demonstrates that after a certain level of competitiveness, compensation stops being the lever that explains daily sentiment.</p>
+
+                <p>Looking at regions paints the same picture. North America stands out for absolute levels, with high compensation reflecting both the competitive labor market and high costs of living. The Middle East also shows strong medians, but for a different reason: low or zero income tax regimes translate into far higher take-home pay compared to gross figures. Europe, by contrast, trails on headline salaries but narrows the experiential gap with stronger statutory protections, longer guaranteed leave, and more consistent hybrid practices. In short, what firms save in payroll, European employees partly regain in time and predictability.</p>
+
+                <p>Seniority follows a predictable pay curve but tells a different story on sentiment. Analysts and Associates start lower on the pay ladder, but their satisfaction tends to be steadier. At the top, Partners and Principals command large packages, yet their net satisfaction is only marginally higher than junior staff. The sharpest strain is carried by Engagement Managers, who inherit heavy accountability without full control of resourcing or cadence. For them, salary increases are rarely enough to offset the grind of weekly travel, long hours, and opaque staffing.</p>
+
+                <p>The conclusion across firm type, region, and seniority is consistent. Pay secures attraction and loyalty in the short run, but satisfaction depends on operating design. When cadence is controlled, staffing is transparent, and travel is moderated, lower-paying environments can achieve satisfaction outcomes that rival or exceed those of the highest-paying firms. This is why firms that rely solely on compensation to improve retention will often find the effect shallow and temporary.</p>
+            </div>
+
+            <!-- Exhibit 1 -->
+            <div class="exhibit">
+                <div class="exhibit-header">
+                    <div class="exhibit-label">Exhibit 1</div>
+                    <h3 class="exhibit-title">Salary (median $) & Satisfaction by Firm Type</h3>
+                    <p class="exhibit-desc">Strategy firms pay substantially more than Big 4 or implementation peers, yet satisfaction averages hardly differ. The premium is often consumed by heavier weekly travel and longer hours, showing that once pay is competitive, cadence and workload discipline are what matter most.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="chart1"></canvas>
+                </div>
+                <p class="exhibit-footnote">Medians in nominal USD, no PPP or FX adjustments. Satisfaction axis scaled to observed range.</p>
+            </div>
+
+            <!-- Exhibit 2 -->
+            <div class="exhibit">
+                <div class="exhibit-header">
+                    <div class="exhibit-label">Exhibit 2</div>
+                    <h3 class="exhibit-title">Salary (median $) & Satisfaction by Level</h3>
+                    <p class="exhibit-desc">Compensation climbs predictably with seniority, but satisfaction does not. Engagement Managers carry the greatest strain: high responsibility paired with limited control over resources and schedules results in the sharpest satisfaction dip. Pay at this level helps little without structural relief in cadence and staffing.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="chart2"></canvas>
+                </div>
+                <p class="exhibit-footnote">Levels ordered: Business Analyst/Consultant, Associate, Engagement Manager, Principal/Director, Partner.</p>
+            </div>
+
+            <!-- Exhibit 3 -->
+            <div class="exhibit">
+                <div class="exhibit-header">
+                    <div class="exhibit-label">Exhibit 3</div>
+                    <h3 class="exhibit-title">Salary (median $) & Satisfaction by Region</h3>
+                    <p class="exhibit-desc">North America and the Middle East report the highest medians, but for different reasons: in North America, market competition and cost of living push salaries up, while in the Middle East, low or zero income tax regimes boost net take-home. Europe lags in gross pay but closes the gap through statutory leave and more predictable hybrid norms.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="chart3"></canvas>
+                </div>
+                <p class="exhibit-footnote">Nominal USD, no PPP or FX adjustments. Satisfaction axis scaled to observed range.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Travel Frequency -->
+        <section id="section2" class="section">
+            <div class="section-header">
+                <div class="section-number">2</div>
+                <h2>Travel Frequency & Satisfaction: Life on the Road</h2>
+                <p class="section-tagline">The more time in transit, the less satisfaction in the job</p>
+            </div>
+
+            <div class="section-content">
+                <p>Travel has always been one of consulting's defining features, but the past decade has made its impact on satisfaction impossible to ignore. Weekly client travel was once worn as a badge of honor, particularly in strategy firms that built their culture around constant client proximity. Today the pattern is clear: the more frequently consultants travel, the lower their average satisfaction. Hybrid working norms that took root during the pandemic have made this contrast starker: once people experience a baseline of flexibility, the fatigue of weekly trips weighs heavier.</p>
+
+                <p>The variation by firm type reflects these structural differences. Strategy firms, still more likely to insist on weekly client presence, show the highest proportions of constant travel. Big 4 firms, with their scale in audit and implementation, operate more blended models where on-site presence varies by service line and client preference. Boutiques and in-house consulting units lean more hybrid, and as a result, their teams often report steadier sentiment even at lower pay levels.</p>
+
+                <p>The effect by seniority is just as telling. Analysts and Associates travel frequently but tend to absorb the disruption more easily, cushioned by novelty and lower accountability. At the top, Partners are more able to influence their schedules, often securing premium travel arrangements or compressing trips into shorter bursts. Engagement Managers again emerge as the pressure point: they shoulder delivery responsibility yet have the least control over where and how often they travel. For them, weekly flights quickly erode satisfaction, even when paired with higher salaries.</p>
+
+                <p>The evidence points in one direction: comfort helps, but cadence rules are the decisive lever. Without governance on how often people travel and how recovery time is built in, sentiment suffers regardless of pay or brand prestige. This is why firms that codify limits, such as caps on consecutive weeks, rules for recovery days, and transparent calendars, see satisfaction stabilise faster than those that rely on compensation alone.</p>
+            </div>
+
+            <!-- Exhibit 4 -->
+            <div class="exhibit">
+                <div class="exhibit-header">
+                    <div class="exhibit-label">Exhibit 4</div>
+                    <h3 class="exhibit-title">Travel Frequency Mix by Firm Type</h3>
+                    <p class="exhibit-desc">Strategy firms carry the heaviest weekly travel share, while Big 4, boutiques, and in-house groups show more hybrid mixes. The difference in satisfaction across these cohorts mirrors cadence rather than compensation.</p>
+                </div>
+                <div class="chart-container tall">
+                    <canvas id="chart4"></canvas>
+                </div>
+                <p class="exhibit-footnote">Distribution of valid responses (%).</p>
+            </div>
+
+            <!-- Exhibit 5 -->
+            <div class="exhibit">
+                <div class="exhibit-header">
+                    <div class="exhibit-label">Exhibit 5</div>
+                    <h3 class="exhibit-title">Weekly Travel (%) & Satisfaction by Level</h3>
+                    <p class="exhibit-desc">Satisfaction falls sharply when travel becomes weekly, and the decline is steepest at the Engagement Manager level. Analysts and Associates tolerate travel more easily, and Partners have more autonomy to shape it, but EMs sit in the middle with the least control and the heaviest responsibility.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="chart5"></canvas>
+                </div>
+                <p class="exhibit-footnote">Percentage of each level reporting weekly travel, with average satisfaction overlay. Satisfaction axis scaled to observed range.</p>
+            </div>
+        </section>
+
+        <!-- Section 3: Travel Class -->
+        <section id="section3" class="section">
+            <div class="section-header">
+                <div class="section-number">3</div>
+                <h2>Manager+ Travel Class & Satisfaction: Comfort Counts</h2>
+                <p class="section-tagline">Premium seats help, but they don't fix tired systems</p>
+            </div>
+
+            <div class="section-content">
+                <p>Travel class has long been a symbolic marker in consulting, but in practice it is less about prestige and more about sustainability. For Engagement Managers, Principals, and Partners, the ability to arrive rested after a long-haul flight is directly tied to client performance and well-being. Business and first-class travel is not a luxury in this context but an operating control, one of the few levers firms can pull to make frequent travel bearable.</p>
+
+                <p>The distribution of travel class by level tells a clear story. Engagement Managers are most often booked in economy, despite being the group that travels most consistently and carries the heaviest project delivery responsibility. Principals and Partners secure a higher share of business and first, reflecting both their seniority and their ability to influence travel policies. The progression shows how comfort is allocated with rank, but it also reveals a misalignment: those who bear the brunt of weekly flights are least likely to travel in comfort.</p>
+
+                <p>When comfort is provided, sentiment improves noticeably. Managers who travel business class report higher average satisfaction compared to their peers who fly economy under the same cadence. Principals and Partners show the same pattern, although the marginal benefit diminishes once cadence becomes too high. This is an important finding: premium travel improves experience, but the benefit plateaus if people are on a plane every week without respite. Comfort, in other words, helps but cannot offset relentless cadence.</p>
+
+                <p>Taken together, the data suggests that firms should treat comfort as part of an integrated operating model. Rules that tie business or first-class travel to trip length, overnight schedules, or the number of consecutive weeks on the road ensure that comfort is applied equitably and avoids the optics of pure hierarchy. More importantly, comfort should be paired with cadence governance. Providing a business-class seat is valuable, but providing a break between consecutive travel weeks is still more valuable.</p>
+            </div>
+
+            <!-- Exhibit 6 -->
+            <div class="exhibit">
+                <div class="exhibit-header">
+                    <div class="exhibit-label">Exhibit 6</div>
+                    <h3 class="exhibit-title">Travel Class Mix (Manager+ Only)</h3>
+                    <p class="exhibit-desc">The share of business and first-class travel rises with seniority, from Engagement Managers to Partners. Yet the mismatch is clear: EMs, who are most exposed to weekly travel, remain the most likely to fly economy. This imbalance erodes satisfaction precisely where it is most fragile.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="chart6"></canvas>
+                </div>
+                <p class="exhibit-footnote">Distribution of valid Manager+ responses (%).</p>
+            </div>
+
+            <!-- Exhibit 7 -->
+            <div class="exhibit">
+                <div class="exhibit-header">
+                    <div class="exhibit-label">Exhibit 7</div>
+                    <h3 class="exhibit-title">Premium Cabin (%) & Satisfaction (Manager+ Only)</h3>
+                    <p class="exhibit-desc">Across all Manager+ levels, those with access to business or first-class travel report higher satisfaction than those without. However, the gains flatten when cadence is weekly, showing that comfort helps but does not solve the problem of overexposure.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="chart7"></canvas>
+                </div>
+                <p class="exhibit-footnote">Share of Manager+ respondents flying business or first, with average satisfaction overlay. Satisfaction axis scaled to observed range.</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Regional -->
+        <section id="section4" class="section">
+            <div class="section-header">
+                <div class="section-number">4</div>
+                <h2>Travel & Satisfaction: Different Markets, Same Story</h2>
+                <p class="section-tagline">Wherever you are, balance beats a bigger paycheck</p>
+            </div>
+
+            <div class="section-content">
+                <p>Travel norms differ sharply across regions, and these norms explain much of the variation in satisfaction. North America and the Middle East continue to show the highest proportions of weekly travel. In North America, this reflects both client expectations and entrenched delivery models that value physical presence. In the Middle East, heavy travel is paired with low or zero income tax regimes that inflate take-home pay, which partially offsets the strain. Even so, high net pay does not fully protect satisfaction when consultants spend most weeks on planes.</p>
+
+                <p>Europe stands apart for its hybrid orientation. Many markets have normalized partial on-site arrangements, with consultants typically spending part of the week at the client and part at home. This structure results in fewer consecutive weeks of travel and shorter average trip lengths. The outcome is clear: even at lower pay levels, European consultants report satisfaction scores that rival or surpass those of their higher-paid peers in more travel-heavy regions.</p>
+
+                <p>Asia occupies a middle ground, with patterns varying significantly by country and sector. Markets like Japan, where in-person engagement remains central, lean closer to the North American model. Others, particularly in Southeast Asia, have moved faster toward hybrid and remote practices. As a result, satisfaction outcomes are highly segmented, reinforcing that regional and cultural norms shape travel expectations as much as firm policies do.</p>
+
+                <p>The overall lesson is that travel governance cannot be designed as a single global standard. Regions where hybrid is now institutionalized need policies that preserve that flexibility and prevent reversion to weekly travel. In regions that still expect constant presence, leadership must explicitly reset norms to avoid chronic fatigue. In all cases, satisfaction converges not around gross pay but around how sustainable the travel load is.</p>
+            </div>
+
+            <!-- Exhibit 8 -->
+            <div class="exhibit">
+                <div class="exhibit-header">
+                    <div class="exhibit-label">Exhibit 8</div>
+                    <h3 class="exhibit-title">Travel Frequency Mix by Region</h3>
+                    <p class="exhibit-desc">North America and the Middle East carry the heaviest weekly travel shares, while Europe is far more hybrid and Asia sits in between. Satisfaction differences across regions align with cadence rather than compensation.</p>
+                </div>
+                <div class="chart-container tall">
+                    <canvas id="chart8"></canvas>
+                </div>
+                <p class="exhibit-footnote">Distribution of valid responses (%).</p>
+            </div>
+
+            <!-- Exhibit 9 -->
+            <div class="exhibit">
+                <div class="exhibit-header">
+                    <div class="exhibit-label">Exhibit 9</div>
+                    <h3 class="exhibit-title">Weekly Travel (%) & Satisfaction by Region</h3>
+                    <p class="exhibit-desc">Regions with entrenched weekly travel norms show the largest satisfaction penalties, while those that have institutionalized hybrid models show far narrower differences. Even with lower salaries, hybrid-leaning regions sustain stronger sentiment by controlling cadence.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="chart9"></canvas>
+                </div>
+                <p class="exhibit-footnote">Percentage of respondents reporting weekly travel, with average satisfaction overlay. Satisfaction axis scaled to observed range.</p>
+            </div>
+        </section>
+
+        <!-- Section 5: Attrition -->
+        <section id="section5" class="section">
+            <div class="section-header">
+                <div class="section-number">5</div>
+                <h2>Attrition & Destinations: The Exit Question</h2>
+                <p class="section-tagline">When work feels unsustainable, people always find the door</p>
+            </div>
+
+            <div class="section-content">
+                <p>Attrition is where the patterns of pay, cadence, and transparency come together. When consultants are asked whether they are considering leaving, the results align almost perfectly with satisfaction levels: where sentiment dips, openness to exit rises. The inverse relationship is not surprising, but the scale of it is striking. Cohorts with only moderate dissatisfaction report exit openness at levels that signal a clear retention problem.</p>
+
+                <p>The most vulnerable group is again the Engagement Manager. At this level, responsibility is high, travel is frequent, and autonomy is constrained. Without structural relief, exit openness spikes even when compensation is competitive. Principals and Partners show a different pattern: their compensation packages and influence buffer sentiment somewhat, but dissatisfaction still translates into a measurable intent to leave. Analysts and Associates report more balanced outcomes, partly because career mobility is expected early and attrition at this stage is less destabilizing to the firm.</p>
+
+                <p>Firm type also shapes attrition patterns. Strategy houses attract with high pay and prestige, but they also carry the steepest travel demands, which fuel higher exit openness among mid-level cohorts. Big 4 firms face a different challenge: lower satisfaction is often tied to pay transparency and progression clarity rather than outright cadence. Boutiques and in-house units, while smaller, often show steadier sentiment where hybrid is the norm, and this reduces attrition intent despite less generous pay.</p>
+
+                <p>Where people go next is equally important. Industry dominates as the main destination across regions and firm types. Consulting-trained professionals are seen as high-value hires in corporates, which offer more predictable hours and less travel. Technology and private equity attract specific slices of the market, particularly in North America and Europe. Startups and freelance roles are smaller in volume but remain attractive where consultants seek autonomy or lifestyle flexibility. The common thread is that exits concentrate in environments perceived as offering more control and predictability, rather than simply higher pay.</p>
+            </div>
+
+            <!-- Exhibit 10 -->
+            <div class="exhibit">
+                <div class="exhibit-header">
+                    <div class="exhibit-label">Exhibit 10</div>
+                    <h3 class="exhibit-title">Attrition Openness (%) & Satisfaction by Firm Type</h3>
+                    <p class="exhibit-desc">Strategy firms show high exit openness among mid-levels, where heavy travel undermines sentiment despite high pay. Big 4 firms see attrition tied more to pay transparency and progression clarity. Boutiques and in-house units, with steadier hybrid practices, record lower exit intent even at lower pay levels.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="chart10"></canvas>
+                </div>
+                <p class="exhibit-footnote">Percentage of respondents reporting they are open or actively looking, with average satisfaction overlay. Satisfaction axis scaled to observed range.</p>
+            </div>
+
+            <!-- Exhibit 11 -->
+            <div class="exhibit">
+                <div class="exhibit-header">
+                    <div class="exhibit-label">Exhibit 11</div>
+                    <h3 class="exhibit-title">Attrition Openness (%) & Satisfaction by Level</h3>
+                    <p class="exhibit-desc">Engagement Managers are the most exposed to attrition risk, with exit openness rising sharply under sustained travel and limited control. Analysts and Associates report more moderate patterns, and senior leaders are partially cushioned by influence and pay.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="chart11"></canvas>
+                </div>
+                <p class="exhibit-footnote">Percentage of respondents reporting they are open or actively looking, with average satisfaction overlay. Satisfaction axis scaled to observed range.</p>
+            </div>
+
+            <!-- Exhibit 12 -->
+            <div class="exhibit">
+                <div class="exhibit-header">
+                    <div class="exhibit-label">Exhibit 12</div>
+                    <h3 class="exhibit-title">Next Destination Mix</h3>
+                    <p class="exhibit-desc">Industry is the leading destination across every slice, with technology and private equity attracting significant shares in specific markets. Startups and freelance roles appeal to a smaller group seeking autonomy.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="chart12"></canvas>
+                </div>
+                <p class="exhibit-footnote">Distribution of valid responses (%).</p>
+            </div>
+        </section>
+
+        <!-- Section 6: Leadership -->
+        <section id="section6" class="section">
+            <div class="section-header">
+                <div class="section-number">6</div>
+                <h2>Leadership Implications: Food For Thought</h2>
+                <p class="section-tagline">Retention depends less on raises and more on rules that work</p>
+            </div>
+
+            <div class="section-content">
+                <p>The data points toward one consistent truth: retention and satisfaction are determined less by pay scales and more by the quality of the operating environment. Firms that address cadence, transparency, and mid-level resilience will outperform peers that rely on compensation alone. The findings across salary, travel, and attrition translate into a set of leadership priorities.</p>
+            </div>
+
+            <ul class="leadership-list">
+                <li>
+                    <h4>Stabilize the middle.</h4>
+                    <p>Engagement Managers emerge as the most fragile point in the system. They carry heavy responsibility, travel most frequently, and have the least influence over staffing and cadence. Protecting them requires targeted measures: clearer scopes, fairer rotation on heavy-travel projects, escalation rights that are actually respected, and manager coaching. Firms that invest in this layer build resilience into the entire pyramid.</p>
+                </li>
+                <li>
+                    <h4>Codify cadence rules.</h4>
+                    <p>Comfort policies alone are insufficient. What makes the biggest difference is cadence governance: limiting consecutive weeks on the road, mandating recovery time after long-haul trips, and publishing transparent staffing calendars. In regions where hybrid is now the default, firms must defend it against backsliding. In regions that still expect constant presence, leadership must explicitly reset norms to avoid chronic fatigue.</p>
+                </li>
+                <li>
+                    <h4>Make transparency non-negotiable.</h4>
+                    <p>Pay bands, promotion criteria, and staffing logic should be as visible and predictable as possible. In firms where compensation trails MBB, transparency can still sustain satisfaction by giving people clarity and trust in the process. In firms that already lead on pay, transparency prevents prestige from eroding under opaque internal politics.</p>
+                </li>
+                <li>
+                    <h4>Measure and act.</h4>
+                    <p>Dashboards that track hours, travel cadence, comfort eligibility, and satisfaction scores create accountability. Leaders cannot manage what they do not measure. Integrating monthly sentiment checks, quick post-travel fatigue pulses, and consistent reporting by cohort ensures the conversation moves beyond anecdote.</p>
+                </li>
+                <li>
+                    <h4>Avoid blunt instruments.</h4>
+                    <p>Compensation remains necessary, but its effectiveness is conditional. High pay cannot mask unmanaged cadence, nor can bonuses offset a broken staffing model. The message from the data is straightforward: firms that fix how the work gets done retain people better than firms that simply pay more.</p>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-brand">NextStep</div>
+        <p>Helping consultants navigate their next career move with data, insight, and a sense of humor.</p>
+        <div class="footer-links">
+            <span>September 2025</span>
+            <span>•</span>
+            <span>In Partnership with Consulting Comedy</span>
+        </div>
+    </footer>
+
+    <script>
+        // Chart.js defaults
+        Chart.defaults.font.family = "'Source Sans 3', sans-serif";
+        Chart.defaults.font.size = 12;
+        Chart.defaults.color = '#64748b';
+
+        const colors = {
+            primary: '#4f46e5',
+            primaryLight: '#818cf8',
+            warm: '#f59e0b',
+            success: '#10b981',
+            danger: '#ef4444',
+            gray: '#94a3b8',
+            grayLight: '#cbd5e1',
+            accent1: '#06b6d4',
+            accent2: '#8b5cf6',
+            accent3: '#ec4899',
+            accent4: '#14b8a6'
+        };
+
+        // Exhibit 1: Salary & Satisfaction by Firm Type
+        new Chart(document.getElementById('chart1'), {
+            type: 'bar',
+            data: {
+                labels: ['MBB', 'Tier 2', 'Boutique', 'Big 4', 'Tech/Impl.', 'In-house'],
+                datasets: [{
+                    label: 'Median Compensation ($)',
+                    data: [180000, 152500, 101000, 89655, 89100, 100000],
+                    backgroundColor: colors.primary,
+                    borderRadius: 4,
+                    yAxisID: 'y'
+                }, {
+                    label: 'Avg Satisfaction',
+                    data: [3.32, 3.24, 3.26, 3.00, 2.83, 3.47],
+                    type: 'line',
+                    borderColor: colors.warm,
+                    backgroundColor: colors.warm,
+                    borderWidth: 3,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 3,
+                    yAxisID: 'y1',
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { intersect: false, mode: 'index' },
+                plugins: { legend: { position: 'top', align: 'end' } },
+                scales: {
+                    y: { position: 'left', title: { display: true, text: 'Compensation ($)' }, ticks: { callback: v => '$' + v.toLocaleString() } },
+                    y1: { position: 'right', min: 2.5, max: 4, title: { display: true, text: 'Satisfaction' }, grid: { drawOnChartArea: false } }
+                }
+            }
+        });
+
+        // Exhibit 2: Salary & Satisfaction by Level
+        new Chart(document.getElementById('chart2'), {
+            type: 'bar',
+            data: {
+                labels: ['BA / Consultant', 'Associate', 'Engagement Mgr', 'Principal / Dir', 'Partner'],
+                datasets: [{
+                    label: 'Median Compensation ($)',
+                    data: [75000, 59917, 130000, 220000, 360000],
+                    backgroundColor: colors.primary,
+                    borderRadius: 4,
+                    yAxisID: 'y'
+                }, {
+                    label: 'Avg Satisfaction',
+                    data: [3.21, 3.00, 2.86, 3.38, 3.93],
+                    type: 'line',
+                    borderColor: colors.warm,
+                    backgroundColor: colors.warm,
+                    borderWidth: 3,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 3,
+                    yAxisID: 'y1',
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { intersect: false, mode: 'index' },
+                plugins: { legend: { position: 'top', align: 'end' } },
+                scales: {
+                    y: { position: 'left', title: { display: true, text: 'Compensation ($)' }, ticks: { callback: v => '$' + v.toLocaleString() } },
+                    y1: { position: 'right', min: 2.5, max: 4.2, title: { display: true, text: 'Satisfaction' }, grid: { drawOnChartArea: false } }
+                }
+            }
+        });
+
+        // Exhibit 3: Salary & Satisfaction by Region
+        new Chart(document.getElementById('chart3'), {
+            type: 'bar',
+            data: {
+                labels: ['North America', 'Middle East', 'Oceania', 'Europe', 'Latin America', 'Africa', 'Asia'],
+                datasets: [{
+                    label: 'Median Compensation ($)',
+                    data: [200000, 198000, 120000, 93670, 57150, 45000, 39234],
+                    backgroundColor: colors.primary,
+                    borderRadius: 4,
+                    yAxisID: 'y'
+                }, {
+                    label: 'Avg Satisfaction',
+                    data: [3.19, 3.45, 3.18, 3.12, 3.09, 3.14, 2.72],
+                    type: 'line',
+                    borderColor: colors.warm,
+                    backgroundColor: colors.warm,
+                    borderWidth: 3,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 3,
+                    yAxisID: 'y1',
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { intersect: false, mode: 'index' },
+                plugins: { legend: { position: 'top', align: 'end' } },
+                scales: {
+                    y: { position: 'left', title: { display: true, text: 'Compensation ($)' }, ticks: { callback: v => '$' + v.toLocaleString() } },
+                    y1: { position: 'right', min: 2.5, max: 4, title: { display: true, text: 'Satisfaction' }, grid: { drawOnChartArea: false } }
+                }
+            }
+        });
+
+        // Exhibit 4: Travel Frequency by Firm Type
+        new Chart(document.getElementById('chart4'), {
+            type: 'bar',
+            data: {
+                labels: ['MBB', 'Tier 2', 'Boutique', 'Big 4', 'Tech/Impl.', 'In-house'],
+                datasets: [{
+                    label: 'No Travel',
+                    data: [17.39, 15.79, 45.26, 41.28, 36.92, 46.67],
+                    backgroundColor: colors.success,
+                    borderRadius: 4
+                }, {
+                    label: 'Less Frequent',
+                    data: [31.88, 31.58, 41.05, 38.95, 30.77, 40.00],
+                    backgroundColor: colors.warm,
+                    borderRadius: 4
+                }, {
+                    label: 'Weekly',
+                    data: [50.72, 52.63, 13.68, 19.77, 32.31, 13.33],
+                    backgroundColor: colors.danger,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: { legend: { position: 'top' } },
+                scales: {
+                    x: { stacked: true, max: 100, title: { display: true, text: 'Percentage (%)' } },
+                    y: { stacked: true }
+                }
+            }
+        });
+
+        // Exhibit 5: Weekly Travel & Satisfaction by Level
+        new Chart(document.getElementById('chart5'), {
+            type: 'bar',
+            data: {
+                labels: ['BA / Consultant', 'Associate', 'Engagement Mgr', 'Principal / Dir', 'Partner'],
+                datasets: [{
+                    label: 'Weekly Travel (%)',
+                    data: [29.75, 21.28, 25.16, 32.81, 21.43],
+                    backgroundColor: colors.danger,
+                    borderRadius: 4,
+                    yAxisID: 'y'
+                }, {
+                    label: 'Avg Satisfaction',
+                    data: [3.22, 3.00, 2.86, 3.38, 4.00],
+                    type: 'line',
+                    borderColor: colors.warm,
+                    backgroundColor: colors.warm,
+                    borderWidth: 3,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 3,
+                    yAxisID: 'y1',
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { intersect: false, mode: 'index' },
+                plugins: { legend: { position: 'top', align: 'end' } },
+                scales: {
+                    y: { position: 'left', title: { display: true, text: 'Weekly Travel (%)' } },
+                    y1: { position: 'right', min: 2.5, max: 4.2, title: { display: true, text: 'Satisfaction' }, grid: { drawOnChartArea: false } }
+                }
+            }
+        });
+
+        // Exhibit 6: Travel Class Mix Manager+
+        new Chart(document.getElementById('chart6'), {
+            type: 'bar',
+            data: {
+                labels: ['Engagement Manager', 'Principal / Director', 'Partner'],
+                datasets: [{
+                    label: 'Economy',
+                    data: [86.26, 63.64, 56.25],
+                    backgroundColor: colors.grayLight,
+                    borderRadius: 4
+                }, {
+                    label: 'Premium Economy',
+                    data: [6.11, 16.36, 6.25],
+                    backgroundColor: colors.accent1,
+                    borderRadius: 4
+                }, {
+                    label: 'Business',
+                    data: [5.34, 18.18, 37.50],
+                    backgroundColor: colors.primary,
+                    borderRadius: 4
+                }, {
+                    label: 'First',
+                    data: [2.29, 1.82, 0],
+                    backgroundColor: colors.accent2,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'top' } },
+                scales: {
+                    x: { stacked: true },
+                    y: { stacked: true, max: 100, title: { display: true, text: 'Percentage (%)' } }
+                }
+            }
+        });
+
+        // Exhibit 7: Premium Cabin & Satisfaction
+        new Chart(document.getElementById('chart7'), {
+            type: 'bar',
+            data: {
+                labels: ['Engagement Manager', 'Principal / Director', 'Partner'],
+                datasets: [{
+                    label: 'Premium Cabin (%)',
+                    data: [7.75, 20.00, 35.71],
+                    backgroundColor: colors.primary,
+                    borderRadius: 4,
+                    yAxisID: 'y'
+                }, {
+                    label: 'Avg Satisfaction',
+                    data: [2.91, 3.44, 4.00],
+                    type: 'line',
+                    borderColor: colors.warm,
+                    backgroundColor: colors.warm,
+                    borderWidth: 3,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 3,
+                    yAxisID: 'y1',
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { intersect: false, mode: 'index' },
+                plugins: { legend: { position: 'top', align: 'end' } },
+                scales: {
+                    y: { position: 'left', title: { display: true, text: 'Premium Cabin (%)' } },
+                    y1: { position: 'right', min: 2.5, max: 4.2, title: { display: true, text: 'Satisfaction' }, grid: { drawOnChartArea: false } }
+                }
+            }
+        });
+
+        // Exhibit 8: Travel Frequency by Region
+        new Chart(document.getElementById('chart8'), {
+            type: 'bar',
+            data: {
+                labels: ['Middle East', 'Africa', 'North America', 'Europe', 'Latin America', 'Asia', 'Oceania'],
+                datasets: [{
+                    label: 'No Travel',
+                    data: [21.21, 37.50, 34.21, 34.15, 39.39, 43.90, 41.67],
+                    backgroundColor: colors.success,
+                    borderRadius: 4
+                }, {
+                    label: 'Less Frequent',
+                    data: [21.21, 12.50, 42.11, 36.59, 36.36, 19.51, 50.00],
+                    backgroundColor: colors.warm,
+                    borderRadius: 4
+                }, {
+                    label: 'Weekly',
+                    data: [57.58, 50.00, 23.68, 29.27, 24.24, 36.59, 8.33],
+                    backgroundColor: colors.danger,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: { legend: { position: 'top' } },
+                scales: {
+                    x: { stacked: true, max: 100, title: { display: true, text: 'Percentage (%)' } },
+                    y: { stacked: true }
+                }
+            }
+        });
+
+        // Exhibit 9: Weekly Travel & Satisfaction by Region
+        new Chart(document.getElementById('chart9'), {
+            type: 'bar',
+            data: {
+                labels: ['Africa', 'Middle East', 'Asia', 'Europe', 'Latin America', 'North America', 'Oceania'],
+                datasets: [{
+                    label: 'Weekly Travel (%)',
+                    data: [57.14, 56.25, 36.59, 29.41, 24.24, 24.11, 9.09],
+                    backgroundColor: colors.danger,
+                    borderRadius: 4,
+                    yAxisID: 'y'
+                }, {
+                    label: 'Avg Satisfaction',
+                    data: [3.14, 3.44, 2.78, 3.27, 3.09, 3.21, 3.18],
+                    type: 'line',
+                    borderColor: colors.warm,
+                    backgroundColor: colors.warm,
+                    borderWidth: 3,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 3,
+                    yAxisID: 'y1',
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { intersect: false, mode: 'index' },
+                plugins: { legend: { position: 'top', align: 'end' } },
+                scales: {
+                    y: { position: 'left', title: { display: true, text: 'Weekly Travel (%)' } },
+                    y1: { position: 'right', min: 2.5, max: 4, title: { display: true, text: 'Satisfaction' }, grid: { drawOnChartArea: false } }
+                }
+            }
+        });
+
+        // Exhibit 10: Attrition & Satisfaction by Firm Type
+        new Chart(document.getElementById('chart10'), {
+            type: 'bar',
+            data: {
+                labels: ['MBB', 'Tier 2', 'Boutique', 'Big 4', 'Tech/Impl.', 'In-house'],
+                datasets: [{
+                    label: 'Attrition Openness (%)',
+                    data: [81.16, 78.95, 74.19, 80.72, 76.56, 80.00],
+                    backgroundColor: colors.accent3,
+                    borderRadius: 4,
+                    yAxisID: 'y'
+                }, {
+                    label: 'Avg Satisfaction',
+                    data: [3.32, 3.24, 3.26, 3.00, 2.83, 3.47],
+                    type: 'line',
+                    borderColor: colors.warm,
+                    backgroundColor: colors.warm,
+                    borderWidth: 3,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 3,
+                    yAxisID: 'y1',
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { intersect: false, mode: 'index' },
+                plugins: { legend: { position: 'top', align: 'end' } },
+                scales: {
+                    y: { position: 'left', min: 50, max: 90, title: { display: true, text: 'Attrition Openness (%)' } },
+                    y1: { position: 'right', min: 2.5, max: 4, title: { display: true, text: 'Satisfaction' }, grid: { drawOnChartArea: false } }
+                }
+            }
+        });
+
+        // Exhibit 11: Attrition & Satisfaction by Level
+        new Chart(document.getElementById('chart11'), {
+            type: 'bar',
+            data: {
+                labels: ['BA / Consultant', 'Associate', 'Engagement Mgr', 'Principal / Dir', 'Partner'],
+                datasets: [{
+                    label: 'Attrition Openness (%)',
+                    data: [76.73, 75.00, 85.16, 75.76, 53.33],
+                    backgroundColor: colors.accent3,
+                    borderRadius: 4,
+                    yAxisID: 'y'
+                }, {
+                    label: 'Avg Satisfaction',
+                    data: [3.21, 3.00, 2.86, 3.38, 3.93],
+                    type: 'line',
+                    borderColor: colors.warm,
+                    backgroundColor: colors.warm,
+                    borderWidth: 3,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 3,
+                    yAxisID: 'y1',
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { intersect: false, mode: 'index' },
+                plugins: { legend: { position: 'top', align: 'end' } },
+                scales: {
+                    y: { position: 'left', min: 40, max: 90, title: { display: true, text: 'Attrition Openness (%)' } },
+                    y1: { position: 'right', min: 2.5, max: 4.2, title: { display: true, text: 'Satisfaction' }, grid: { drawOnChartArea: false } }
+                }
+            }
+        });
+
+        // Exhibit 12: Destination Mix
+        new Chart(document.getElementById('chart12'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Industry', 'Still Figuring Out', 'Another Consulting', 'Big Tech', 'PE / VC', 'Startup', 'Freelance', 'Sabbatical', 'Other'],
+                datasets: [{
+                    data: [32.0, 29.5, 16.9, 7.2, 4.7, 3.2, 2.9, 2.0, 2.2],
+                    backgroundColor: [
+                        colors.primary,
+                        colors.gray,
+                        colors.accent1,
+                        colors.accent2,
+                        colors.warm,
+                        colors.success,
+                        colors.accent3,
+                        colors.accent4,
+                        colors.grayLight
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '55%',
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: { padding: 16, usePointStyle: true, pointStyle: 'circle' }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: ctx => ctx.label + ': ' + ctx.parsed + '%'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
