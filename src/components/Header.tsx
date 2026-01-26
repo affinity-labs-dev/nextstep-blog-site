@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/nextstep-logo-updated.png";
@@ -11,17 +12,17 @@ const Header = () => {
       <nav className="mx-auto max-w-6xl" aria-label="Main navigation">
         <div className="flex items-center justify-between rounded-full bg-card/80 backdrop-blur-md px-4 py-2 md:px-6 md:py-3 shadow-soft border border-border/50">
           {/* Logo */}
-          <a href="/" className="flex items-center">
-            <img 
+          <Link to="/" className="flex items-center">
+            <img
               src={`${logo}?v=20260105`}
-              alt="NextStep - Career platform for ex-consultants" 
-              className="h-8 md:h-10 w-auto" 
-              width={189} 
+              alt="NextStep - Career platform for ex-consultants"
+              className="h-8 md:h-10 w-auto"
+              width={189}
               height={40}
               decoding="async"
               fetchPriority="high"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-3">

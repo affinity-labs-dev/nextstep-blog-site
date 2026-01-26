@@ -15,4 +15,9 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Bundle all dependencies into the SSR build to avoid CJS/ESM interop issues
+  // during static prerendering (react-helmet-async, etc.)
+  ssr: {
+    noExternal: true,
+  },
 }));
