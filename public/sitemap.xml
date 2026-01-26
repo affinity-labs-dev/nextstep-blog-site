@@ -3,78 +3,80 @@
   <!-- Homepage -->
   <url>
     <loc>https://blog.getnextstep.com</loc>
-    <lastmod>2025-12-16</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
+
   <!-- LLM/AI Information Page -->
   <url>
     <loc>https://blog.getnextstep.com/llm.html</loc>
     <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
-  
-  <!-- Blog Posts -->
+
+  <!-- Consulting Survey 2025 (standalone HTML page) -->
   <url>
     <loc>https://blog.getnextstep.com/consulting-survey-2025.html</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Blog Posts (primary content - priority 0.8) -->
   <url>
     <loc>https://blog.getnextstep.com/blog/consulting-exit-opportunities-2026</loc>
     <lastmod>2025-12-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blog.getnextstep.com/blog/mckinsey-to-tech-transition</loc>
     <lastmod>2025-12-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blog.getnextstep.com/blog/consulting-interview-case-study-tips</loc>
     <lastmod>2025-12-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blog.getnextstep.com/blog/private-equity-consulting-background</loc>
     <lastmod>2025-12-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blog.getnextstep.com/blog/work-life-balance-after-consulting</loc>
     <lastmod>2025-12-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blog.getnextstep.com/blog/salary-negotiation-ex-consultants</loc>
     <lastmod>2025-12-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blog.getnextstep.com/blog/startup-vs-corporate-ex-consultant</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blog.getnextstep.com/blog/networking-strategies-career-change</loc>
     <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blog.getnextstep.com/blog/bain-alumni-success-stories</loc>
     <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -129,17 +129,23 @@ const BlogPost = () => {
     author: {
       "@type": "Person",
       name: post.author,
+      jobTitle: post.authorTitle,
       url: "https://getnextstep.com",
     },
     datePublished: post.publishDate,
     dateModified: post.modifiedDate,
     wordCount: wordCount,
+    articleSection: post.category,
+    inLanguage: "en-US",
     publisher: {
       "@type": "Organization",
       name: "NextStep",
+      url: "https://getnextstep.com",
       logo: {
         "@type": "ImageObject",
         url: "https://blog.getnextstep.com/assets/nextstep-logo-updated.png?v=20260105",
+        width: 189,
+        height: 40,
       },
     },
     mainEntityOfPage: {
@@ -147,7 +153,12 @@ const BlogPost = () => {
       "@id": `https://blog.getnextstep.com/blog/${post.slug}`,
     },
     keywords: post.keywords.join(", "),
-    articleBody: post.content.replace(/[#*\-]/g, '').slice(0, 500).trim(),
+    articleBody: post.content.replace(/[#*\-]/g, '').slice(0, 1000).trim(),
+    isPartOf: {
+      "@type": "Blog",
+      name: "NextStep Blog",
+      url: "https://blog.getnextstep.com",
+    },
   };
 
   const breadcrumbData = {
@@ -163,12 +174,6 @@ const BlogPost = () => {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Blog",
-        item: "https://blog.getnextstep.com/blog",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
         name: post.title,
         item: `https://blog.getnextstep.com/blog/${post.slug}`,
       },
@@ -196,7 +201,9 @@ const BlogPost = () => {
         <title>{`${post.title.length > 55 ? post.title.slice(0, 55) + '...' : post.title} | NextStep`}</title>
         <meta name="description" content={post.metaDescription} />
         <meta name="keywords" content={post.keywords.join(", ")} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`https://blog.getnextstep.com/blog/${post.slug}`} />
+        <link rel="alternate" hreflang="en" href={`https://blog.getnextstep.com/blog/${post.slug}`} />
         <meta name="author" content={post.author} />
 
         {/* Open Graph */}
@@ -204,7 +211,8 @@ const BlogPost = () => {
         <meta property="og:description" content={post.metaDescription} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://blog.getnextstep.com/blog/${post.slug}`} />
-        <meta property="og:site_name" content="NextStep" />
+        <meta property="og:site_name" content="NextStep Blog" />
+        <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={articleImage} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -247,13 +255,7 @@ const BlogPost = () => {
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
-              <li>
-                <Link to="/" className="inline-link py-2 hover:text-primary transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li aria-hidden="true">/</li>
-              <li className="text-foreground truncate max-w-[200px] py-2">{post.title}</li>
+              <li className="text-foreground truncate max-w-[300px] py-2" aria-current="page">{post.title}</li>
             </ol>
           </nav>
 
