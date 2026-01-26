@@ -114,17 +114,26 @@ const BlogPost = () => {
     return elements;
   };
 
+  // Calculate word count for structured data
+  const wordCount = post.content.split(/\s+/).filter(word => word.length > 0).length;
+  
+  // Get the article image URL
+  const articleImage = `https://blog.getnextstep.com${getOgImageForCategory(post.category)}`;
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.metaDescription,
+    image: articleImage,
     author: {
-      "@type": "Organization",
+      "@type": "Person",
       name: post.author,
+      url: "https://getnextstep.com",
     },
     datePublished: post.publishDate,
     dateModified: post.modifiedDate,
+    wordCount: wordCount,
     publisher: {
       "@type": "Organization",
       name: "NextStep",
@@ -138,6 +147,7 @@ const BlogPost = () => {
       "@id": `https://blog.getnextstep.com/blog/${post.slug}`,
     },
     keywords: post.keywords.join(", "),
+    articleBody: post.content.replace(/[#*\-]/g, '').slice(0, 500).trim(),
   };
 
   const breadcrumbData = {
@@ -183,32 +193,38 @@ const BlogPost = () => {
   return (
     <>
       <Helmet>
-        <title>{`${post.title.slice(0, 50)}${post.title.length > 50 ? '...' : ''} | NextStep`}</title>
+        <title>{`${post.title.length > 55 ? post.title.slice(0, 55) + '...' : post.title} | NextStep`}</title>
         <meta name="description" content={post.metaDescription} />
         <meta name="keywords" content={post.keywords.join(", ")} />
         <link rel="canonical" href={`https://blog.getnextstep.com/blog/${post.slug}`} />
+        <meta name="author" content={post.author} />
 
         {/* Open Graph */}
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.metaDescription} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://blog.getnextstep.com/blog/${post.slug}`} />
-        <meta property="og:image" content={`https://blog.getnextstep.com${getOgImageForCategory(post.category)}`} />
+        <meta property="og:site_name" content="NextStep" />
+        <meta property="og:image" content={articleImage} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content={`${post.title} - ${post.category}`} />
         <meta property="article:published_time" content={post.publishDate} />
         <meta property="article:modified_time" content={post.modifiedDate} />
         <meta property="article:section" content={post.category} />
+        <meta property="article:author" content={post.author} />
         {post.keywords.map((keyword) => (
           <meta key={keyword} property="article:tag" content={keyword} />
         ))}
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@getnextstep" />
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.metaDescription} />
-        <meta name="twitter:image" content={`https://blog.getnextstep.com${getOgImageForCategory(post.category)}`} />
+        <meta name="twitter:image" content={articleImage} />
+        <meta name="twitter:image:alt" content={`${post.title} - ${post.category}`} />
 
         {/* Structured Data */}
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
