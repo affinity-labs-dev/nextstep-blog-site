@@ -35,7 +35,7 @@ In 2026, the exit opportunity landscape has evolved significantly. While traditi
 
 ### 1. Private Equity and Venture Capital
 
-Private equity firms continue to be one of the most popular destinations for ex-consultants. The analytical rigor and due diligence skills developed in consulting translate directly to evaluating investment opportunities.
+Private equity firms continue to be one of the most popular destinations for ex-consultants. The analytical rigor and due diligence skills developed in consulting translate directly to evaluating investment opportunities. For a detailed roadmap, see our guide on [breaking into PE with a consulting background](/blog/private-equity-consulting-background).
 
 **What you need to know:**
 - PE firms value your ability to quickly understand business models
@@ -47,7 +47,7 @@ Private equity firms continue to be one of the most popular destinations for ex-
 
 Tech giants and high-growth startups actively recruit consultants for various roles:
 
-**Product Management:** Your structured thinking and stakeholder management skills are directly applicable. Companies like Google, Meta, and Amazon have established consultant-to-PM pipelines.
+**Product Management:** Your structured thinking and stakeholder management skills are directly applicable. Companies like Google, Meta, and Amazon have established consultant-to-PM pipelines. Our [McKinsey to tech transition guide](/blog/mckinsey-to-tech-transition) covers the full roadmap.
 
 **Corporate Strategy:** Tech companies need strategic thinkers to guide their growth. Roles at companies like Uber, Airbnb, and Stripe offer consulting-like work with equity upside.
 
@@ -96,7 +96,7 @@ Each exit opportunity requires specific skills beyond consulting fundamentals:
 
 ### Leverage Your Network
 
-Your consulting network is your greatest asset. Alumni from your firm are in leadership positions across industries and can provide introductions, referrals, and insider information.
+Your consulting network is your greatest asset. Alumni from your firm are in leadership positions across industries and can provide introductions, referrals, and insider information. See our [networking strategies for career changers](/blog/networking-strategies-career-change) for actionable techniques.
 
 ## Timing Your Exit
 
@@ -260,7 +260,7 @@ The key to a successful transition is a compelling story that connects your cons
 
 ## Conclusion
 
-The McKinsey-to-PM path is well-established, but success requires intentional preparation. Start building your PM skills now, develop a compelling narrative, and leverage your consulting network to get introductions.
+The McKinsey-to-PM path is well-established and one of the most popular routes in our [complete guide to consulting exit opportunities](/blog/consulting-exit-opportunities-2026), but success requires intentional preparation. Start building your PM skills now, develop a compelling narrative, and leverage your [consulting network](/blog/networking-strategies-career-change) to get introductions. When offers come in, be ready to [negotiate your compensation](/blog/salary-negotiation-ex-consultants) effectively.
 
 NextStep can connect you with ex-consultants who've successfully made this transition and can provide guidance tailored to your situation.
     `
@@ -420,7 +420,7 @@ Interviewers will test your composure. When something unexpected happens:
 
 ## Conclusion
 
-Case interview success comes from genuine problem-solving ability, not memorized frameworks. Focus on developing real analytical skills, business judgment, and communication excellence.
+Case interview success comes from genuine problem-solving ability, not memorized frameworks. Focus on developing real analytical skills, business judgment, and communication excellence. Once you've landed the offer, explore the [top exit opportunities for consultants](/blog/consulting-exit-opportunities-2026) to plan your next move.
 
 NextStep offers mock interviews with ex-MBB consultants who can provide personalized feedback on your case technique.
     `
@@ -439,7 +439,7 @@ NextStep offers mock interviews with ex-MBB consultants who can provide personal
     content: `
 ## Why PE Firms Want Consultants
 
-Private equity firms have long recognized the value of consulting talent. Here's why your background is attractive:
+Private equity firms have long recognized the value of consulting talent — it's consistently ranked among the [top exit opportunities for consultants](/blog/consulting-exit-opportunities-2026). Here's why your background is attractive:
 
 ### Skills That Transfer
 
@@ -599,7 +599,7 @@ PE compensation typically includes:
 **Bonus:** Significant, tied to deal performance and firm success
 **Carried interest:** The real wealth-builder—share of fund profits
 
-Total compensation can exceed consulting significantly, especially with carry.
+Total compensation can exceed consulting significantly, especially with carry. For negotiation strategies, see our [salary negotiation guide for ex-consultants](/blog/salary-negotiation-ex-consultants).
 
 ## Common Mistakes to Avoid
 
@@ -607,7 +607,7 @@ Total compensation can exceed consulting significantly, especially with carry.
 2. **Generic "Why PE" answers:** Have a specific, authentic reason
 3. **Ignoring culture fit:** PE firms have distinct cultures—research them
 4. **Waiting too long:** The optimal time is typically 2-4 years post-MBA
-5. **Neglecting networking:** Many opportunities come through relationships
+5. **Neglecting networking:** Many opportunities come through relationships — see our [networking strategies for career changers](/blog/networking-strategies-career-change)
 
 ## Conclusion
 
@@ -632,7 +632,7 @@ NextStep can connect you with ex-consultants now in PE who can provide guidance 
 
 Let's be honest: consulting is demanding. The travel, the hours, the constant context-switching—it takes a toll. If you're reading this, you're probably wondering whether you can have a successful career without sacrificing your personal life.
 
-The answer is yes. Here are real stories from consultants who made the transition.
+The answer is yes — and for a broader view of your options, see our [complete guide to consulting exit opportunities](/blog/consulting-exit-opportunities-2026). Here are real stories from consultants who made the transition.
 
 ## Sarah's Story: From BCG to Tech Strategy
 
@@ -664,7 +664,7 @@ The answer is yes. Here are real stories from consultants who made the transitio
 
 - Startups offer more control even if hours are similar
 - Ownership and impact can compensate for lifestyle factors
-- Choose your startup carefully—culture varies widely
+- Choose your startup carefully—culture varies widely (our [startup vs. corporate guide](/blog/startup-vs-corporate-ex-consultant) can help you decide)
 
 ## Jennifer's Story: From Bain to Industry Expert
 
@@ -674,7 +674,7 @@ The answer is yes. Here are real stories from consultants who made the transitio
 
 **The result:** "I work 40-45 hours most weeks. I know everyone, I understand the context, and I can actually see my recommendations implemented. The pace is slower, but the depth is greater. I also had my first child last year and took a real maternity leave—something that felt impossible in consulting."
 
-**Compensation impact:** 15% pay cut initially, but faster promotions and better benefits closed the gap within two years.
+**Compensation impact:** 15% pay cut initially, but faster promotions and better benefits closed the gap within two years. Our [salary negotiation guide](/blog/salary-negotiation-ex-consultants) can help you maximize your offer.
 
 ### Key Takeaways from Jennifer
 
@@ -917,7 +917,7 @@ The best foundation for future negotiations is strong performance.
 
 ## Conclusion
 
-Negotiation is a skill you've developed in consulting—use it for yourself. Prepare thoroughly, know your worth, and approach the conversation with confidence and professionalism.
+Negotiation is a skill you've developed in consulting—use it for yourself. Whether you're targeting [private equity](/blog/private-equity-consulting-background), [tech product management](/blog/mckinsey-to-tech-transition), or another path from our [exit opportunities guide](/blog/consulting-exit-opportunities-2026), prepare thoroughly, know your worth, and approach the conversation with confidence and professionalism.
 
 NextStep offers negotiation coaching with ex-consultants who've successfully navigated these conversations and can help you maximize your compensation.
     `
@@ -936,7 +936,7 @@ NextStep offers negotiation coaching with ex-consultants who've successfully nav
     content: `
 ## The Fundamental Question
 
-After consulting, you have options. One of the biggest decisions is whether to join a startup or a large corporation. Both paths can lead to successful, fulfilling careers—but they offer very different experiences.
+After consulting, you have options — our [guide to exit opportunities](/blog/consulting-exit-opportunities-2026) covers them all. One of the biggest decisions is whether to join a startup or a large corporation. Both paths can lead to successful, fulfilling careers—but they offer very different experiences.
 
 ## Understanding the Trade-offs
 
@@ -1139,7 +1139,7 @@ Stay corporate but work on new initiatives:
 
 There's no universally "right" answer. The best choice depends on your personality, circumstances, and goals. Be honest with yourself about what you want and what you can handle.
 
-Many successful careers include both—you can start corporate and go startup later, or vice versa. The skills transfer in both directions.
+Many successful careers include both—you can start corporate and go startup later, or vice versa. The skills transfer in both directions. For more on managing this transition, explore our guides on [finding work-life balance after consulting](/blog/work-life-balance-after-consulting) and [salary negotiation](/blog/salary-negotiation-ex-consultants).
 
 NextStep can connect you with ex-consultants who've taken both paths and can share honest perspectives on their experiences.
     `
@@ -1158,7 +1158,7 @@ NextStep can connect you with ex-consultants who've taken both paths and can sha
     content: `
 ## Why Networking Matters More Than You Think
 
-Here's a reality check: most jobs—especially senior ones—are filled through relationships, not applications. As a consultant, your network is one of your greatest assets. The question is how to use it effectively.
+Here's a reality check: most jobs—especially senior ones—are filled through relationships, not applications. Whether you're pursuing one of the [top exit opportunities for consultants](/blog/consulting-exit-opportunities-2026) or targeting a specific role, your network is one of your greatest assets. The question is how to use it effectively.
 
 ## The Networking Mindset Shift
 
@@ -1309,7 +1309,7 @@ Before asking for anything, offer value:
 
 ### The Long Game
 
-The best networking isn't about your current job search—it's about building relationships that will help you throughout your career.
+The best networking isn't about your current job search—it's about building relationships that will help you throughout your career. See how [Bain alumni leveraged their networks](/blog/bain-alumni-success-stories) to build remarkable careers.
 
 **Actions to take:**
 - Stay in touch even after you land a job
@@ -1367,7 +1367,7 @@ Sarah joined Bain after graduating from Stanford GSB. She spent four years at th
 
 "I loved the analytical work at Bain, but I wanted to be closer to the decision-making. VC offered that—instead of advising companies, I could choose which ones to back and help them grow."
 
-She networked her way into an associate role at a top healthcare-focused VC firm.
+She networked her way into an associate role at a top healthcare-focused VC firm. (For a deeper dive into this path, see our [private equity and consulting guide](/blog/private-equity-consulting-background).)
 
 ### The Path Forward
 
@@ -1461,7 +1461,7 @@ He took a Chief of Staff role at a fast-growing startup.
 
 ### Advice for Others
 
-"Be open to non-obvious entry points. Chief of Staff or BizOps roles get you exposure to everything. From there, you can pivot to whatever function interests you most."
+"Be open to non-obvious entry points. Chief of Staff or BizOps roles get you exposure to everything. From there, you can pivot to whatever function interests you most." For a step-by-step roadmap, see our [McKinsey to tech transition guide](/blog/mckinsey-to-tech-transition).
 
 ## From Bain to Impact: Rina's Non-Profit Path
 
@@ -1511,7 +1511,7 @@ She took a significant pay cut to join a major education non-profit.
 
 These stories show that there's no single "right" path after consulting. Success comes from understanding yourself—your strengths, interests, and values—and finding opportunities that align.
 
-Whether you're drawn to investing, building, leading, or changing the world, your consulting experience provides a strong foundation. The question is: what will you build on it?
+Whether you're drawn to investing, building, leading, or changing the world, your consulting experience provides a strong foundation. Explore the full landscape in our [guide to consulting exit opportunities](/blog/consulting-exit-opportunities-2026), and use our [networking strategies](/blog/networking-strategies-career-change) to open doors. The question is: what will you build on it?
 
 NextStep connects you with Bain alumni (and alumni from other top firms) who've navigated these transitions and can provide personalized guidance for your journey.
     `

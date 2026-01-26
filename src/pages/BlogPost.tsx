@@ -14,16 +14,30 @@ import BlogCard from "@/components/BlogCard";
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   
-  // Redirect to standalone HTML page for the survey
+  // Redirect to standalone HTML page for the survey.
+  // Uses <meta http-equiv="refresh"> so crawlers see the redirect in
+  // prerendered HTML without needing JavaScript execution.
   if (slug === "consulting-survey-2025") {
-    window.location.href = "/consulting-survey-2025.html";
-    return null;
+    if (typeof window !== "undefined") {
+      window.location.replace("/consulting-survey-2025.html");
+    }
+    return (
+      <>
+        <Helmet>
+          <title>Redirecting to Consulting Survey 2025 | NextStep</title>
+          <meta httpEquiv="refresh" content="0;url=/consulting-survey-2025.html" />
+          <link rel="canonical" href="https://blog.getnextstep.com/consulting-survey-2025.html" />
+          <meta name="robots" content="noindex, follow" />
+        </Helmet>
+        <p>Redirecting&hellip;</p>
+      </>
+    );
   }
   
   const post = slug ? getPostContent(slug) : undefined;
 
   if (!post) {
-    return <Navigate to="/blog" replace />;
+    return <Navigate to="/" replace />;
   }
 
   // Get related posts (same category, excluding current)
@@ -39,10 +53,15 @@ const BlogPost = () => {
     let inList = false;
 
     const formatText = (text: string): string => {
-      return text.replace(
-        /\*\*(.*?)\*\*/g,
-        '<strong class="font-semibold text-foreground">$1</strong>'
-      );
+      return text
+        .replace(
+          /\*\*(.*?)\*\*/g,
+          '<strong class="font-semibold text-foreground">$1</strong>'
+        )
+        .replace(
+          /\[([^\]]+)\]\(([^)]+)\)/g,
+          '<a href="$2" class="text-primary hover:underline">$1</a>'
+        );
     };
 
     const flushList = () => {
@@ -302,15 +321,32 @@ const BlogPost = () => {
           </header>
 
           <div className="max-w-4xl mx-auto px-4 pb-8">
-            <img
-              src={getImageForSlug(slug!) || getImageForCategory(post.category)}
-              alt={`Featured image for ${post.title} - ${post.category} article`}
-              className="w-full h-64 md:h-96 object-cover rounded-2xl"
-              width={896}
-              height={384}
-              decoding="async"
-              fetchPriority="high"
-            />
+            {(() => {
+              const heroImg = getImageForSlug(slug!) || getImageForCategory(post.category);
+              return (
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcSet={`${heroImg.smWebp} 400w, ${heroImg.webp} 800w`}
+                    sizes="(max-width: 768px) 100vw, 896px"
+                  />
+                  <source
+                    type="image/jpeg"
+                    srcSet={`${heroImg.smJpg} 400w, ${heroImg.jpg} 800w`}
+                    sizes="(max-width: 768px) 100vw, 896px"
+                  />
+                  <img
+                    src={heroImg.jpg}
+                    alt={`Featured image for ${post.title} - ${post.category} article`}
+                    className="w-full h-64 md:h-96 object-cover rounded-2xl"
+                    width={896}
+                    height={384}
+                    decoding="async"
+                    fetchPriority="high"
+                  />
+                </picture>
+              );
+            })()}
           </div>
 
           {/* Article Content */}

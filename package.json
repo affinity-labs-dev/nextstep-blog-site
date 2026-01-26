@@ -8,6 +8,7 @@
     "build": "vite build && vite build --ssr src/entry-server.tsx --outDir dist/server && node scripts/prerender.js",
     "build:client": "vite build",
     "build:dev": "vite build --mode development",
+    "optimize-images": "node scripts/optimize-images.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -77,6 +78,7 @@
     "globals": "^15.15.0",
     "lovable-tagger": "^1.1.13",
     "postcss": "^8.5.6",
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",

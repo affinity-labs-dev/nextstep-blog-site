@@ -11,15 +11,16 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, "../dist");
 const serverDir = path.resolve(__dirname, "../dist/server");
 
-// All routes to prerender (excluding consulting-survey-2025 which redirects to static HTML)
+// All routes to prerender
 const routes = [
   "/",
+  "/blog/consulting-survey-2025",
   "/blog/consulting-exit-opportunities-2026",
   "/blog/mckinsey-to-tech-transition",
   "/blog/consulting-interview-case-study-tips",
@@ -50,9 +51,52 @@ function stripStaticSeoTags(html) {
     .replace(/<link\s+rel="alternate"\s+hreflang[^>]*>\s*/g, "");
 }
 
+/**
+ * Generate sitemap.xml from blog post data at build time.
+ * Replaces the static public/sitemap.xml to prevent content drift.
+ */
+function generateSitemap(blogPosts, blogContent) {
+  const SITE = "https://blog.getnextstep.com";
+  const today = new Date().toISOString().split("T")[0];
+
+  const staticPages = [
+    { loc: SITE, lastmod: today, changefreq: "weekly", priority: "1.0" },
+    { loc: `${SITE}/llm.html`, lastmod: "2025-12-16", changefreq: "monthly", priority: "0.6" },
+    { loc: `${SITE}/consulting-survey-2025.html`, lastmod: "2026-01-05", changefreq: "monthly", priority: "0.8" },
+  ];
+
+  const blogPages = blogPosts
+    .filter((p) => p.slug !== "consulting-survey-2025")
+    .map((p) => {
+      const content = blogContent[p.slug];
+      return {
+        loc: `${SITE}/blog/${p.slug}`,
+        lastmod: content?.modifiedDate || today,
+        changefreq: "monthly",
+        priority: "0.8",
+      };
+    });
+
+  const urls = [...staticPages, ...blogPages];
+
+  const xml = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...urls.map(
+      (u) =>
+        `  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`
+    ),
+    "</urlset>",
+    "",
+  ].join("\n");
+
+  return xml;
+}
+
 async function prerender() {
   // Load the SSR entry module
-  const { render } = await import(path.join(serverDir, "entry-server.js"));
+  const ssrModule = await import(pathToFileURL(path.join(serverDir, "entry-server.js")).href);
+  const { render, blogPosts, blogContent } = ssrModule;
 
   // Read the client-built index.html as a template
   const rawTemplate = fs.readFileSync(path.join(distDir, "index.html"), "utf-8");
@@ -112,6 +156,11 @@ async function prerender() {
   console.log(
     `\nPrerendered ${successCount}/${routes.length} routes successfully.`
   );
+
+  // Generate sitemap.xml from blog post data
+  const sitemap = generateSitemap(blogPosts, blogContent);
+  fs.writeFileSync(path.join(distDir, "sitemap.xml"), sitemap);
+  console.log("Generated sitemap.xml from blog post data.");
 
   // Clean up server build (not needed in production)
   fs.rmSync(serverDir, { recursive: true, force: true });
