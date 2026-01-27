@@ -105,3 +105,21 @@ export const categories = [
   "Networking",
   "Success Stories"
 ];
+
+/** Map category display names to URL-safe slugs */
+export const categorySlugMap: Record<string, string> = {
+  "Career Transitions": "career-transitions",
+  "Tech Careers": "tech-careers",
+  "Interview Prep": "interview-prep",
+  "Private Equity": "private-equity",
+  "Work-Life Balance": "work-life-balance",
+  "Compensation": "compensation",
+  "Career Decisions": "career-decisions",
+  "Networking": "networking",
+  "Success Stories": "success-stories",
+};
+
+/** Reverse lookup: slug → display name */
+export const slugToCategoryMap: Record<string, string> = Object.fromEntries(
+  Object.entries(categorySlugMap).map(([name, slug]) => [slug, name])
+);

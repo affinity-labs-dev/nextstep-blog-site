@@ -17,7 +17,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, "../dist");
 const serverDir = path.resolve(__dirname, "../dist/server");
 
-// All routes to prerender
+// All routes to prerender (category routes are added dynamically below)
 const routes = [
   "/",
   "/blog/consulting-survey-2025",
@@ -55,7 +55,7 @@ function stripStaticSeoTags(html) {
  * Generate sitemap.xml from blog post data at build time.
  * Replaces the static public/sitemap.xml to prevent content drift.
  */
-function generateSitemap(blogPosts, blogContent) {
+function generateSitemap(blogPosts, blogContent, categorySlugMap) {
   const SITE = "https://blog.getnextstep.com";
   const today = new Date().toISOString().split("T")[0];
 
@@ -64,6 +64,13 @@ function generateSitemap(blogPosts, blogContent) {
     { loc: `${SITE}/llm.html`, lastmod: "2025-12-16", changefreq: "monthly", priority: "0.6" },
     { loc: `${SITE}/consulting-survey-2025.html`, lastmod: "2026-01-05", changefreq: "monthly", priority: "0.8" },
   ];
+
+  const categoryPages = Object.values(categorySlugMap).map((slug) => ({
+    loc: `${SITE}/blog/category/${slug}`,
+    lastmod: today,
+    changefreq: "weekly",
+    priority: "0.7",
+  }));
 
   const blogPages = blogPosts
     .filter((p) => p.slug !== "consulting-survey-2025")
@@ -77,7 +84,7 @@ function generateSitemap(blogPosts, blogContent) {
       };
     });
 
-  const urls = [...staticPages, ...blogPages];
+  const urls = [...staticPages, ...categoryPages, ...blogPages];
 
   const xml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
@@ -96,7 +103,13 @@ function generateSitemap(blogPosts, blogContent) {
 async function prerender() {
   // Load the SSR entry module
   const ssrModule = await import(pathToFileURL(path.join(serverDir, "entry-server.js")).href);
-  const { render, blogPosts, blogContent } = ssrModule;
+  const { render, blogPosts, blogContent, categorySlugMap } = ssrModule;
+
+  // Add category routes dynamically from data
+  const categoryRoutes = Object.values(categorySlugMap).map(
+    (slug) => `/blog/category/${slug}`
+  );
+  const allRoutes = [...routes, ...categoryRoutes];
 
   // Read the client-built index.html as a template
   const rawTemplate = fs.readFileSync(path.join(distDir, "index.html"), "utf-8");
@@ -106,7 +119,7 @@ async function prerender() {
 
   let successCount = 0;
 
-  for (const route of routes) {
+  for (const route of allRoutes) {
     try {
       const { html, helmet } = render(route);
 
@@ -154,11 +167,11 @@ async function prerender() {
   }
 
   console.log(
-    `\nPrerendered ${successCount}/${routes.length} routes successfully.`
+    `\nPrerendered ${successCount}/${allRoutes.length} routes successfully.`
   );
 
   // Generate sitemap.xml from blog post data
-  const sitemap = generateSitemap(blogPosts, blogContent);
+  const sitemap = generateSitemap(blogPosts, blogContent, categorySlugMap);
   fs.writeFileSync(path.join(distDir, "sitemap.xml"), sitemap);
   console.log("Generated sitemap.xml from blog post data.");
 

@@ -29,7 +29,7 @@ export const blogContent: Record<string, BlogPostContent> = {
 
 Management consultants possess a unique combination of skills that make them highly sought after across industries. Your ability to structure complex problems, synthesize data, and communicate effectively with executives is invaluable in today's business landscape.
 
-In 2026, the exit opportunity landscape has evolved significantly. While traditional paths like private equity and corporate strategy remain strong, new opportunities in tech, venture capital, and entrepreneurship have emerged as equally attractive options.
+In 2026, the exit opportunity landscape has evolved significantly. According to the [Bureau of Labor Statistics](https://www.bls.gov/ooh/business-and-financial/management-analysts.htm), demand for management analysts continues to grow across sectors. While traditional paths like private equity and corporate strategy remain strong, new opportunities in tech, venture capital, and entrepreneurship have emerged as equally attractive options.
 
 ## Top Exit Opportunities for 2026
 
@@ -157,8 +157,8 @@ While consulting provides a strong foundation, you'll need to develop PM-specifi
 ### Phase 1: Build Your Foundation (2-3 months)
 
 **Learn PM Fundamentals:**
-- Read "Inspired" by Marty Cagan and "The Lean Product Playbook" by Dan Olsen
-- Take online courses on product management (Reforge, Product School)
+- Read [Inspired](https://www.svpg.com/inspired-how-to-create-tech-products-customers-love/) by Marty Cagan and [The Lean Product Playbook](https://leanproductplaybook.com/) by Dan Olsen
+- Take online courses on product management ([Reforge](https://www.reforge.com/), [Product School](https://productschool.com/))
 - Follow product leaders on Twitter and subscribe to product newsletters
 
 **Develop Technical Understanding:**
@@ -279,7 +279,7 @@ NextStep can connect you with ex-consultants who've successfully made this trans
     content: `
 ## What Interviewers Really Look For
 
-Having conducted hundreds of case interviews at BCG, I can tell you that most candidates focus on the wrong things. Here's what actually matters—and what doesn't.
+Having conducted hundreds of case interviews at BCG, I can tell you that most candidates focus on the wrong things. While firms like [McKinsey](https://www.mckinsey.com/careers/interviewing), [BCG](https://www.bcg.com/careers/interviewing), and [Bain](https://www.bain.com/careers/interview-prep/) offer their own interview guidance, here's what actually matters—and what doesn't.
 
 ## The Truth About Case Frameworks
 
@@ -439,7 +439,7 @@ NextStep offers mock interviews with ex-MBB consultants who can provide personal
     content: `
 ## Why PE Firms Want Consultants
 
-Private equity firms have long recognized the value of consulting talent — it's consistently ranked among the [top exit opportunities for consultants](/blog/consulting-exit-opportunities-2026). Here's why your background is attractive:
+Private equity firms have long recognized the value of consulting talent — it's consistently ranked among the [top exit opportunities for consultants](/blog/consulting-exit-opportunities-2026). According to [Bain & Company's Global Private Equity Report](https://www.bain.com/insights/topics/global-private-equity-report/), the industry continues to grow and recruit top talent. Here's why your background is attractive:
 
 ### Skills That Transfer
 
@@ -460,7 +460,7 @@ The ability to quickly understand a new industry or business model is essential 
 While consulting provides a strong foundation, PE requires additional skills:
 
 **Financial Modeling:**
-LBO models, merger models, and detailed financial analysis are PE fundamentals. If you're coming from a non-financial consulting background, you'll need to develop this.
+LBO models, merger models, and detailed financial analysis are PE fundamentals. Resources like [Wall Street Prep](https://www.wallstreetprep.com/) and [Breaking Into Wall Street](https://breakingintowallstreet.com/) can help. If you're coming from a non-financial consulting background, you'll need to develop this.
 
 **Investment Judgment:**
 Moving from "what should this company do?" to "should we buy this company?" requires a different lens focused on returns and risks.
@@ -812,7 +812,7 @@ Highly variable—lower base but potentially significant equity upside.
 ### Phase 1: Preparation
 
 **Research:**
-- Use Glassdoor, Levels.fyi, Blind, and Payscale for market data
+- Use [Glassdoor](https://www.glassdoor.com/Salaries/), [Levels.fyi](https://www.levels.fyi/), [Blind](https://www.teamblind.com/), and [Payscale](https://www.payscale.com/) for market data
 - Talk to people in similar roles at the company
 - Understand the company's compensation philosophy
 
@@ -936,7 +936,7 @@ NextStep offers negotiation coaching with ex-consultants who've successfully nav
     content: `
 ## The Fundamental Question
 
-After consulting, you have options — our [guide to exit opportunities](/blog/consulting-exit-opportunities-2026) covers them all. One of the biggest decisions is whether to join a startup or a large corporation. Both paths can lead to successful, fulfilling careers—but they offer very different experiences.
+After consulting, you have options — our [guide to exit opportunities](/blog/consulting-exit-opportunities-2026) covers them all. One of the biggest decisions is whether to join a startup or a large corporation. According to [Harvard Business Review](https://hbr.org/topic/subject/career-transitions), both paths can lead to successful, fulfilling careers—but they offer very different experiences.
 
 ## Understanding the Trade-offs
 
@@ -1272,7 +1272,7 @@ They expand your reach and bring fresh perspectives.
 
 ### LinkedIn Strategies
 
-**Optimizing your profile:**
+**Optimizing your profile ([LinkedIn's own guidance](https://www.linkedin.com/business/talent/blog/product-tips/linkedin-profile-tips)):**
 - Clear headline indicating your transition goal
 - Summary that tells your story and value proposition
 - Detailed experience highlighting transferable skills
@@ -1355,7 +1355,7 @@ NextStep provides networking opportunities with ex-consultants across industries
     content: `
 ## The Bain Alumni Advantage
 
-Bain & Company has long been known for producing exceptional business leaders. The firm's emphasis on results, teamwork, and practical solutions creates consultants who excel in diverse post-consulting careers. Here are inspiring stories of Bain alumni who've built remarkable careers after leaving the firm.
+[Bain & Company](https://www.bain.com/) has long been known for producing exceptional business leaders. The firm's emphasis on results, teamwork, and practical solutions creates consultants who excel in diverse post-consulting careers. Here are inspiring stories of Bain alumni who've built remarkable careers after leaving the firm.
 
 ## From Bain to Venture Capital: Sarah's Journey
 

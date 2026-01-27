@@ -2,7 +2,7 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import { HelmetProvider, HelmetServerState } from "react-helmet-async";
 import { AppRoutes } from "./App";
-export { blogPosts } from "./data/blogPosts";
+export { blogPosts, categorySlugMap } from "./data/blogPosts";
 export { blogContent } from "./data/blogContent";
 
 interface RenderResult {

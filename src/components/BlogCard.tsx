@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Clock, ArrowRight } from "lucide-react";
 import { getImageForCategory, getImageForSlug } from "@/data/blogImages";
+import { categorySlugMap } from "@/data/blogPosts";
 
 interface BlogCardProps {
   slug: string;
@@ -49,9 +50,9 @@ const BlogCard = ({ slug, title, excerpt, category, readTime, date, featured = f
       
       <div className="p-5 sm:p-6">
         <div className="flex items-center gap-3 mb-3">
-          <span className="text-sm font-medium text-primary bg-primary/10 px-3 py-1.5 rounded-full">
+          <Link to={`/blog/category/${categorySlugMap[category] || category.toLowerCase()}`} className="inline-link text-sm font-medium text-primary bg-primary/10 px-3 py-1.5 rounded-full hover:bg-primary/20 transition-colors">
             {category}
-          </span>
+          </Link>
           <span className="text-sm text-muted-foreground">{date}</span>
         </div>
         

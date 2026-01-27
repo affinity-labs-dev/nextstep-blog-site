@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BlogFAQ from "@/components/BlogFAQ";
 import { getPostContent } from "@/data/blogContent";
-import { blogPosts } from "@/data/blogPosts";
+import { blogPosts, categorySlugMap } from "@/data/blogPosts";
 import { getImageForCategory, getImageForSlug } from "@/data/blogImages";
 import { getOgImageForCategory } from "@/data/ogImages";
 import { blogFAQs } from "@/data/blogFAQs";
@@ -60,7 +60,13 @@ const BlogPost = () => {
         )
         .replace(
           /\[([^\]]+)\]\(([^)]+)\)/g,
-          '<a href="$2" class="text-primary hover:underline">$1</a>'
+          (_match, linkText, url) => {
+            const isExternal = url.startsWith("http");
+            if (isExternal) {
+              return `<a href="${url}" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">${linkText}</a>`;
+            }
+            return `<a href="${url}" class="text-primary hover:underline">${linkText}</a>`;
+          }
         );
     };
 
@@ -193,6 +199,12 @@ const BlogPost = () => {
       {
         "@type": "ListItem",
         position: 2,
+        name: post.category,
+        item: `https://blog.getnextstep.com/blog/category/${categorySlugMap[post.category] || post.category.toLowerCase()}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
         name: post.title,
         item: `https://blog.getnextstep.com/blog/${post.slug}`,
       },
@@ -274,6 +286,12 @@ const BlogPost = () => {
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
+              <li>
+                <Link to={`/blog/category/${categorySlugMap[post.category] || post.category.toLowerCase()}`} className="inline-link py-2 hover:text-primary transition-colors">
+                  {post.category}
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
               <li className="text-foreground truncate max-w-[300px] py-2" aria-current="page">{post.title}</li>
             </ol>
           </nav>
@@ -289,9 +307,9 @@ const BlogPost = () => {
                 <span className="text-base">Back to all articles</span>
               </Link>
 
-              <span className="text-base font-medium text-primary bg-primary/10 px-4 py-2 rounded-full">
+              <Link to={`/blog/category/${categorySlugMap[post.category] || post.category.toLowerCase()}`} className="inline-link text-base font-medium text-primary bg-primary/10 px-4 py-2 rounded-full hover:bg-primary/20 transition-colors">
                 {post.category}
-              </span>
+              </Link>
             </div>
 
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
