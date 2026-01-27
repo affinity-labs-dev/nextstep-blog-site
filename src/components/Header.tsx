@@ -27,8 +27,8 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-3">
             <Button variant="ghost" className="text-muted-foreground hover:text-foreground" asChild>
-              <a href="https://getnextstep.com/auth/choose-type" target="_blank" rel="noopener noreferrer">
-                Sign in
+              <a href="https://getnextstep.com/candidate/landing?v=cc" target="_blank" rel="noopener noreferrer">
+                Sign Up
               </a>
             </Button>
             
@@ -60,7 +60,7 @@ const Header = () => {
           <div className="md:hidden mt-2 rounded-2xl bg-card/95 backdrop-blur-md p-4 shadow-soft border border-border/50 animate-fade-in">
             <div className="flex flex-col gap-2">
               <Button variant="ghost" className="justify-start h-12 text-base" asChild>
-                <a href="https://getnextstep.com/auth/choose-type" target="_blank" rel="noopener noreferrer">Sign in</a>
+                <a href="https://getnextstep.com/candidate/landing?v=cc" target="_blank" rel="noopener noreferrer">Sign Up</a>
               </Button>
               <Button variant="outline" className="h-12 text-base" asChild>
                 <a href="https://getnextstep.com/auth/candidate/sign-up" target="_blank" rel="noopener noreferrer">I'm a Candidate</a>
