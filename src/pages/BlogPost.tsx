@@ -360,7 +360,7 @@ const BlogPost = () => {
                     width={896}
                     height={384}
                     decoding="async"
-                    fetchPriority="high"
+                    fetchpriority="high"
                   />
                 </picture>
               );

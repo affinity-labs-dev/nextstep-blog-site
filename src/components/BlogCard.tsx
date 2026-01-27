@@ -43,7 +43,7 @@ const BlogCard = ({ slug, title, excerpt, category, readTime, date, featured = f
             decoding="async"
             width={imgWidth}
             height={imgHeight}
-            fetchPriority={isFirstCard ? "high" : "auto"}
+            fetchpriority={isFirstCard ? "high" : "auto"}
           />
         </picture>
       </Link>

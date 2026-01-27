@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BlogCard from "@/components/BlogCard";
 import { blogPosts, slugToCategoryMap, categorySlugMap } from "@/data/blogPosts";
+import { getOgImageForCategory } from "@/data/ogImages";
 
 const categoryDescriptions: Record<string, string> = {
   "Career Transitions": "Expert guides on transitioning from management consulting to industry roles. Discover exit opportunities, plan your career move, and learn from those who've successfully made the leap.",
@@ -31,6 +32,7 @@ const CategoryPage = () => {
 
   const description = categoryDescriptions[categoryName] || `Articles about ${categoryName} for ex-consultants.`;
   const canonicalUrl = `https://blog.getnextstep.com/blog/category/${slug}`;
+  const ogImage = `https://blog.getnextstep.com${getOgImageForCategory(categoryName)}`;
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -73,7 +75,7 @@ const CategoryPage = () => {
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="NextStep Blog" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:image" content="https://blog.getnextstep.com/og-homepage.jpg" />
+        <meta property="og:image" content={ogImage} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
@@ -81,7 +83,7 @@ const CategoryPage = () => {
         <meta name="twitter:site" content="@getnextstep" />
         <meta name="twitter:title" content={`${categoryName} Articles | NextStep Blog`} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content="https://blog.getnextstep.com/og-homepage.jpg" />
+        <meta name="twitter:image" content={ogImage} />
 
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbData)}</script>

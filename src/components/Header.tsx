@@ -20,7 +20,7 @@ const Header = () => {
               width={189}
               height={40}
               decoding="async"
-              fetchPriority="high"
+              fetchpriority="high"
             />
           </Link>
 
