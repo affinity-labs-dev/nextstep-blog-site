@@ -16,8 +16,8 @@ export const blogContent: Record<string, BlogPostContent> = {
   "consulting-exit-opportunities-2026": {
     slug: "consulting-exit-opportunities-2026",
     title: "Top Exit Opportunities for Consultants in 2026: A Complete Guide",
-    metaDescription: "Discover the best exit opportunities for consultants in 2026. From private equity to tech startups, learn which industries are hiring ex-consultants and how to position yourself.",
-    keywords: ["consulting exit opportunities", "ex-consultant careers", "consulting to private equity", "consulting to tech", "career transition consultants"],
+    metaDescription: "Discover the best exit opportunities for consultants in 2026. From private equity to tech startups, learn which top industries are hiring ex-consultants.",
+    keywords: ["consulting exit opportunities", "ex-consultant careers", "consulting to private equity", "consulting to tech", "career transition consultants", "MBB exit opportunities", "post-consulting careers 2026", "leave McKinsey", "best jobs after consulting"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
     publishDate: "2025-12-15",
@@ -116,8 +116,8 @@ Ready to take the next step in your career? NextStep connects consultants with m
   "mckinsey-to-tech-transition": {
     slug: "mckinsey-to-tech-transition",
     title: "From McKinsey to Tech: How to Land a Product Manager Role",
-    metaDescription: "Step-by-step guide for transitioning from McKinsey and other top consulting firms to product management roles at Google, Meta, and top startups.",
-    keywords: ["McKinsey to product manager", "consulting to PM", "tech career transition", "product management career", "ex-consultant PM"],
+    metaDescription: "Step-by-step guide for transitioning from McKinsey and other top consulting firms to product management roles at Google, Meta, and high-growth startups.",
+    keywords: ["McKinsey to product manager", "consulting to PM", "tech career transition", "product management career", "ex-consultant PM", "McKinsey to Google", "MBB to tech", "consultant to PM pipeline", "consulting to product management"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
     publishDate: "2025-12-12",
@@ -268,8 +268,8 @@ NextStep can connect you with ex-consultants who've successfully made this trans
   "consulting-interview-case-study-tips": {
     slug: "consulting-interview-case-study-tips",
     title: "Mastering Case Interviews: Strategies from Ex-BCG Consultants",
-    metaDescription: "Insider tips on acing consulting case interviews from professionals who have conducted hundreds of interviews at McKinsey, BCG, and Bain.",
-    keywords: ["case interview tips", "consulting interview", "BCG interview", "McKinsey case study", "management consulting interview"],
+    metaDescription: "Insider tips on acing consulting case interviews from professionals who have conducted hundreds of interviews at McKinsey, BCG, and Bain. Master frameworks and more.",
+    keywords: ["case interview tips", "consulting interview", "BCG interview", "McKinsey case study", "management consulting interview", "case study framework", "MBB interview prep", "consulting case practice", "Bain case interview"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
     publishDate: "2025-12-10",
@@ -344,7 +344,7 @@ Numbers should lead to insights, not just answers. "Revenue declined 15%" is dat
 This separates good candidates from great ones:
 
 **Industry Intuition:**
-Develop broad knowledge of how different businesses work. Read business news, case studies, and annual reports.
+Develop broad knowledge of how different businesses work. Read business news, case studies, and annual reports. Familiarity with industries like [private equity](/blog/private-equity-consulting-background) or [tech product management](/blog/mckinsey-to-tech-transition) will help you reason through unfamiliar cases.
 
 **Practical Thinking:**
 Consider implementation, not just strategy. "We could raise prices" isn't helpful. "We could raise prices by 5-10% on premium products where we have brand strength, while holding prices on commodity items" shows judgment.
@@ -420,7 +420,7 @@ Interviewers will test your composure. When something unexpected happens:
 
 ## Conclusion
 
-Case interview success comes from genuine problem-solving ability, not memorized frameworks. Focus on developing real analytical skills, business judgment, and communication excellence. Once you've landed the offer, explore the [top exit opportunities for consultants](/blog/consulting-exit-opportunities-2026) to plan your next move.
+Case interview success comes from genuine problem-solving ability, not memorized frameworks. Focus on developing real analytical skills, business judgment, and communication excellence. Your [networking strategy](/blog/networking-strategies-career-change) matters just as much—many candidates secure interviews through warm introductions. Once you've landed the offer, explore the [top exit opportunities for consultants](/blog/consulting-exit-opportunities-2026) to plan your next move, and don't forget to [negotiate your compensation](/blog/salary-negotiation-ex-consultants) effectively.
 
 NextStep offers mock interviews with ex-MBB consultants who can provide personalized feedback on your case technique.
     `
@@ -428,8 +428,8 @@ NextStep offers mock interviews with ex-MBB consultants who can provide personal
   "private-equity-consulting-background": {
     slug: "private-equity-consulting-background",
     title: "Breaking Into Private Equity with a Consulting Background",
-    metaDescription: "Learn how your consulting experience positions you for PE roles and what additional skills you need to successfully transition into private equity.",
-    keywords: ["consulting to private equity", "PE career transition", "private equity recruiting", "ex-consultant PE", "consulting PE exit"],
+    metaDescription: "Learn how your McKinsey, BCG, or Bain consulting experience positions you for private equity roles and what skills you need to transition successfully.",
+    keywords: ["consulting to private equity", "PE career transition", "private equity recruiting", "ex-consultant PE", "consulting PE exit", "MBB to private equity", "LBO modeling consultants", "PE associate from consulting", "consulting due diligence PE"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
     publishDate: "2025-12-08",
@@ -619,8 +619,8 @@ NextStep can connect you with ex-consultants now in PE who can provide guidance 
   "work-life-balance-after-consulting": {
     slug: "work-life-balance-after-consulting",
     title: "Finding Work-Life Balance After Consulting: Real Stories",
-    metaDescription: "Ex-consultants share their experiences transitioning to roles with better work-life balance without sacrificing career growth or compensation.",
-    keywords: ["consulting work life balance", "ex-consultant lifestyle", "leave consulting", "consulting burnout", "better work life balance careers"],
+    metaDescription: "Real stories from ex-consultants who successfully transitioned to roles with better work-life balance without sacrificing career growth or compensation.",
+    keywords: ["consulting work life balance", "ex-consultant lifestyle", "leave consulting", "consulting burnout", "better work life balance careers", "quit consulting career", "consulting travel burnout", "post-consulting lifestyle", "McKinsey work hours"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
     publishDate: "2025-12-05",
@@ -749,7 +749,7 @@ The answer is yes — and for a broader view of your options, see our [complete 
 
 ## Conclusion
 
-Work-life balance after consulting isn't a myth. Thousands of ex-consultants have found roles that offer intellectual stimulation, career growth, and a sustainable lifestyle. The key is being intentional about what you want and finding the right opportunity.
+Work-life balance after consulting isn't a myth. Thousands of ex-consultants have found roles that offer intellectual stimulation, career growth, and a sustainable lifestyle—just look at these [inspiring Bain alumni career journeys](/blog/bain-alumni-success-stories). The key is being intentional about what you want and finding the right opportunity.
 
 NextStep can connect you with ex-consultants who've successfully found balance and can share their experiences and advice.
     `
@@ -757,8 +757,8 @@ NextStep can connect you with ex-consultants who've successfully found balance a
   "salary-negotiation-ex-consultants": {
     slug: "salary-negotiation-ex-consultants",
     title: "Salary Negotiation Tactics for Ex-Consultants",
-    metaDescription: "Leverage your consulting background to negotiate top-tier compensation packages. Includes benchmarks and scripts for common negotiation scenarios.",
-    keywords: ["salary negotiation consultants", "ex-consultant compensation", "negotiate job offer", "consulting salary benchmark", "compensation negotiation tips"],
+    metaDescription: "Leverage your consulting background to negotiate top-tier compensation packages. Includes salary benchmarks and proven scripts for negotiation scenarios.",
+    keywords: ["salary negotiation consultants", "ex-consultant compensation", "negotiate job offer", "consulting salary benchmark", "compensation negotiation tips", "McKinsey salary after exit", "consulting to tech salary", "ex-consultant total comp", "negotiate signing bonus"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
     publishDate: "2025-12-03",
@@ -925,8 +925,8 @@ NextStep offers negotiation coaching with ex-consultants who've successfully nav
   "startup-vs-corporate-ex-consultant": {
     slug: "startup-vs-corporate-ex-consultant",
     title: "Startup vs. Corporate: Which Path Is Right for You?",
-    metaDescription: "Analyze the pros and cons of joining a startup versus a large corporation after consulting, with insights from those who've done both.",
-    keywords: ["startup vs corporate", "ex-consultant startup", "consulting to startup", "corporate strategy career", "startup career decision"],
+    metaDescription: "Analyze the pros and cons of joining a startup versus a large corporation after consulting. Real insights from ex-consultants who've taken both paths.",
+    keywords: ["startup vs corporate", "ex-consultant startup", "consulting to startup", "corporate strategy career", "startup career decision", "consulting to corporate strategy", "startup equity ex-consultant", "post-consulting career path", "MBB to startup"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
     publishDate: "2025-11-30",
@@ -984,7 +984,7 @@ After consulting, you have options — our [guide to exit opportunities](/blog/c
 
 ### Who Thrives at Startups
 
-- **Risk-tolerant:** Comfortable with uncertainty and potential failure
+- **Risk-tolerant:** Comfortable with uncertainty and potential failure (if this isn't you, [private equity](/blog/private-equity-consulting-background) may be a better fit)
 - **Self-directed:** Don't need external structure or validation
 - **Adaptable:** Can shift priorities quickly and wear many hats
 - **Mission-driven:** Care deeply about what the company is building
@@ -1139,7 +1139,7 @@ Stay corporate but work on new initiatives:
 
 There's no universally "right" answer. The best choice depends on your personality, circumstances, and goals. Be honest with yourself about what you want and what you can handle.
 
-Many successful careers include both—you can start corporate and go startup later, or vice versa. The skills transfer in both directions. For more on managing this transition, explore our guides on [finding work-life balance after consulting](/blog/work-life-balance-after-consulting) and [salary negotiation](/blog/salary-negotiation-ex-consultants).
+Many successful careers include both—you can start corporate and go startup later, or vice versa. The skills transfer in both directions. Whichever path you choose, [strong networking](/blog/networking-strategies-career-change) will open doors. For more on managing this transition, explore our guides on [finding work-life balance after consulting](/blog/work-life-balance-after-consulting) and [salary negotiation](/blog/salary-negotiation-ex-consultants).
 
 NextStep can connect you with ex-consultants who've taken both paths and can share honest perspectives on their experiences.
     `
@@ -1147,8 +1147,8 @@ NextStep can connect you with ex-consultants who've taken both paths and can sha
   "networking-strategies-career-change": {
     slug: "networking-strategies-career-change",
     title: "Networking Strategies That Actually Work for Career Changers",
-    metaDescription: "Effective networking techniques for consultants looking to break into new industries without cold outreach fatigue.",
-    keywords: ["networking career change", "consulting networking", "career transition networking", "professional networking tips", "networking strategies"],
+    metaDescription: "Effective networking techniques specifically designed for consultants looking to break into new industries. Build real relationships without cold outreach fatigue.",
+    keywords: ["networking career change", "consulting networking", "career transition networking", "professional networking tips", "networking strategies", "ex-consultant networking", "MBB alumni network", "informational interviews consulting", "LinkedIn networking consultants"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
     publishDate: "2025-11-28",
@@ -1240,7 +1240,7 @@ They expand your reach and bring fresh perspectives.
 
 **Before the meeting:**
 - Research the person and company thoroughly
-- Prepare thoughtful questions
+- Prepare thoughtful questions (just as you would for a [case interview](/blog/consulting-interview-case-study-tips))
 - Have a clear (but not demanding) goal
 
 **During the meeting:**
@@ -1336,7 +1336,7 @@ The best networking isn't about your current job search—it's about building re
 
 ## Conclusion
 
-Networking isn't about collecting contacts—it's about building genuine relationships that create mutual value. Approach it with curiosity, generosity, and patience, and it will become one of your most powerful career tools.
+Networking isn't about collecting contacts—it's about building genuine relationships that create mutual value. Whether you're seeking [better work-life balance](/blog/work-life-balance-after-consulting) or a high-growth opportunity, approach networking with curiosity, generosity, and patience, and it will become one of your most powerful career tools.
 
 NextStep provides networking opportunities with ex-consultants across industries who can provide guidance and introductions for your transition.
     `
@@ -1344,8 +1344,8 @@ NextStep provides networking opportunities with ex-consultants across industries
   "bain-alumni-success-stories": {
     slug: "bain-alumni-success-stories",
     title: "Where Are They Now? Inspiring Bain Alumni Career Journeys",
-    metaDescription: "Follow the career trajectories of Bain alumni who've transitioned into venture capital, entrepreneurship, and executive leadership roles.",
-    keywords: ["Bain alumni", "consulting alumni careers", "ex-Bain success stories", "consulting career paths", "after Bain consulting"],
+    metaDescription: "Follow the career trajectories of Bain & Company alumni who've successfully transitioned into venture capital, entrepreneurship, and executive leadership.",
+    keywords: ["Bain alumni", "consulting alumni careers", "ex-Bain success stories", "consulting career paths", "after Bain consulting", "Bain alumni venture capital", "Bain to CEO", "ex-Bain founder", "Bain consulting exit stories"],
     author: "NextStep Team",
     authorTitle: "Career Transition Experts",
     publishDate: "2025-11-25",

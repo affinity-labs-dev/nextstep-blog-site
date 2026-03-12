@@ -5,6 +5,7 @@ export interface BlogPost {
   category: string;
   readTime: string;
   date: string;
+  publishDate?: string;
   featured?: boolean;
 }
 
@@ -16,6 +17,7 @@ export const blogPosts: BlogPost[] = [
     category: "Career Transitions",
     readTime: "15 min read",
     date: "Jan 5, 2026",
+    publishDate: "2026-01-05",
     featured: true
   },
   {
@@ -25,6 +27,7 @@ export const blogPosts: BlogPost[] = [
     category: "Career Transitions",
     readTime: "8 min read",
     date: "Dec 15, 2025",
+    publishDate: "2025-12-15",
     featured: true
   },
   {
@@ -33,7 +36,8 @@ export const blogPosts: BlogPost[] = [
     excerpt: "A step-by-step guide for transitioning from management consulting to product management in top tech companies like Google, Meta, and fast-growing startups.",
     category: "Tech Careers",
     readTime: "6 min read",
-    date: "Dec 12, 2025"
+    date: "Dec 12, 2025",
+    publishDate: "2025-12-12"
   },
   {
     slug: "consulting-interview-case-study-tips",
@@ -41,7 +45,8 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Insider tips on acing consulting case interviews from professionals who have conducted hundreds of interviews at top firms.",
     category: "Interview Prep",
     readTime: "10 min read",
-    date: "Dec 10, 2025"
+    date: "Dec 10, 2025",
+    publishDate: "2025-12-10"
   },
   {
     slug: "private-equity-consulting-background",
@@ -49,7 +54,8 @@ export const blogPosts: BlogPost[] = [
     excerpt: "How your consulting experience positions you uniquely for PE roles, and what additional skills you need to make the transition successfully.",
     category: "Private Equity",
     readTime: "7 min read",
-    date: "Dec 8, 2025"
+    date: "Dec 8, 2025",
+    publishDate: "2025-12-08"
   },
   {
     slug: "work-life-balance-after-consulting",
@@ -57,7 +63,8 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Ex-consultants share their experiences transitioning to roles with better work-life balance without sacrificing career growth or compensation.",
     category: "Work-Life Balance",
     readTime: "5 min read",
-    date: "Dec 5, 2025"
+    date: "Dec 5, 2025",
+    publishDate: "2025-12-05"
   },
   {
     slug: "salary-negotiation-ex-consultants",
@@ -65,7 +72,8 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Leverage your consulting background to negotiate top-tier compensation packages. Includes benchmarks and scripts for common negotiation scenarios.",
     category: "Compensation",
     readTime: "6 min read",
-    date: "Dec 3, 2025"
+    date: "Dec 3, 2025",
+    publishDate: "2025-12-03"
   },
   {
     slug: "startup-vs-corporate-ex-consultant",
@@ -73,7 +81,8 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Analyze the pros and cons of joining a startup versus a large corporation after consulting, with insights from those who've done both.",
     category: "Career Decisions",
     readTime: "8 min read",
-    date: "Nov 30, 2025"
+    date: "Nov 30, 2025",
+    publishDate: "2025-11-30"
   },
   {
     slug: "networking-strategies-career-change",
@@ -81,7 +90,8 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Effective networking techniques specifically designed for consultants looking to break into new industries without cold outreach fatigue.",
     category: "Networking",
     readTime: "5 min read",
-    date: "Nov 28, 2025"
+    date: "Nov 28, 2025",
+    publishDate: "2025-11-28"
   },
   {
     slug: "bain-alumni-success-stories",
@@ -89,7 +99,8 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Follow the career trajectories of Bain alumni who've successfully transitioned into diverse roles from venture capital to founding their own companies.",
     category: "Success Stories",
     readTime: "7 min read",
-    date: "Nov 25, 2025"
+    date: "Nov 25, 2025",
+    publishDate: "2025-11-25"
   }
 ];
 

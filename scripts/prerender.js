@@ -17,21 +17,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, "../dist");
 const serverDir = path.resolve(__dirname, "../dist/server");
 
-// All routes to prerender (category routes are added dynamically below)
-const routes = [
-  "/",
-  "/blog/consulting-survey-2025",
-  "/blog/consulting-exit-opportunities-2026",
-  "/blog/mckinsey-to-tech-transition",
-  "/blog/consulting-interview-case-study-tips",
-  "/blog/private-equity-consulting-background",
-  "/blog/work-life-balance-after-consulting",
-  "/blog/salary-negotiation-ex-consultants",
-  "/blog/startup-vs-corporate-ex-consultant",
-  "/blog/networking-strategies-career-change",
-  "/blog/bain-alumni-success-stories",
-  "/unsubscribe",
-];
+// Static routes (blog + category routes are discovered dynamically from data)
+const staticRoutes = ["/", "/unsubscribe"];
 
 /**
  * Strip static SEO tags from the HTML template <head>.
@@ -105,11 +92,12 @@ async function prerender() {
   const ssrModule = await import(pathToFileURL(path.join(serverDir, "entry-server.js")).href);
   const { render, blogPosts, blogContent, categorySlugMap } = ssrModule;
 
-  // Add category routes dynamically from data
+  // Auto-discover routes from blog data
+  const blogRoutes = blogPosts.map((p) => `/blog/${p.slug}`);
   const categoryRoutes = Object.values(categorySlugMap).map(
     (slug) => `/blog/category/${slug}`
   );
-  const allRoutes = [...routes, ...categoryRoutes];
+  const allRoutes = [...staticRoutes, ...blogRoutes, ...categoryRoutes];
 
   // Read the client-built index.html as a template
   const rawTemplate = fs.readFileSync(path.join(distDir, "index.html"), "utf-8");
@@ -164,6 +152,31 @@ async function prerender() {
     } catch (err) {
       console.error(`  ✗ ${route} → ERROR: ${err.message}`);
     }
+  }
+
+  // Render 404 page for GitHub Pages SPA fallback
+  try {
+    const { html: notFoundHtml, helmet: notFoundHelmet } = render("/this-page-does-not-exist");
+    const notFoundHead = [
+      notFoundHelmet.title?.toString() || "",
+      notFoundHelmet.meta?.toString() || "",
+      notFoundHelmet.link?.toString() || "",
+      notFoundHelmet.script?.toString() || "",
+    ]
+      .filter(Boolean)
+      .join("\n    ");
+
+    let notFoundPage = template.replace(
+      '<div id="root"></div>',
+      `<div id="root">${notFoundHtml}</div>`
+    );
+    if (notFoundHead) {
+      notFoundPage = notFoundPage.replace("</head>", `    ${notFoundHead}\n  </head>`);
+    }
+    fs.writeFileSync(path.join(distDir, "404.html"), notFoundPage);
+    console.log("  ✓ 404.html → 404.html");
+  } catch (err) {
+    console.error(`  ✗ 404.html → ERROR: ${err.message}`);
   }
 
   console.log(

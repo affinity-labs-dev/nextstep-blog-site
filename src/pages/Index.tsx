@@ -113,6 +113,7 @@ const Index = () => {
                 "url": `https://blog.getnextstep.com/blog/${p.slug}`,
                 "description": p.excerpt,
                 "image": `https://blog.getnextstep.com${getOgImageForCategory(p.category)}`,
+                ...(p.publishDate && { "datePublished": p.publishDate }),
                 "author": {
                   "@type": "Organization",
                   "@id": "https://getnextstep.com/#organization",
