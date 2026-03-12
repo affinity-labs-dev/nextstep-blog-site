@@ -5,6 +5,7 @@ import BlogGrid from "@/components/BlogGrid";
 import BlogCTA from "@/components/BlogCTA";
 import Footer from "@/components/Footer";
 import { blogPosts } from "@/data/blogPosts";
+import { getOgImageForCategory } from "@/data/ogImages";
 
 const Index = () => {
   return (
@@ -46,6 +47,7 @@ const Index = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
+            "@id": "https://getnextstep.com/#organization",
             "name": "NextStep",
             "description": "NextStep is a career platform helping ex-consultants from McKinsey, BCG, and Bain transition to industry roles in tech, private equity, and corporate strategy.",
             "url": "https://getnextstep.com",
@@ -63,7 +65,8 @@ const Index = () => {
               "@type": "ContactPoint",
               "contactType": "customer service",
               "url": "https://getnextstep.com"
-            }
+            },
+            "foundingDate": "2025"
           })}
         </script>
 
@@ -108,7 +111,13 @@ const Index = () => {
                 "@type": "BlogPosting",
                 "headline": p.title,
                 "url": `https://blog.getnextstep.com/blog/${p.slug}`,
-                "description": p.excerpt
+                "description": p.excerpt,
+                "image": `https://blog.getnextstep.com${getOgImageForCategory(p.category)}`,
+                "author": {
+                  "@type": "Organization",
+                  "@id": "https://getnextstep.com/#organization",
+                  "name": "NextStep"
+                }
               }))
           })}
         </script>

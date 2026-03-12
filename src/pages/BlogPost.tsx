@@ -152,10 +152,18 @@ const BlogPost = () => {
     description: post.metaDescription,
     image: articleImage,
     author: {
-      "@type": "Person",
-      name: post.author,
-      jobTitle: post.authorTitle,
+      "@type": "Organization",
+      "@id": "https://getnextstep.com/#organization",
+      name: "NextStep",
       url: "https://getnextstep.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://blog.getnextstep.com/assets/nextstep-logo-updated.png?v=20260105",
+      },
+      sameAs: [
+        "https://www.linkedin.com/company/getnextstep",
+        "https://twitter.com/getnextstep",
+      ],
     },
     datePublished: post.publishDate,
     dateModified: post.modifiedDate,
@@ -178,7 +186,7 @@ const BlogPost = () => {
       "@id": `https://blog.getnextstep.com/blog/${post.slug}`,
     },
     keywords: post.keywords.join(", "),
-    articleBody: post.content.replace(/[#*\-]/g, '').slice(0, 1000).trim(),
+    articleBody: post.content.replace(/[#*\-\[\]()]/g, '').replace(/\n+/g, ' ').slice(0, 3000).trim(),
     isPartOf: {
       "@type": "Blog",
       name: "NextStep Blog",
@@ -229,7 +237,7 @@ const BlogPost = () => {
   return (
     <>
       <Helmet>
-        <title>{`${post.title.length > 55 ? post.title.slice(0, 55) + '...' : post.title} | NextStep`}</title>
+        <title>{`${post.title.length > 65 ? post.title.slice(0, 62) + '...' : post.title} | NextStep`}</title>
         <meta name="description" content={post.metaDescription} />
         <meta name="keywords" content={post.keywords.join(", ")} />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
