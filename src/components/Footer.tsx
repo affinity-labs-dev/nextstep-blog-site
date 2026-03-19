@@ -20,30 +20,48 @@ const Footer = () => {
 
           {/* Links */}
           <nav aria-label="Footer navigation" className="flex flex-wrap justify-center gap-2 md:gap-4">
-            <Link 
-              to="/blog/mckinsey-to-tech-transition" 
+            <Link
+              to="/blog/consulting-exit-opportunities-2026"
               className="inline-link px-3 py-3 text-base text-muted-foreground hover:text-foreground transition-colors"
             >
-              Consulting to Tech Guide
+              Exit Opportunities
             </Link>
-            <Link 
-              to="/blog/private-equity-consulting-background" 
+            <Link
+              to="/blog/mckinsey-to-tech-transition"
+              className="inline-link px-3 py-3 text-base text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Consulting to Tech
+            </Link>
+            <Link
+              to="/blog/private-equity-consulting-background"
               className="inline-link px-3 py-3 text-base text-muted-foreground hover:text-foreground transition-colors"
             >
               Private Equity Careers
             </Link>
-            <a 
-              href="https://getnextstep.com/privacy" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <Link
+              to="/blog/salary-negotiation-ex-consultants"
+              className="inline-link px-3 py-3 text-base text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Salary Negotiation
+            </Link>
+            <Link
+              to="/blog/consulting-interview-case-study-tips"
+              className="inline-link px-3 py-3 text-base text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Case Interview Tips
+            </Link>
+            <a
+              href="https://getnextstep.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-link px-3 py-3 text-base text-muted-foreground hover:text-foreground transition-colors"
             >
               Privacy Policy
             </a>
-            <a 
-              href="https://getnextstep.com/terms/candidate" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://getnextstep.com/terms/candidate"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-link px-3 py-3 text-base text-muted-foreground hover:text-foreground transition-colors"
             >
               Terms of Service

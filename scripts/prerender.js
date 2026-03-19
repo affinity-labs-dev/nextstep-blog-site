@@ -52,12 +52,20 @@ function generateSitemap(blogPosts, blogContent, categorySlugMap) {
     { loc: `${SITE}/consulting-survey-2025.html`, lastmod: "2026-01-05", changefreq: "monthly", priority: "0.8" },
   ];
 
-  const categoryPages = Object.values(categorySlugMap).map((slug) => ({
-    loc: `${SITE}/blog/category/${slug}`,
-    lastmod: today,
-    changefreq: "weekly",
-    priority: "0.7",
-  }));
+  // Only include category pages with 3+ posts in the sitemap to avoid thin content
+  const categoryPages = Object.entries(categorySlugMap)
+    .filter(([name]) => {
+      const postCount = blogPosts.filter(
+        (p) => p.category === name && p.slug !== "consulting-survey-2025"
+      ).length;
+      return postCount >= 3;
+    })
+    .map(([, slug]) => ({
+      loc: `${SITE}/blog/category/${slug}`,
+      lastmod: today,
+      changefreq: "weekly",
+      priority: "0.7",
+    }));
 
   const blogPages = blogPosts
     .filter((p) => p.slug !== "consulting-survey-2025")

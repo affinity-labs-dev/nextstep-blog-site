@@ -30,6 +30,9 @@ const CategoryPage = () => {
     (p) => p.category === categoryName && p.slug !== "consulting-survey-2025"
   );
 
+  // Noindex thin category pages (fewer than 3 posts) to avoid diluting crawl budget
+  const isThinCategory = posts.length < 3;
+
   const description = categoryDescriptions[categoryName] || `Articles about ${categoryName} for ex-consultants.`;
   const canonicalUrl = `https://blog.getnextstep.com/blog/category/${slug}`;
   const ogImage = `https://blog.getnextstep.com${getOgImageForCategory(categoryName)}`;
@@ -65,7 +68,7 @@ const CategoryPage = () => {
       <Helmet>
         <title>{`${categoryName} Articles | NextStep Blog`}</title>
         <meta name="description" content={description} />
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="robots" content={isThinCategory ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
         <link rel="canonical" href={canonicalUrl} />
         <link rel="alternate" hreflang="en" href={canonicalUrl} />
 
@@ -115,6 +118,7 @@ const CategoryPage = () => {
           </header>
 
           <section className="max-w-7xl mx-auto px-4 pb-16">
+            <h2 className="sr-only">{categoryName} Articles</h2>
             {posts.length > 0 ? (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {posts.map((post) => (
