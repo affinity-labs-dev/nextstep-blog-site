@@ -18,7 +18,7 @@ const distDir = path.resolve(__dirname, "../dist");
 const serverDir = path.resolve(__dirname, "../dist/server");
 
 // Static routes (blog + category routes are discovered dynamically from data)
-const staticRoutes = ["/", "/about", "/unsubscribe"];
+const staticRoutes = ["/", "/unsubscribe"];
 
 /**
  * Strip static SEO tags from the HTML template <head>.
@@ -47,33 +47,35 @@ function generateSitemap(blogPosts, blogContent, categorySlugMap) {
   const today = new Date().toISOString().split("T")[0];
 
   const staticPages = [
-    { loc: SITE, lastmod: today },
-    { loc: `${SITE}/about`, lastmod: today },
-    { loc: `${SITE}/llm.html`, lastmod: "2025-12-16" },
-    { loc: `${SITE}/consulting-survey-2025.html`, lastmod: "2026-01-05" },
+    { loc: SITE, lastmod: today, changefreq: "weekly", priority: "1.0" },
+    { loc: `${SITE}/llm.html`, lastmod: "2025-12-16", changefreq: "monthly", priority: "0.6" },
+    { loc: `${SITE}/consulting-survey-2025.html`, lastmod: "2026-01-05", changefreq: "monthly", priority: "0.8" },
   ];
 
-  const categoryPages = Object.entries(categorySlugMap).map(([categoryName, slug]) => {
-    const postsInCategory = blogPosts.filter(
-      (p) => p.category === categoryName && p.slug !== "consulting-survey-2025"
-    );
-    const latestDate = postsInCategory.reduce((max, p) => {
-      const d = blogContent[p.slug]?.modifiedDate || p.publishDate || today;
-      return d > max ? d : max;
-    }, "2000-01-01");
-    return {
-      loc: `${SITE}/category/${slug}`,
-      lastmod: latestDate > "2000-01-01" ? latestDate : today,
-    };
-  });
+  // Only include category pages with 3+ posts in the sitemap to avoid thin content
+  const categoryPages = Object.entries(categorySlugMap)
+    .filter(([name]) => {
+      const postCount = blogPosts.filter(
+        (p) => p.category === name && p.slug !== "consulting-survey-2025"
+      ).length;
+      return postCount >= 3;
+    })
+    .map(([, slug]) => ({
+      loc: `${SITE}/blog/category/${slug}`,
+      lastmod: today,
+      changefreq: "weekly",
+      priority: "0.7",
+    }));
 
   const blogPages = blogPosts
     .filter((p) => p.slug !== "consulting-survey-2025")
     .map((p) => {
       const content = blogContent[p.slug];
       return {
-        loc: `${SITE}/${p.slug}`,
+        loc: `${SITE}/blog/${p.slug}`,
         lastmod: content?.modifiedDate || today,
+        changefreq: "monthly",
+        priority: "0.8",
       };
     });
 
@@ -84,7 +86,7 @@ function generateSitemap(blogPosts, blogContent, categorySlugMap) {
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ...urls.map(
       (u) =>
-        `  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n  </url>`
+        `  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`
     ),
     "</urlset>",
     "",
@@ -99,9 +101,9 @@ async function prerender() {
   const { render, blogPosts, blogContent, categorySlugMap } = ssrModule;
 
   // Auto-discover routes from blog data
-  const blogRoutes = blogPosts.map((p) => `/${p.slug}`);
+  const blogRoutes = blogPosts.map((p) => `/blog/${p.slug}`);
   const categoryRoutes = Object.values(categorySlugMap).map(
-    (slug) => `/category/${slug}`
+    (slug) => `/blog/category/${slug}`
   );
   const allRoutes = [...staticRoutes, ...blogRoutes, ...categoryRoutes];
 
@@ -143,7 +145,7 @@ async function prerender() {
       if (route === "/") {
         outputPath = path.join(distDir, "index.html");
       } else {
-        // /slug → dist/slug/index.html (for clean URLs)
+        // /blog/slug → dist/blog/slug/index.html (for clean URLs)
         outputPath = path.join(distDir, route.slice(1), "index.html");
       }
 
