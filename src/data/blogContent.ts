@@ -1420,16 +1420,16 @@ NextStep provides networking opportunities with ex-consultants across industries
     category: "Career Transitions",
     readTime: "7 min read",
     keyTakeaways: [
-      "One page for roles under 10 years experience — a half-empty two-pager is worse than a tight one-pager",
+      "One page for roles under 10 years experience:  a half-empty two-pager is worse than a tight one-pager",
       "Every bullet needs a number: deal size, revenue, team size, savings delivered, time-to-completion",
-      "Translate firm jargon before submitting — 'workstream' becomes 'work', 'deck' becomes 'presentation'",
+      "Translate firm jargon before submitting:  'workstream' becomes 'work', 'deck' becomes 'presentation'",
       "Tailor for your target: PE resumes lead with financial exposure; PM resumes lead with user outcomes; corporate strategy resumes show decisions made, not just analyses",
-      "ATS systems screen most applications before a human sees them — use exact keywords from the job description",
+      "ATS systems screen most applications before a human sees them:  use exact keywords from the job description",
     ],
     content: `
 ## Why Your Consulting Resume Needs a Different Approach
 
-A consulting resume and an industry resume are built for different readers with different expectations. Recruiters at PE firms, tech companies, and startups see consultant resumes daily. The ones that stand out do not try to pack everything in — they make a clear argument for why this person, for this role, right now.
+A consulting resume and an industry resume are built for different readers with different expectations. Recruiters at PE firms, tech companies, and startups see consultant resumes daily. The ones that stand out do not try to pack everything in:  they make a clear argument for why this person, for this role, right now.
 
 This guide covers what to include, how to write bullets that translate, and how to tailor for three common targets.
 
@@ -1442,13 +1442,13 @@ Standard order:
 2. Summary (3-4 lines, optional but useful during a career change)
 3. Experience (reverse chronological)
 4. Education
-5. Skills (optional — mostly for tech roles with ATS requirements)
+5. Skills (optional:  mostly for tech roles with ATS requirements)
 
 Do not include: objective statements, headshots, references, or "skills" sections listing Microsoft Office.
 
 ## Writing a Summary That Does Work
 
-The summary is optional if you are applying to similar roles. It becomes valuable when you are making a pivot — PE, tech PM, corporate strategy — because it gives the reader a frame before they start scanning bullets.
+The summary is optional if you are applying to similar roles. It becomes valuable when you are making a pivot:  PE, tech PM, corporate strategy:  because it gives the reader a frame before they start scanning bullets.
 
 A good summary is 3-4 lines:
 
@@ -1491,7 +1491,7 @@ Rules for consulting bullets on an industry resume:
 PE recruiters scan for three things: financial experience, deal exposure, and speed of thought under pressure.
 
 Prioritize bullets that reference:
-- Modeling (LBO, DCF, three-statement) — even if done in support of a case
+- Modeling (LBO, DCF, three-statement):  even if done in support of a case
 - Due diligence processes (commercial, operational, financial)
 - Client company financial metrics (EBITDA margins, revenue growth, capex)
 - Any sell-side, buy-side, or M&A exposure
@@ -1516,7 +1516,7 @@ Our [McKinsey to tech transition guide](/mckinsey-to-tech-transition) has the fu
 
 ### Corporate Strategy
 
-This is the most natural fit for consulting experience. The biggest mistake ex-consultants make is over-consulting their bullets — framing everything as "recommended" rather than "decided."
+This is the most natural fit for consulting experience. The biggest mistake ex-consultants make is over-consulting their bullets:  framing everything as "recommended" rather than "decided."
 
 Recruiters want to see:
 - Strategic choices made (not just analyzed)
@@ -1530,22 +1530,22 @@ Even if you were advising, reframe where accurate: "advised senior team on X" is
 
 Most large companies and PE firms run applications through Applicant Tracking Systems before a human sees them. Consultants underestimate this because firms recruit directly through networks, but cold applications still get screened.
 
-- **Use the exact keywords from the job description.** If the JD says "financial modeling," your resume should say "financial modeling" — not "quantitative analysis."
-- **Use standard section headings:** "Experience," "Education," "Skills" — not "Career Journey" or "Where I've Been."
+- **Use the exact keywords from the job description.** If the JD says "financial modeling," your resume should say "financial modeling":  not "quantitative analysis."
+- **Use standard section headings:** "Experience," "Education," "Skills":  not "Career Journey" or "Where I've Been."
 - **Avoid tables, columns, headers/footers, and graphics.** Most ATS cannot parse these correctly.
 - **Save as .docx or .pdf.** PDF is fine for most modern ATS; check the application portal for guidance.
 
 ## Common Mistakes Ex-Consultants Make
 
-**Listing firm prestige as a substitute for achievement.** Saying "McKinsey" is table stakes at PE or FAANG — it gets you the screen, not the offer. The bullets have to do the work.
+**Listing firm prestige as a substitute for achievement.** Saying "McKinsey" is table stakes at PE or FAANG:  it gets you the screen, not the offer. The bullets have to do the work.
 
 **Being too modest about scope.** Many consultants understate their impact because the work was collaborative. If your analysis drove the CEO's decision, say so. The resume is not a place for false modesty.
 
-**Forgetting to translate acronyms.** MECE, SCQA, RFP, SOW — industry readers may not know these. Write for the reader, not the firm.
+**Forgetting to translate acronyms.** MECE, SCQA, RFP, SOW:  industry readers may not know these. Write for the reader, not the firm.
 
 **Using a one-size resume for every application.** The PE version and the PM version should read quite differently. Create a base document and tailor each application.
 
-**Ignoring the cover letter.** For career transitions — especially into PE or PM — a strong cover letter that explains the "why" and closes the narrative gap is often more important than the resume itself.
+**Ignoring the cover letter.** For career transitions:  especially into PE or PM:  a strong cover letter that explains the "why" and closes the narrative gap is often more important than the resume itself.
 
 ## Pre-Submit Checklist
 
@@ -1556,7 +1556,7 @@ Before you send any application:
 - [ ] Tailored for this specific role and industry
 - [ ] Summary (if included) speaks directly to this target role
 - [ ] Keywords from the JD appear at least once
-- [ ] One page (or two pages for senior roles) — no half-empty second page
+- [ ] One page (or two pages for senior roles):  no half-empty second page
 - [ ] Someone from your target industry has reviewed it
 
 For help positioning your story and targeting the right roles, NextStep connects you with ex-consultants who have navigated the exact transition you are planning. See our [salary negotiation guide](/salary-negotiation-ex-consultants) and [networking strategies guide](/networking-strategies-career-change) for the next steps in your search.
@@ -1575,7 +1575,7 @@ For help positioning your story and targeting the right roles, NextStep connects
     category: "Career Transitions",
     readTime: "8 min read",
     keyTakeaways: [
-      "Chief of Staff roles vary widely — operational, strategic, and hybrid. Know which type you are targeting before you apply",
+      "Chief of Staff roles vary widely:  operational, strategic, and hybrid. Know which type you are targeting before you apply",
       "Ex-consultants' biggest competitive advantage in CoS interviews: structured communication and comfort presenting to senior leaders",
       "The biggest gap to fill: execution. Consulting trains you to recommend; CoS requires you to follow through",
       "Most CoS openings are filled through referrals. Direct outreach to founders and CEOs outperforms job board applications",
@@ -1584,7 +1584,7 @@ For help positioning your story and targeting the right roles, NextStep connects
     content: `
 ## Why Chief of Staff Is a Natural Move for Ex-Consultants
 
-More ex-consultants are landing Chief of Staff roles than at any point in the past decade — and it makes sense. The skill set overlaps almost exactly: structured thinking, stakeholder management, comfort with ambiguity, and the ability to synthesize a lot of information quickly and present it to senior decision-makers.
+More ex-consultants are landing Chief of Staff roles than at any point in the past decade:  and it makes sense. The skill set overlaps almost exactly: structured thinking, stakeholder management, comfort with ambiguity, and the ability to synthesize a lot of information quickly and present it to senior decision-makers.
 
 If you have been in consulting for 2-5 years and are not sure whether PE, PM, or corporate strategy is the right fit, CoS is worth a serious look. It tends to offer high executive exposure, broad learning across every function, and a clear path to more senior roles.
 
@@ -1608,7 +1608,7 @@ Works directly with the CEO on high-priority strategic initiatives: new market e
 
 ### 3. Hybrid CoS
 
-The most common at growth-stage startups. You run the operating rhythm and own strategic projects. The scope shifts as the company scales — early on, you are doing everything; later, you specialize.
+The most common at growth-stage startups. You run the operating rhythm and own strategic projects. The scope shifts as the company scales:  early on, you are doing everything; later, you specialize.
 
 Most ex-consultants target Type 2 or Type 3.
 
@@ -1624,7 +1624,7 @@ Consulting trains you for most of what CoS roles require:
 
 **Presence.** You can walk into a room with the CFO, board members, or external partners and hold your own. Junior candidates without consulting training often struggle with this.
 
-**The gap to fill:** Consulting experience skews toward advising and recommending. CoS roles require you to execute and follow through. Be honest in interviews about this, and prepare concrete examples of times you actually got things done — not just analyzed them.
+**The gap to fill:** Consulting experience skews toward advising and recommending. CoS roles require you to execute and follow through. Be honest in interviews about this, and prepare concrete examples of times you actually got things done:  not just analyzed them.
 
 ## The Types of Organizations That Hire Ex-Consultants as CoS
 
@@ -1632,7 +1632,7 @@ Not every organization is a strong fit. The ones that work best:
 
 **High-growth startups (Series B-D):** The CEO needs leverage, has too much on their plate, and needs someone who can handle both strategic projects and operational coordination. Compensation includes equity upside. For the full trade-off analysis of startup vs. corporate roles, see our [startup vs. corporate guide](/startup-vs-corporate-ex-consultant).
 
-**PE-backed companies in transformation:** The PE firm wants an operator alongside the CEO. Ex-consultants who understand the PE logic — cost reduction, EBITDA improvement, exit readiness — fit well here.
+**PE-backed companies in transformation:** The PE firm wants an operator alongside the CEO. Ex-consultants who understand the PE logic:  cost reduction, EBITDA improvement, exit readiness:  fit well here.
 
 **Enterprise tech companies:** CoS to a business unit leader or C-suite executive. More structure and process, slower pace, but strong brand and compensation.
 
@@ -1669,7 +1669,7 @@ CoS interviews differ from consulting case interviews or PE modeling tests. Expe
 - How do you run an effective leadership team meeting?
 - Walk me through how you would set up a cross-functional project from scratch.
 
-Consultants tend to do well on strategy questions and struggle on operational questions. Prepare examples of real execution work — times you organized something, coordinated a group, held people accountable, and shipped a result.
+Consultants tend to do well on strategy questions and struggle on operational questions. Prepare examples of real execution work:  times you organized something, coordinated a group, held people accountable, and shipped a result.
 
 The single most important thing to communicate: you are not there to be an analyst. You are there to make the principal more effective. Frame every answer through that lens.
 
@@ -1694,7 +1694,7 @@ The CoS role is a launchpad, not a destination. Common next moves:
 
 **Strategy or Business Development Lead:** For strategic CoS who ran special projects and market analysis. Leads to VP Strategy or Head of BD roles.
 
-**General Manager or Business Unit Lead:** For CoS who developed deep product or market knowledge — particularly strong at larger companies.
+**General Manager or Business Unit Lead:** For CoS who developed deep product or market knowledge:  particularly strong at larger companies.
 
 **Founder:** A meaningful share of CoS alumni start their own companies after gaining full-stack exposure to how a business actually runs.
 
@@ -1715,9 +1715,9 @@ It is a weaker fit if:
 - You want to build deep functional expertise (engineering, product, finance)
 - You struggle with ambiguity about where your role ends and others' begins
 
-If you are still weighing your options more broadly, the [consulting exit opportunities guide](/consulting-exit-opportunities-2026) covers the full landscape — PE, tech, corporate strategy, startups, and more.
+If you are still weighing your options more broadly, the [consulting exit opportunities guide](/consulting-exit-opportunities-2026) covers the full landscape:  PE, tech, corporate strategy, startups, and more.
 
-NextStep connects you with ex-consultants who have taken the CoS path and can walk you through what to expect. The decision is more personal than most career advice acknowledges — the right CoS role, at the right company, with the right principal, is one of the best moves you can make after consulting.
+NextStep connects you with ex-consultants who have taken the CoS path and can walk you through what to expect. The decision is more personal than most career advice acknowledges:  the right CoS role, at the right company, with the right principal, is one of the best moves you can make after consulting.
     `
   },
   "bcg-alumni-career-paths": {
@@ -1733,18 +1733,18 @@ NextStep connects you with ex-consultants who have taken the CoS path and can wa
     category: "Success Stories",
     readTime: "8 min read",
     keyTakeaways: [
-      "BCG alumni reach leadership roles across PE, tech, startups, and Fortune 500 companies — there is no single right path",
+      "BCG alumni reach leadership roles across PE, tech, startups, and Fortune 500 companies:  there is no single right path",
       "The skills that travel furthest from BCG: structured communication, speed to insight, and intellectual honesty under pressure",
       "What every successful BCG alumnus had to build post-firm: execution instincts, functional depth, and a tolerance for decisions made with incomplete information",
-      "Start networking for your exit 12-18 months before you plan to leave — PE timelines are long, and relationships drive most senior hires",
-      "Your BCG alumni network is one of your most durable assets — activate it deliberately, early, and with specific asks",
+      "Start networking for your exit 12-18 months before you plan to leave:  PE timelines are long, and relationships drive most senior hires",
+      "Your BCG alumni network is one of your most durable assets:  activate it deliberately, early, and with specific asks",
     ],
     content: `
 ## The BCG Alumni Advantage
 
 [Boston Consulting Group](https://www.bcg.com/) has built a reputation as one of the world's most demanding and most formative consulting environments. BCG's emphasis on intellectual rigor, proprietary frameworks, and developing generalist problem-solvers has produced an alumni network that spans virtually every sector of the global economy.
 
-The question ex-BCG consultants ask most often is not whether their skills transfer — they do. The question is where to apply them, and how.
+The question ex-BCG consultants ask most often is not whether their skills transfer:  they do. The question is where to apply them, and how.
 
 ## From BCG to Private Equity: James's Story
 
@@ -1766,11 +1766,11 @@ He landed at a middle-market buyout fund after three rounds, including a modelin
 
 ### Key Lessons
 
-"BCG gave me the commercial instincts — understanding competitive dynamics, market sizing, business model stress-testing. I had to build the financial modeling skills largely on my own. The combination is what PE firms actually want from consultants."
+"BCG gave me the commercial instincts:  understanding competitive dynamics, market sizing, business model stress-testing. I had to build the financial modeling skills largely on my own. The combination is what PE firms actually want from consultants."
 
 ### Advice for Others
 
-"Start earlier than you think you need to. The networking window for PE is longer than it is for most other transitions. Be specific in your outreach — 'I want to work in PE' is not a useful sentence. 'I am targeting growth equity or lower-middle-market buyout in industrials or healthcare' opens the conversation." See our full guide on [breaking into PE with a consulting background](/private-equity-consulting-background).
+"Start earlier than you think you need to. The networking window for PE is longer than it is for most other transitions. Be specific in your outreach:  'I want to work in PE' is not a useful sentence. 'I am targeting growth equity or lower-middle-market buyout in industrials or healthcare' opens the conversation." See our full guide on [breaking into PE with a consulting background](/private-equity-consulting-background).
 
 ## From BCG to Founder: Priya's Product Company
 
@@ -1793,7 +1793,7 @@ She bootstrapped for eight months, then raised a pre-seed round.
 
 ### Key Lessons
 
-"BCG taught me how to present ideas convincingly — which is half of fundraising. And the framework thinking translated directly to building a product: structuring user problems, prioritizing a roadmap, writing a coherent strategy. What I had to learn was moving fast and being wrong. Consulting trains you to minimize the chance of being wrong. Startups require you to be wrong quickly and iterate."
+"BCG taught me how to present ideas convincingly:  which is half of fundraising. And the framework thinking translated directly to building a product: structuring user problems, prioritizing a roadmap, writing a coherent strategy. What I had to learn was moving fast and being wrong. Consulting trains you to minimize the chance of being wrong. Startups require you to be wrong quickly and iterate."
 
 ### Advice for Others
 
@@ -1807,7 +1807,7 @@ Sophie spent four years at BCG post-MBA, focusing on tech and consumer companies
 
 ### The Pivot
 
-"I did not want to go into product management from day one. I wanted to understand the inside of a large tech company first — how decisions get made, how products get built, what the operating model actually looks like. Corporate strategy was the right entry point."
+"I did not want to go into product management from day one. I wanted to understand the inside of a large tech company first:  how decisions get made, how products get built, what the operating model actually looks like. Corporate strategy was the right entry point."
 
 ### The Evolution
 
@@ -1818,7 +1818,7 @@ Sophie spent four years at BCG post-MBA, focusing on tech and consumer companies
 
 ### Key Lessons
 
-"The BCG training gave me the ability to structure a narrative and defend a recommendation under pressure — that is just as valuable in an internal meeting with six VPs as it is in a client meeting. The gap I had to fill was everything product: user empathy, technical feasibility, what actually takes two weeks vs. six months to build."
+"The BCG training gave me the ability to structure a narrative and defend a recommendation under pressure:  that is just as valuable in an internal meeting with six VPs as it is in a client meeting. The gap I had to fill was everything product: user empathy, technical feasibility, what actually takes two weeks vs. six months to build."
 
 ### Advice for Others
 
@@ -1832,7 +1832,7 @@ Amir spent three years at BCG after undergrad, focusing on consumer and retail. 
 
 ### Why CoS
 
-"I wanted to see how a company actually works without being three layers removed as an outside advisor. CoS lets you see every function, every decision, every crisis. It was the fastest learning environment I have been in — by a large margin."
+"I wanted to see how a company actually works without being three layers removed as an outside advisor. CoS lets you see every function, every decision, every crisis. It was the fastest learning environment I have been in:  by a large margin."
 
 ### The Journey
 
@@ -1843,7 +1843,7 @@ Amir spent three years at BCG after undergrad, focusing on consumer and retail. 
 
 ### Key Lessons
 
-"The biggest shift from consulting to CoS was learning to slow down on analysis and speed up on decisions. In consulting, you have two weeks to study something. In a startup, you have two days — or two hours. The muscle you build is judgment, not analysis."
+"The biggest shift from consulting to CoS was learning to slow down on analysis and speed up on decisions. In consulting, you have two weeks to study something. In a startup, you have two days:  or two hours. The muscle you build is judgment, not analysis."
 
 ### Advice for Others
 
@@ -1857,7 +1857,7 @@ Maria spent six years at BCG, reaching Senior Manager. She left to become VP of 
 
 ### The Transition
 
-"I was drawn to implementation. Consulting produces excellent recommendations, many of which die in the client's inbox. I wanted to see strategies through — to own outcomes, not just advise on them."
+"I was drawn to implementation. Consulting produces excellent recommendations, many of which die in the client's inbox. I wanted to see strategies through:  to own outcomes, not just advise on them."
 
 ### The Progression
 
@@ -1887,14 +1887,14 @@ Maria spent six years at BCG, reaching Senior Manager. She left to become VP of 
 ### What They Had to Develop
 
 - **Execution instincts:** Moving from "recommend" to "decide" to "ship" required deliberate effort for all of them
-- **Functional depth:** Each found a domain and went deep — PE modeling, product development, operational leadership
+- **Functional depth:** Each found a domain and went deep:  PE modeling, product development, operational leadership
 - **Risk tolerance:** Accepting outcomes that are not fully predictable or controllable
 - **People leadership:** Managing teams through ambiguity, pressure, and setbacks
 - **Long-term perspective:** Building a career requires a fundamentally different time horizon than building a case
 
 ### One Pattern Worth Noting
 
-BCG alumni consistently cite the firm's culture of intellectual honesty as the most durable competitive advantage. "BCG expects you to disagree with the client if the data points the other way," said one alumna. "That skill — being comfortable saying something unpopular when you are confident in the evidence — turns out to be rare and genuinely valuable in leadership roles across every sector."
+BCG alumni consistently cite the firm's culture of intellectual honesty as the most durable competitive advantage. "BCG expects you to disagree with the client if the data points the other way," said one alumna. "That skill:  being comfortable saying something unpopular when you are confident in the evidence:  turns out to be rare and genuinely valuable in leadership roles across every sector."
 
 ## Your Path After BCG
 
@@ -1902,7 +1902,7 @@ These stories show there is no single optimal path after BCG. The common thread 
 
 Whether you are targeting PE, tech, a startup, or executive leadership, your BCG foundation is real and durable. The full landscape of options is covered in our [consulting exit opportunities guide](/consulting-exit-opportunities-2026). Use our [networking strategies guide](/networking-strategies-career-change) to activate the alumni network systematically and early.
 
-NextStep connects you with BCG alumni and alumni from other top-tier firms who can walk you through the path they actually took. The guidance is specific, not generic — because your situation requires it.
+NextStep connects you with BCG alumni and alumni from other top-tier firms who can walk you through the path they actually took. The guidance is specific, not generic:  because your situation requires it.
     `
   },
   "bain-alumni-success-stories": {

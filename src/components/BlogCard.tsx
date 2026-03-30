@@ -37,7 +37,7 @@ const BlogCard = ({ slug, title, excerpt, category, readTime, date, featured = f
           />
           <img
             src={image.jpg}
-            alt={`${title} - ${category} article thumbnail`}
+            alt={image.alt}
             className={`w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 ${featured ? 'aspect-video md:aspect-auto md:h-full' : ''}`}
             loading={isFirstCard ? "eager" : "lazy"}
             decoding="async"

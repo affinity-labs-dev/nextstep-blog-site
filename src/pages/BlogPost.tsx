@@ -375,7 +375,7 @@ const BlogPost = () => {
                   />
                   <img
                     src={heroImg.jpg}
-                    alt={`Featured image for ${post.title} - ${post.category} article`}
+                    alt={heroImg.alt}
                     className="w-full h-64 md:h-96 object-cover rounded-2xl"
                     width={896}
                     height={384}
