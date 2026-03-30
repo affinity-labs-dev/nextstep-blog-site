@@ -1,0 +1,33 @@
+# NextStep
+
+> NextStep is an AI-powered career platform connecting ex-consultants from McKinsey, BCG, and Bain with strategic business roles. Free for both candidates and companies.
+
+## Blog
+
+The NextStep Blog offers expert career advice for management consultants exploring exit opportunities, career transitions, and life after consulting.
+
+- [Top Exit Opportunities for Consultants in 2026](/consulting-exit-opportunities-2026): Complete guide to PE, tech, corporate development, and startup paths
+- [From McKinsey to Tech: How to Land a PM Role](/mckinsey-to-tech-transition): Step-by-step product management transition roadmap
+- [Mastering Case Interviews](/consulting-interview-case-study-tips): Insider tips and frameworks from ex-BCG interviewers
+- [Breaking Into Private Equity](/private-equity-consulting-background): Recruiting timelines, LBO modeling skills, and interview prep
+- [Work-Life Balance After Consulting](/work-life-balance-after-consulting): Real stories and roles with intellectual challenge and better hours
+- [Salary Negotiation for Ex-Consultants](/salary-negotiation-ex-consultants): Negotiation scripts, compensation benchmarks, and equity tactics
+- [Startup vs. Corporate After Consulting](/startup-vs-corporate-ex-consultant): Decision framework and self-assessment scoring tool
+- [Networking Strategies for Career Changers](/networking-strategies-career-change): Alumni outreach, LinkedIn tactics, and the 5-5-5 weekly routine
+- [Bain Alumni Career Paths](/bain-alumni-success-stories): Where Bain alumni go and how they got there
+- [Consulting Survey 2025](/consulting-survey-2025.html): Original research from 1,000+ consultants on pay, travel, and retention across MBB, Big 4, and boutique firms
+
+## Platform
+
+- **For candidates:** Weekly curated role matches based on consulting background and preferences — no application needed
+- **For companies:** AI-curated shortlist of vetted ex-consultants, typically within days of posting
+- **AI matching:** Uses semantic understanding of business context, not keyword filtering
+- **Cost:** Completely free for both sides
+
+## About
+
+Founded in 2025 by Ahmed E., a former top-tier management consultant, to fix the broken process of connecting consulting talent with the right strategic roles.
+
+Contact: zero@mail.getnextstep.com
+Site: https://getnextstep.com
+Blog: https://blog.getnextstep.com

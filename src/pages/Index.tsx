@@ -110,7 +110,7 @@ const Index = () => {
               .map(p => ({
                 "@type": "BlogPosting",
                 "headline": p.title,
-                "url": `https://blog.getnextstep.com/blog/${p.slug}`,
+                "url": `https://blog.getnextstep.com/${p.slug}`,
                 "description": p.excerpt,
                 "image": `https://blog.getnextstep.com${getOgImageForCategory(p.category)}`,
                 ...(p.publishDate && { "datePublished": p.publishDate }),
@@ -138,7 +138,7 @@ const Index = () => {
                 .map((p, i) => ({
                   "@type": "ListItem",
                   "position": i + 1,
-                  "url": `https://blog.getnextstep.com/blog/${p.slug}`,
+                  "url": `https://blog.getnextstep.com/${p.slug}`,
                   "name": p.title
                 }))
             }

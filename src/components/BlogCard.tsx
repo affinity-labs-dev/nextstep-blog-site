@@ -23,7 +23,7 @@ const BlogCard = ({ slug, title, excerpt, category, readTime, date, featured = f
 
   return (
     <article className={`group bg-card rounded-2xl border border-border/50 overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/20 ${featured ? 'md:col-span-2 md:grid md:grid-cols-2' : ''}`}>
-      <Link to={`/blog/${slug}`} className={`block overflow-hidden ${featured ? 'md:h-full' : 'aspect-video'}`}>
+      <Link to={`/${slug}`} className={`block overflow-hidden ${featured ? 'md:h-full' : 'aspect-video'}`}>
         <picture>
           <source
             type="image/webp"
@@ -50,14 +50,14 @@ const BlogCard = ({ slug, title, excerpt, category, readTime, date, featured = f
       
       <div className="p-5 sm:p-6">
         <div className="flex items-center gap-3 mb-3">
-          <Link to={`/blog/category/${categorySlugMap[category] || category.toLowerCase()}`} className="inline-link text-sm font-medium text-primary bg-primary/10 px-3 py-1.5 rounded-full hover:bg-primary/20 transition-colors">
+          <Link to={`/category/${categorySlugMap[category] || category.toLowerCase()}`} className="inline-link text-sm font-medium text-primary bg-primary/10 px-3 py-1.5 rounded-full hover:bg-primary/20 transition-colors">
             {category}
           </Link>
           <span className="text-sm text-muted-foreground">{date}</span>
         </div>
         
         <h3 className={`font-semibold text-foreground group-hover:text-primary transition-colors mb-3 ${featured ? 'text-xl sm:text-2xl' : 'text-lg'}`}>
-          <Link to={`/blog/${slug}`} className="inline-link hover:underline">
+          <Link to={`/${slug}`} className="inline-link hover:underline">
             {title}
           </Link>
         </h3>
@@ -73,7 +73,7 @@ const BlogCard = ({ slug, title, excerpt, category, readTime, date, featured = f
           </div>
           
           <Link 
-            to={`/blog/${slug}`}
+            to={`/${slug}`}
             className="inline-flex items-center gap-1.5 text-base font-medium text-primary hover:gap-2.5 transition-all py-2 -mr-2 pr-2"
           >
             Read more

@@ -16,15 +16,15 @@ const BlogHero = () => {
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
           Expert advice on transitioning from consulting to industry roles. 
           Discover{" "}
-          <Link to="/blog/consulting-interview-case-study-tips" className="text-primary hover:underline">
+          <Link to="/consulting-interview-case-study-tips" className="text-primary hover:underline">
             case interview strategies
           </Link>
           ,{" "}
-          <Link to="/blog/salary-negotiation-ex-consultants" className="text-primary hover:underline">
+          <Link to="/salary-negotiation-ex-consultants" className="text-primary hover:underline">
             salary negotiation tactics
           </Link>
           , and{" "}
-          <Link to="/blog/bain-alumni-success-stories" className="text-primary hover:underline">
+          <Link to="/bain-alumni-success-stories" className="text-primary hover:underline">
             success stories from top firm alumni
           </Link>
           .

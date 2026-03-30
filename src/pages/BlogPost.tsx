@@ -51,6 +51,7 @@ const BlogPost = () => {
     const elements: JSX.Element[] = [];
     let listItems: string[] = [];
     let inList = false;
+    let isOrderedList = false;
 
     const formatText = (text: string): string => {
       return text
@@ -72,15 +73,25 @@ const BlogPost = () => {
 
     const flushList = () => {
       if (listItems.length > 0) {
+        const listClass = "list-inside space-y-2 text-muted-foreground mb-6 ml-4";
         elements.push(
-          <ul key={`list-${elements.length}`} className="list-disc list-inside space-y-2 text-muted-foreground mb-6 ml-4">
-            {listItems.map((item, i) => (
-              <li key={i} dangerouslySetInnerHTML={{ __html: formatText(item) }} />
-            ))}
-          </ul>
+          isOrderedList ? (
+            <ol key={`list-${elements.length}`} className={`list-decimal ${listClass}`}>
+              {listItems.map((item, i) => (
+                <li key={i} dangerouslySetInnerHTML={{ __html: formatText(item) }} />
+              ))}
+            </ol>
+          ) : (
+            <ul key={`list-${elements.length}`} className={`list-disc ${listClass}`}>
+              {listItems.map((item, i) => (
+                <li key={i} dangerouslySetInnerHTML={{ __html: formatText(item) }} />
+              ))}
+            </ul>
+          )
         );
         listItems = [];
         inList = false;
+        isOrderedList = false;
       }
     };
 
@@ -116,10 +127,14 @@ const BlogPost = () => {
           </p>
         );
       } else if (trimmedLine.startsWith("- ")) {
+        if (inList && isOrderedList) flushList();
         inList = true;
+        isOrderedList = false;
         listItems.push(trimmedLine.slice(2));
       } else if (trimmedLine.match(/^\d+\.\s/)) {
+        if (inList && !isOrderedList) flushList();
         inList = true;
+        isOrderedList = true;
         listItems.push(trimmedLine.replace(/^\d+\.\s/, ""));
       } else if (trimmedLine === "") {
         flushList();
@@ -152,18 +167,15 @@ const BlogPost = () => {
     description: post.metaDescription,
     image: articleImage,
     author: {
-      "@type": "Organization",
-      "@id": "https://getnextstep.com/#organization",
-      name: "NextStep",
-      url: "https://getnextstep.com",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://blog.getnextstep.com/assets/nextstep-logo-updated.png?v=20260105",
+      "@type": "Person",
+      name: post.author,
+      jobTitle: post.authorTitle,
+      worksFor: {
+        "@type": "Organization",
+        "@id": "https://getnextstep.com/#organization",
+        name: "NextStep",
+        url: "https://getnextstep.com",
       },
-      sameAs: [
-        "https://www.linkedin.com/company/getnextstep",
-        "https://twitter.com/getnextstep",
-      ],
     },
     datePublished: post.publishDate,
     dateModified: post.modifiedDate,
@@ -183,7 +195,7 @@ const BlogPost = () => {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://blog.getnextstep.com/blog/${post.slug}`,
+      "@id": `https://blog.getnextstep.com/${post.slug}`,
     },
     keywords: post.keywords.join(", "),
     articleBody: post.content.replace(/[#*\-\[\]()]/g, '').replace(/\n+/g, ' ').slice(0, 3000).trim(),
@@ -208,13 +220,13 @@ const BlogPost = () => {
         "@type": "ListItem",
         position: 2,
         name: post.category,
-        item: `https://blog.getnextstep.com/blog/category/${categorySlugMap[post.category] || post.category.toLowerCase()}`,
+        item: `https://blog.getnextstep.com/category/${categorySlugMap[post.category] || post.category.toLowerCase()}`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: post.title,
-        item: `https://blog.getnextstep.com/blog/${post.slug}`,
+        item: `https://blog.getnextstep.com/${post.slug}`,
       },
     ],
   };
@@ -241,15 +253,15 @@ const BlogPost = () => {
         <meta name="description" content={post.metaDescription} />
         <meta name="keywords" content={post.keywords.join(", ")} />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <link rel="canonical" href={`https://blog.getnextstep.com/blog/${post.slug}`} />
-        <link rel="alternate" hreflang="en" href={`https://blog.getnextstep.com/blog/${post.slug}`} />
+        <link rel="canonical" href={`https://blog.getnextstep.com/${post.slug}`} />
+        <link rel="alternate" hreflang="en" href={`https://blog.getnextstep.com/${post.slug}`} />
         <meta name="author" content={post.author} />
 
         {/* Open Graph */}
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.metaDescription} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://blog.getnextstep.com/blog/${post.slug}`} />
+        <meta property="og:url" content={`https://blog.getnextstep.com/${post.slug}`} />
         <meta property="og:site_name" content="NextStep Blog" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={articleImage} />
@@ -295,7 +307,7 @@ const BlogPost = () => {
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <Link to={`/blog/category/${categorySlugMap[post.category] || post.category.toLowerCase()}`} className="inline-link py-2 hover:text-primary transition-colors">
+                <Link to={`/category/${categorySlugMap[post.category] || post.category.toLowerCase()}`} className="inline-link py-2 hover:text-primary transition-colors">
                   {post.category}
                 </Link>
               </li>
@@ -315,7 +327,7 @@ const BlogPost = () => {
                 <span className="text-base">Back to all articles</span>
               </Link>
 
-              <Link to={`/blog/category/${categorySlugMap[post.category] || post.category.toLowerCase()}`} className="inline-link text-base font-medium text-primary bg-primary/10 px-4 py-2 rounded-full hover:bg-primary/20 transition-colors">
+              <Link to={`/category/${categorySlugMap[post.category] || post.category.toLowerCase()}`} className="inline-link text-base font-medium text-primary bg-primary/10 px-4 py-2 rounded-full hover:bg-primary/20 transition-colors">
                 {post.category}
               </Link>
             </div>
@@ -375,14 +387,41 @@ const BlogPost = () => {
             })()}
           </div>
 
+          {/* Key Takeaways */}
+          {post.keyTakeaways && post.keyTakeaways.length > 0 && (
+            <div className="max-w-4xl mx-auto px-4 pb-8">
+              <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+                <h2 className="text-lg font-bold text-foreground mb-4">Key Takeaways</h2>
+                <ul className="space-y-2">
+                  {post.keyTakeaways.map((takeaway, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <span className="text-primary font-bold shrink-0 mt-0.5">✓</span>
+                      <span>{takeaway}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          )}
+
           {/* Article Content */}
           <article className="max-w-4xl mx-auto px-4 pb-16">
             <div className="prose prose-lg max-w-none">
               {renderContent(post.content)}
             </div>
 
+            {/* Author Bio */}
+            <div className="border-t border-border mt-12 pt-8 mb-8">
+              <p className="text-xs text-muted-foreground uppercase tracking-wide mb-3">Written by</p>
+              <p className="font-semibold text-foreground">{post.author}</p>
+              <p className="text-sm text-primary mb-2">{post.authorTitle}</p>
+              {post.authorBio && (
+                <p className="text-sm text-muted-foreground leading-relaxed">{post.authorBio}</p>
+              )}
+            </div>
+
             {/* Share Section */}
-            <div className="border-t border-border mt-12 pt-8">
+            <div className="border-t border-border pt-8">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <p className="text-muted-foreground text-base">Found this helpful? Share it with your network.</p>
                 <button
@@ -421,6 +460,9 @@ const BlogPost = () => {
           {/* CTA Section */}
           <section className="py-16">
             <div className="max-w-4xl mx-auto px-4 text-center">
+              <p className="text-sm text-muted-foreground mb-6">
+                This article is published by NextStep, a platform connecting ex-consultants with strategic business roles.
+              </p>
               <h2 className="text-2xl font-bold text-foreground mb-6">
                 Join thousands of consultants who've found their dream roles through NextStep. Get curated opportunities delivered to your inbox.
               </h2>

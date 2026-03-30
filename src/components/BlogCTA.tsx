@@ -11,7 +11,7 @@ const BlogCTA = () => {
         </h2>
         <p className="text-muted-foreground text-sm mb-8 max-w-xl mx-auto">
           Not sure where to start? Read our{" "}
-          <Link to="/blog/consulting-exit-opportunities-2026" className="text-primary hover:underline">
+          <Link to="/consulting-exit-opportunities-2026" className="text-primary hover:underline">
             complete guide to consulting exit opportunities
           </Link>
           .

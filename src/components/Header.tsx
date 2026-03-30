@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/nextstep-logo-updated.png";
+const LOGO_WEBP = "/assets/nextstep-logo.webp";
+const LOGO_PNG = "/assets/nextstep-logo-updated.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -13,15 +14,18 @@ const Header = () => {
         <div className="flex items-center justify-between rounded-full bg-card/80 backdrop-blur-md px-4 py-2 md:px-6 md:py-3 shadow-soft border border-border/50">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img
-              src={`${logo}?v=20260105`}
-              alt="NextStep - Career platform for ex-consultants"
-              className="h-8 md:h-10 w-auto"
-              width={189}
-              height={40}
-              decoding="async"
-              fetchpriority="high"
-            />
+            <picture>
+              <source srcSet={LOGO_WEBP} type="image/webp" />
+              <img
+                src={LOGO_PNG}
+                alt="NextStep - Career platform for ex-consultants"
+                className="h-8 md:h-10 w-auto"
+                width={189}
+                height={40}
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
           </Link>
 
           {/* Desktop Navigation */}

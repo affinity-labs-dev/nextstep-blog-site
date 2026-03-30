@@ -31,7 +31,7 @@ const CategoryPage = () => {
   );
 
   const description = categoryDescriptions[categoryName] || `Articles about ${categoryName} for ex-consultants.`;
-  const canonicalUrl = `https://blog.getnextstep.com/blog/category/${slug}`;
+  const canonicalUrl = `https://blog.getnextstep.com/category/${slug}`;
   const ogImage = `https://blog.getnextstep.com${getOgImageForCategory(categoryName)}`;
 
   const structuredData = {
@@ -45,7 +45,7 @@ const CategoryPage = () => {
       itemListElement: posts.map((p, i) => ({
         "@type": "ListItem",
         position: i + 1,
-        url: `https://blog.getnextstep.com/blog/${p.slug}`,
+        url: `https://blog.getnextstep.com/${p.slug}`,
         name: p.title,
       })),
     },

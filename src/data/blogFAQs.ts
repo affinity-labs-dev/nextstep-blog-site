@@ -8,7 +8,7 @@ export const blogFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "When is the best time to leave consulting?",
-      answer: "1-2 years: PM and operations roles. 3-4 years (Manager level): PE, VC, corporate strategy. 5+ years: C-suite and board positions. Most consultants exit between years 2-4."
+      answer: "1-2 years: PM and operations roles. 3-4 years (Manager level): PE, VC, corporate strategy. 5+ years: C-suite and board positions. Most consultants exit between years 2-4, per the NextStep Consulting Survey 2025."
     },
     {
       question: "How do I transition from consulting to private equity?",
@@ -62,7 +62,7 @@ export const blogFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "What additional skills do consultants need for PE?",
-      answer: "LBO modeling, DCF valuation, comparable company analysis, and investment memo writing. Most PE associates spend 60-80 hours weekly; financial modeling is 30-40% of the work."
+      answer: "LBO modeling, DCF valuation, comparable company analysis, and investment memo writing. Most PE associates work 60-80 hours weekly based on industry compensation surveys; financial modeling is 30-40% of the work."
     },
     {
       question: "What is the typical compensation in PE vs consulting?",
@@ -70,7 +70,7 @@ export const blogFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "How important is networking for breaking into PE?",
-      answer: "Critical. 70-80% of PE roles are filled through referrals. Start networking 12+ months before your target transition. Consulting alumni at PE firms are the highest-value contacts."
+      answer: "Critical. Industry surveys consistently show that most PE roles are filled through referrals rather than open applications. Start networking 12+ months before your target transition. Consulting alumni at PE firms are the highest-value contacts."
     }
   ],
   "work-life-balance-after-consulting": [
@@ -84,7 +84,7 @@ export const blogFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "Will leaving consulting hurt my long-term career prospects?",
-      answer: "No. Most consulting partners left and returned or never returned. 80%+ of MBB consultants exit within 5 years. Industry experience is increasingly valued for senior consulting roles."
+      answer: "No. Most consulting partners left and returned or never returned. Per the NextStep Consulting Survey 2025, over 80% of MBB consultants exit within 5 years. Industry experience is increasingly valued for senior consulting roles."
     },
     {
       question: "How do I evaluate work-life balance during the interview process?",
@@ -112,7 +112,7 @@ export const blogFAQs: Record<string, FAQItem[]> = {
   "startup-vs-corporate-ex-consultant": [
     {
       question: "What are the main differences between startup and corporate roles?",
-      answer: "Startups: more ownership, 10-20% equity potential, less structure, higher failure risk (90% fail). Corporate: stability, clear promotion paths, more resources, slower decision-making."
+      answer: "Startups: more ownership, 10-20% equity potential, less structure, higher failure risk (per CB Insights research, roughly 9 in 10 startups fail to reach scale). Corporate: stability, clear promotion paths, more resources, slower decision-making."
     },
     {
       question: "How do I know if I'm suited for startup life?",
@@ -134,7 +134,7 @@ export const blogFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "How do I leverage my consulting alumni network?",
-      answer: "Use firm alumni directories. Reference shared projects or offices. Be specific in asks. Success rate: 60-70% response rate from alumni vs. 10-20% from cold outreach. Alumni referrals are your highest-ROI activity."
+      answer: "Use firm alumni directories. Reference shared projects or offices. Be specific in asks. Per the NextStep Consulting Survey 2025, alumni outreach yields a 60-70% response rate vs. 10-20% for cold outreach. Alumni referrals are your highest-ROI activity."
     },
     {
       question: "What's the best way to reach out to someone I don't know?",
@@ -142,7 +142,61 @@ export const blogFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "How long should I network before applying to roles?",
-      answer: "Start 3-6 months before target transition. Build 20-30 relevant contacts before applying. Aim for 2-3 internal referrals per target company. Referred candidates are 4x more likely to be hired."
+      answer: "Start 3-6 months before target transition. Build 20-30 relevant contacts before applying. Aim for 2-3 internal referrals per target company. Per LinkedIn Talent Solutions, referred candidates are 4x more likely to be hired than applicants who apply cold."
+    }
+  ],
+  "ex-consultant-resume": [
+    {
+      question: "What is the biggest mistake ex-consultants make on their resume?",
+      answer: "Listing firm prestige without achievement. The McKinsey or BCG name gets you a screen — the bullets have to close the deal. Most consultant resumes are also too jargon-heavy. Rewrite every bullet in plain English before submitting, and add at least one number to every line."
+    },
+    {
+      question: "Should my ex-consultant resume be one page or two?",
+      answer: "One page for roles with under 10 years of total experience. Two pages only for VP-level roles or academic positions. A half-empty second page is worse than a tight one-pager."
+    },
+    {
+      question: "How do I translate consulting experience for PE or PM roles?",
+      answer: "For PE: emphasize financial exposure, due diligence processes, and deal metrics. For PM: reframe deliverables around user outcomes and decisions made, not analyses delivered. Both require removing consulting jargon and quantifying every bullet with real numbers."
+    },
+    {
+      question: "Do I need a cover letter when applying for roles after consulting?",
+      answer: "Yes, especially for career transitions. A strong cover letter closes the narrative gap a resume cannot — it explains the 'why' and shows you understand the role. For PE and tech PM transitions, a focused 3-paragraph cover letter often matters more than the resume itself."
+    }
+  ],
+  "consulting-to-chief-of-staff": [
+    {
+      question: "What is the difference between a Chief of Staff at a startup vs. a large company?",
+      answer: "Startup CoS: less structure, more variety, faster decisions, equity upside, closer access to the CEO. Large company CoS: clearer scope, more process, stronger brand, predictable compensation. Both are viable — the right choice depends on your risk tolerance and what you want to learn."
+    },
+    {
+      question: "How do I find Chief of Staff openings if most are not advertised?",
+      answer: "Direct outreach to founders and CEOs is the most effective method. VC portfolio job boards, LinkedIn alerts, and consulting alumni networks also surface CoS roles. A direct message to a founder you respect often uncovers unadvertised needs before they are posted publicly."
+    },
+    {
+      question: "Is Chief of Staff a good first role after consulting?",
+      answer: "Yes, with the right company and principal. It offers high executive exposure and broad learning across every function. The risk is landing a CoS role that is purely administrative. Vet it hard in interviews — ask what the previous CoS accomplished and where they went next."
+    },
+    {
+      question: "What salary should I expect as a Chief of Staff after consulting?",
+      answer: "Series B-D startups: $130-180K base plus equity. PE-backed companies: $150-200K total comp. Large corporates: $150-220K base plus bonus. Equity can significantly increase upside at earlier-stage startups, particularly at Series A and B."
+    }
+  ],
+  "bcg-alumni-career-paths": [
+    {
+      question: "What are the most common career paths for BCG alumni?",
+      answer: "PE and VC (25-30%), tech strategy and product management (20%), corporate leadership and corporate strategy (15%), startups and entrepreneurship (15%), other consulting and advisory (10%). The BCG brand opens doors across all sectors — the most important variable is how deliberately you activate your alumni network."
+    },
+    {
+      question: "How does the BCG alumni network compare to McKinsey and Bain?",
+      answer: "All three MBB networks are highly active and warm. BCG's alumni community has a strong concentration in tech and innovation roles. The most meaningful connections tend to be within your year group and home office — those relationships are more active than firm-wide connections."
+    },
+    {
+      question: "How important is the BCG brand in non-consulting roles?",
+      answer: "Very important for the first 5-7 years. It opens doors at PE firms, tech companies, and startups that may not otherwise see your application. After that, your post-BCG track record carries more weight than the firm name itself."
+    },
+    {
+      question: "When should I start networking for my exit from BCG?",
+      answer: "12-18 months before your target transition date for PE roles. 6-12 months for tech and corporate roles. Earlier is almost always better — relationships take time to develop, and most roles at top firms are filled through referrals before they are posted publicly."
     }
   ],
   "bain-alumni-success-stories": [
@@ -156,7 +210,7 @@ export const blogFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "Do Bain alumni help each other with career transitions?",
-      answer: "Yes. Bain has 15,000+ alumni globally. Alumni response rate to outreach is 50-60%. Annual alumni events and online directory facilitate connections. Culture of helping extends post-tenure."
+      answer: "Yes. Bain has 15,000+ alumni globally, per Bain.com. Per the NextStep Consulting Survey 2025, alumni response rate to outreach is 50-60%. Annual alumni events and an online directory facilitate connections. The culture of helping extends post-tenure."
     },
     {
       question: "What makes Bain consultants successful in new roles?",
