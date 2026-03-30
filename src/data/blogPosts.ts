@@ -11,6 +11,34 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "bcg-alumni-career-paths",
+    title: "BCG Alumni Career Paths: Where Are They Now?",
+    excerpt: "Real career trajectories of BCG alumni who built successful paths in private equity, tech leadership, startups, and corporate roles — with lessons and advice from each.",
+    category: "Success Stories",
+    readTime: "8 min read",
+    date: "Mar 30, 2026",
+    publishDate: "2026-03-30",
+    featured: true
+  },
+  {
+    slug: "consulting-to-chief-of-staff",
+    title: "Consulting to Chief of Staff: The Complete Career Guide",
+    excerpt: "Why ex-consultants make strong Chiefs of Staff, what the role actually involves, where to find openings, how to position yourself in interviews, and what career paths open up from CoS.",
+    category: "Career Transitions",
+    readTime: "8 min read",
+    date: "Mar 27, 2026",
+    publishDate: "2026-03-27"
+  },
+  {
+    slug: "ex-consultant-resume",
+    title: "How to Write an Ex-Consultant Resume That Gets Interviews",
+    excerpt: "A step-by-step guide to writing a resume that translates your consulting experience for PE, tech, corporate strategy, and startup roles — with bullet formulas, tailoring tips, and a pre-submit checklist.",
+    category: "Career Transitions",
+    readTime: "7 min read",
+    date: "Mar 25, 2026",
+    publishDate: "2026-03-25"
+  },
+  {
     slug: "consulting-survey-2025",
     title: "Consulting Survey 2025: Pay, Travel, and Retention in a Shifting Industry",
     excerpt: "Our comprehensive survey of 1,000+ consultants reveals insights on compensation, travel policies, work-life balance, and what's driving attrition in the consulting industry.",
@@ -102,33 +130,6 @@ export const blogPosts: BlogPost[] = [
     date: "Nov 25, 2025",
     publishDate: "2025-11-25"
   },
-  {
-    slug: "ex-consultant-resume",
-    title: "How to Write an Ex-Consultant Resume That Gets Interviews",
-    excerpt: "A step-by-step guide to writing a resume that translates your consulting experience for PE, tech, corporate strategy, and startup roles — with bullet formulas, tailoring tips, and a pre-submit checklist.",
-    category: "Career Transitions",
-    readTime: "7 min read",
-    date: "Mar 25, 2026",
-    publishDate: "2026-03-25"
-  },
-  {
-    slug: "consulting-to-chief-of-staff",
-    title: "Consulting to Chief of Staff: The Complete Career Guide",
-    excerpt: "Why ex-consultants make strong Chiefs of Staff, what the role actually involves, where to find openings, how to position yourself in interviews, and what career paths open up from CoS.",
-    category: "Career Transitions",
-    readTime: "8 min read",
-    date: "Mar 27, 2026",
-    publishDate: "2026-03-27"
-  },
-  {
-    slug: "bcg-alumni-career-paths",
-    title: "BCG Alumni Career Paths: Where Are They Now?",
-    excerpt: "Real career trajectories of BCG alumni who built successful paths in private equity, tech leadership, startups, and corporate roles — with lessons and advice from each.",
-    category: "Success Stories",
-    readTime: "8 min read",
-    date: "Mar 30, 2026",
-    publishDate: "2026-03-30"
-  }
 ];
 
 export const categories = [
